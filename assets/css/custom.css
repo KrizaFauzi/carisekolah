@@ -1,0 +1,228 @@
+/* primary */
+/*
+.primary-color {
+    background: #da3743;
+    background: green; 
+}
+
+.primary-link:hover {
+    color: #da3743;
+    transition: all 0.15s;
+    -webkit-transition: all 0.15s;
+    text-decoration: none;
+}
+
+.primary-text-color {
+    color: #da3743;
+    color: green;
+}
+
+.caption .date i,
+.invoice-intro.invoice-logo a,
+.commten-box .title a:hover,
+.commten-box .action a:hover,
+.author-card .name_surname a:hover,
+p.note:before,
+.location-box .location-box-content .title a:hover,
+.list-navigation li.return a,
+.mark-c,
+.pagination>li a:hover, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover,
+.infobox .content .title a:hover,
+.thumbnail.thumbnail-type .caption .title a:hover,
+.thumbnail.thumbnail-video .thumbnail-title a:hover,
+.card.card-category:hover .badget.b-icon i,
+.btn-marker:hover .title,
+.btn-marker .box,
+.thumbnail.thumbnail-property .thumbnail-title a:hover,
+.top-bar .logo a {
+    color: #da3743;
+    color: green;
+}
+
+.owl-dots-local .owl-theme .owl-dots .owl-dot:hover span,
+.affix-menu.affix.top-bar .default-menu .dropdown-menu>li.dropdown-submenu:hover > a, .affix-menu.affix.top-bar .default-menu .dropdown-menu>li>a:hover,
+.infobox-big .title,
+.cluster div:after,
+.google_marker:before,
+.owl-carousel-items.owl-theme .owl-dots .owl-dot.active span,
+.owl-carousel-items.owl-theme .owl-dots .owl-dot:hover span,
+.hidden-subtitle,
+.btn-marker:hover .box,
+.top-bar .default-menu .dropdown-menu>li>a:hover, .top-bar .default-menu .dropdown-menu>li.active>a, .top-bar .default-menu .dropdown-menu>li.dropdown.dropdown-submenu:hover > a,
+.owl-nav-local  .owl-theme .owl-nav [class*='owl-']:hover,
+.owl-dots-local .owl-theme .owl-dots .owl-dot.active span {
+    background: #da3743;
+    background: green;
+}
+
+[class*="icon-star-ratings"]:after {
+    color: green;
+ }
+ 
+ .pagination>li a:hover, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover,
+.infoBox > img, 
+.infobox-big, 
+.infobox:before,
+.infobox-big:before,
+.infobox {
+    border-color: #da3743;
+    border-color: green;
+}
+*/
+/* end primary */
+
+/* secondary */
+/*.color-secondary {
+    background: #da3743;
+}*/
+
+/* end secondary */
+
+
+/* color-title */
+/*
+.post-comments .post-comments-title,
+.reply-box .reply-title,
+.post-header .post-title .title,
+.widget-listing-title .options .options-body .title,
+.widget-styles .caption-title h2, .widget-styles .caption-title, .widget .widget-title, .widget-styles .header h2, .widget-styles .header,
+.header .title-location .location,
+.user-card .body .name,
+.section-title .title {
+    color: #252525;
+}
+*/
+
+/* end color-title */
+
+/* color-subtitle */
+/*
+.thumbnail.thumbnail-video .type,
+.caption .date,
+.thumbnail.thumbnail-property-list .header .right .address,
+.thumbnail.thumbnail-property .type,
+.post-header .post-title .subtitle,
+.header .title-location .count,
+.section-title .subtitle {
+    color: #7b7b7b;
+}
+*/
+/* end color-subtitle */
+
+/* color-title-primary */
+/*
+.post-social .hash-tags a,
+.user-card .body .contact .link,
+.thumbnail.thumbnail-property .thumbnail-title a {
+    color: #4285f4;
+}*/
+/* end color-title-primary */
+
+/* color-title-secondary */
+/*
+.caption.caption-blog .thumbnail-title a,
+.list-category-item .title, .list-category-item .title a,
+.grid-tile .title,
+.btn-marker .title,
+.commten-box .title a,
+.thumbnail.thumbnail-type .caption .title, .thumbnail.thumbnail-type .caption .title a,
+ .author-card .name_surname a {
+    color: #252525;
+}*/
+/* end color-title-secondary */
+
+/* color-content */
+/*
+.thumbnail .caption,
+.thumbnail.thumbnail-type .caption .description,
+.author-card .author-body,
+body,
+.author-card .author-body,
+.post-body,
+.thumbnail.thumbnail-type .caption .description {
+    color: #353535;
+}*/
+/* end color-content */
+
+/* Font-size */
+/*
+.owl-slider-content .item .title {
+    font-size: 40px;
+}
+
+.widget-geomap .geomap-title,
+.h-area .title {
+    font-size: 36px;
+}
+
+.widget-listing-title .options .options-body .title,
+.section-title .title {
+    font-size: 32px;
+}
+
+.footer .logo a,
+.top-bar .logo a {
+    font-size: 30px;
+}
+
+.h3, h3 {
+    font-size: 24px;
+}
+
+.section-profile-box .content .title,
+.section.widget-recentproperties .header .title-location .location,
+.section-title.slim .title,
+.caption.caption-blog .thumbnail-title a {
+    font-size: 20px;
+}
+
+.agent-box .title a,
+.thumbnail.thumbnail-offers .thumbnail-title a, .card.card-pricing .title, .list-category-item .title, .list-category-item .title a, .thumbnail.thumbnail-type .caption .title, .thumbnail.thumbnail-type .caption .title a, .owl-slider-content .item .subtitle, .thumbnail.thumbnail-property .thumbnail-title a, .thumbnail.thumbnail-type .caption .title, .thumbnail.thumbnail-type .caption .title a, .owl-slider-content .item .subtitle, .thumbnail.thumbnail-property .thumbnail-title a,
+.thumbnail.thumbnail-offers .thumbnail-title a,
+.card.card-pricing .title,
+.list-category-item .title, .list-category-item .title a,
+.thumbnail.thumbnail-type .caption .title, .thumbnail.thumbnail-type .caption .title a, .owl-slider-content .item .subtitle, .thumbnail.thumbnail-property .thumbnail-title a,
+.thumbnail.thumbnail-type .caption .title, .thumbnail.thumbnail-type .caption .title a,
+.owl-slider-content .item .subtitle,
+.thumbnail.thumbnail-property .thumbnail-title a {
+    font-size: 18px;
+}
+
+.section-profile-box .content .options,
+.grid-tile .title,
+.h-area .subtitle,
+.f-box .title,
+.user-card .body .name,
+.section-title .subtitle {
+    font-size: 16px;
+}
+
+.btn-custom,
+.header .title-location .location,
+.thumbnail.thumbnail-property-list .header .right .address {
+    font-size: 15px;
+}
+
+.list-navigation li,
+.btn,
+body,
+.top-bar .nav-items li {
+    font-size: 14px;
+}
+
+.card.card-pricing .price-box .notice,
+.list-suggestions li,
+.thumbnail.thumbnail-property-list .list-comment p,
+.thumbnail.thumbnail-type .caption .description,
+.thumbnail.thumbnail-video .type,
+.section-search-area .tags ul li,
+.f-box .list-f a,
+.caption .date,
+.btn-marker .title,
+.thumbnail.thumbnail-property .type {
+    font-size: 13px;
+}
+
+
+*/
+/* end Font-size */

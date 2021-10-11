@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Listing Preview</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
+        <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/libraries/ionicons-2.0.1/css/ionicons.min.css" />
+        <!-- Start BOOTSTRAP -->
+        <link rel="stylesheet" href="assets/libraries/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
+        <link rel="stylesheet" href="assets/libraries/bootstrap-colorpicker-master/dist/css/bootstrap-colorpicker.min.css" />
+        <!-- End Bootstrap -->
+        <!-- Start Template files -->
+        <link rel="stylesheet" href="assets/css/local.css" />
+        <link rel="stylesheet" href="assets/css/local-media.css" />
+        <!-- End  Template files -->
+        <!-- Start blueimp  -->
+        <link rel="stylesheet" href="assets/css/blueimp-gallery.min.css" />
+        <!-- End blueimp  -->
+        <link rel="stylesheet" href="assets/libraries/owl.carousel/dist/css/owl.carousel.min.css" />
+        <link rel="stylesheet" href="assets/libraries/owl.carousel/dist/css/owl.theme.default.css" />
+        <link rel="stylesheet" href="assets/libraries/owl.carousel/dist/css/animate.css" />
+        <!-- Start custom styles  -->
+        <!-- Start select-picke  -->
+        <link rel="stylesheet" href="assets/libraries/select-picker-auhau/dist/picker.min.css" />
+        <!-- End select-picke  -->
+        <!-- Start JS MAP  -->
+        <link rel="stylesheet" href="assets/css/map.css" />
+        <!-- End JS MAP  -->
+        <link rel="stylesheet" href="assets/css/custom.css" />
+        <!-- End custom styles  -->
+        <script src="assets/js/modernizr.custom.js"></script> 
+    </head>
+    <body class="">
+        <header class="header">
+            <div class="container container-palette top-bar affix-menu top-bar-color top-bar-white">
+                <div class="container-top">
+                    <div class="clearfix">
+                        <div class="pull-left logo"><a href="index.html">C</a></div>
+                        <div class="pull-left">
+                            <div class="local-form">
+                                <form action="map-small.html">
+                                    <div class="form-group">
+                                        <select class="form-control selectpicker" title="Jenjang sekolah yang dicari">
+                                            <option value="a" data-icon="ion-arrow-graph-up-right">Paling banyak dicari</option>
+                                            <option value="B" data-icon="ion-android-restaurant">SMA</option>
+                                            <option value="c" data-icon="ion-coffee">SMK</option>
+                                            <option value="d" data-icon="ion-android-bar">SMP/MTS</option>
+                                            <option value="d" data-icon="ion-android-bar">SD/MI</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="location" placeholder="Lokasi" />
+                                    </div>         
+                                    <div class="form-group form-group-btns">
+                                        <button type="submit" class="btn btn-custom btn-custom-secondary btn-icon"><i class="ion-ios-search-strong"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> 
+                        <div class="top-bar-btns">
+                            <ul class="nav-items">
+                                <li><a href="login.html" class="btn btn-custom-default">Log In</a></li>
+                                <li><a href="page_edit.html" class="btn btn-custom-primary">Add Listing</a></li>
+                            </ul>
+                            <button type="button" class="navbar-toggle" id="navigation-toogle">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="pull-right navigation-wrapper navigation-middle">
+                            <a href="" class="button-close"></a> 
+                            <div class="logo"><a href="#">L</a></div>
+                            <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Home
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="admin_1.html">Admin</a></li>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="homepage-side-mapsearch.html">Map by Side Search</a></li>
+                                        <li><a href="homepage-slider-top.html">Slider Top</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> About
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="how_it-works.html">How it works</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown active">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Pages
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="page_image-gallery.html">Basic with Gallery</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="page_edit.html">Add Listing</a></li>
+                                        <li><a href="mylistings.html">My Listings</a></li>
+                                        <li class="active"><a href="listing.html">Listing Preview</a></li>
+                                        <li><a href="page_faq.html">FAQ</a></li>
+                                        <li><a href="page_contact.html">Contact</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                             <button type="button" class="navbar-toggle">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="information-box">
+                                <div class="f-box">
+                                    <div class="title">Useful Links</div>
+                                    <p>
+                                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. 
+                                        Duis sed odio siton amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
+                                        Nam nec tellus a odio tincidunt auctor a ornare odio. Sed auris vitae erata consequat auctor eu in elit. 
+                                        Class aptent taciti socosqu ad litora torquent per conubia. In pretium mi non velit tincidunt aliquam. 
+                                        Nam elementu nulla accumsan cursus varius.
+                                        
+                                    </p>
+                                </div>
+                                <div class="f-box">
+                                    <div class="title">Cibtact Info</div>
+                                    <p>
+                                        Email: <a href="mailto:local@local.com">local@local.com</a>
+                                        Phone: +350 123 45 67
+                                    </p>
+                                </div>
+                                <div class="f-box">
+                                    <div class="title">Follow Us</div>
+                                    <ul class="list-social">
+                                        <li><a href="https://www.facebook.com/share.php?u=http://test.com&amp;title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://plus.google.com/share?url=http://test.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="http://pinterest.com/pin/create/button/?url=http://test.com" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="twitter"><i class="fa fa-pinterest-p"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=&source=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>                      
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /.header -->
+        <main class="main container container-palette"> 
+            <div class="widget container container-palette listing-gallery">
+                <div class="container">
+                    <div class="content">
+                        <div class="row-s">
+                            <div class="col-sm-4"><a href="assets/img/placeholder/post-preview.jpg" class="image-cover-div" download="assets/img/placeholder/post-preview.jpg"><img src="assets/img/placeholder/post-preview.jpg" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="assets/img/placeholder/post-preview.jpg" class="image-cover-div" download="assets/img/placeholder/post-preview.jpg"><img src="assets/img/placeholder/post-preview.jpg" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="assets/img/placeholder/post-preview.jpg" class="image-cover-div" download="assets/img/placeholder/post-preview.jpg"><img src="assets/img/placeholder/post-preview.jpg" alt="" /></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="widget container container-palette widget-listing-title">
+                <div class="container wb">
+                    <div class="options">
+                        <div class="type-box"><i class="ion-android-bar"></i></div>
+                        <div class="options-body">
+                            <h1 class="title">Contraband Coffee Bar</h1>
+                            <div class="ratings">
+                                4.5 <i class="icon-star-ratings-4-5"></i>
+                            </div>
+                            <div class="types">
+                                Cocktail Bars
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="#wrie_review" class="btn btn-custom-s btn-custom-secondary"><i class="ion-ios-star"></i>Tulis Reiview</a>  
+                        <a href="#" id="add_to_favorites" class="btn btn-custom-s btn-custom-default"><i class="ion-heart"></i>Simpan</a>  
+                        <a class="btn btn-custom-s btn-custom-default" href="https://www.facebook.com/share.php?u=http://test.com&amp;title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="ion-share"></i>Bagikan</a>  
+                    </div>
+                </div>
+            </div> 
+            <div class="container container-palette widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="widget-styles">
+                                <div class="content-box">
+                                    Pellentesque tincidunt libero in lacus tincidunt lacinia. Ut ex augue, porttitor et lacus ut, ultricies egestas risus. Maecenas vestibulum, urna ac tempus imperdiet, tellus enim molestie dolor, vel iaculis neque ipsum nec nisl. Orci varius natoe ale penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse interdum mattis nunc et placerat. Donec consequat nulla nec nulla accumsan ornare. Cras tempor dolor sit amet turpis fringilla tempor. Mauris sollicitudin purus et metus tristique, venenatis dictum sem mollis. Suspendisse potenti. Aenean nec vestibulum enimulla facilisipendisse.
+                                </div>
+                            </div>   
+                           
+                            <div class="widget-styles">
+                                <div class="header content t-left"><h2>Reviews & Tips</h2></div>
+                                <ul class="list-reviews">
+                                    <li class="content-box">
+                                        <a href="page_profile.html">
+                                            <img src="assets/img/placeholder/user-comment.jpg" alt="" />
+                                        </a>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h2><a href="page_profile.html">Dorian Breen</a></h2>
+                                            </div>
+                                            <div class="raiting"><i class="icon-star-ratings-4"></i></div>
+                                            <div class="description">Morbi dolor eros, malesuada nec bibendum at, tincidunt sit amet sem. Maecenas dictum pharetra tortor sit amet varius. In eu tortor diam. Vestibulum eu elit metus. Integer consectetur quam sed dolor cursus viverra molestie erat vitae, ullamcorper urna.</div>
+                                        </div>
+                                    </li>
+                                    <li class="content-box">
+                                        <a href="page_profile.html">
+                                            <img src="assets/img/placeholder/user-comment.jpg" alt="" />
+                                        </a>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h2><a href="page_profile.html">Gloria Trillo</a></h2>
+                                            </div>
+                                            <div class="raiting"><i class="icon-star-ratings-3"></i></div>
+                                            <div class="description">Phasellus a tempor libero. Mauris vitae aliquet ipsum, nec vulputate leo.</div>
+                                        </div>
+                                    </li>
+                                    <li class="content-box">
+                                        <a href="page_profile.html">
+                                            <img src="assets/img/placeholder/user-comment.jpg" alt="" />
+                                        </a>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h2><a href="page_profile.html">Bernard Show</a></h2>
+                                            </div>
+                                            <div class="raiting"><i class="icon-star-ratings-5"></i></div>
+                                            <div class="description">In ut volutpat enim. Nam eget venenatis lorem. Nunc in varius eros, eget pretium ligula. Vestibulum vitae metus sagittis, faucibus ex ac, dictum nibh. Ut interdum dolor nec quam gravida eleifend. </div>
+                                        </div>
+                                    </li>
+                                    <li class="content-box">
+                                        <a href="page_profile.html">
+                                            <img src="assets/img/placeholder/user-comment.jpg" alt="" /></a>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h2><a href="page_profile.html">Antonie Bluer</a></h2>
+                                            </div>
+                                            <div class="raiting"><i class="icon-star-ratings-5"></i></div>
+                                            <div class="description">Curabitur finibus tellus arcu, non condimentum purus sodales id. Nam ornare porttitor velit, vel luctus turpis feugiat ac. In fermentum maximus varius. Fusce non pharetra magna. Etiam viverra gravida lectus. </div>
+                                        </div>
+                                    </li>
+                                    <li class="content-box">
+                                        <a href="page_profile.html">
+                                            <img src="assets/img/placeholder/user-comment.jpg" alt="" />
+                                        </a>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h2>Kevin Igorevich</h2>
+                                            </div>
+                                            <div class="raiting"><i class="icon-star-ratings-5"></i></div>
+                                            <div class="description">Curabitur finibus tellus arcu, non condimentum purus sodales id. Nam ornare porttitor velit, vel luctus turpis feugiat ac. In fermentum maximus varius. Fusce non pharetra magna. Etiam viverra gravida lectus. Aliquam erat volutpat. Nam fringilla accumsan magna, nec gravida ex suscipit vitae.</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="caption-title t-left content" id="write_review">Nilai/Tulis Review</div>
+                                <div class="content-box">
+                                    <form action="#" class="local-form">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <div class="rating-action">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    Select Your Rating
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="mail" placeholder="Email Address" />
+                                                </div>
+                                            </div> 
+                                            <div class="col-sm-6 col-xs-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="name" value="Your Name" />
+                                                </div>
+                                            </div>    
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control" rows="10">Help other to choose perfect place</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cliearfix">
+                                            <button type="submit" id="submit_review" class="btn btn-custom btn-custom-secondary">kirim Review</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="widget-styles widget-listing-map">
+                                <div class="body">
+                                    <div class="map" id="property-map"></div>
+                                </div>
+                                <div class="content-box">
+                                    <ul class="list-contact">
+                                        <li class="icon address">31 Crosby St, New York</li>
+                                        <li class="icon phone"><a href="tel:3103179140">(310) 317-9140</a></li>
+                                        <li class="icon clock multi"><div class="title">Open until 6:00 PM</div>
+                                            <ul>
+                                                <li class="fill column"><span>Mon - Sat</span> <span>7:00 AM - 6:00 PM</span></li>
+                                                <li class="fill column"><span>Sun</span> <span>8:00 AM - 5:30 PM</span></li>
+                                            </ul>
+                                        </li>
+                                        <li class="icon earth"><a href="#">local.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget-styles agent-box">
+                                <div class="content">
+                                    <div class="preview-image"><a href="page_profile.html"><img src="assets/img/placeholder/user-comment.jpg" alt="" /></a></div>
+                                    <div class="content-box">
+                                        <h2 class="title"><a href="page_profile.html">James Gordon</a></h2>
+                                        <div class="description">Aenean sollicitudin, lorem quis bibe ndum auctor, nisi elit consequat ipsum nec sagittis sem nibh id elit. </div>
+                                        <a href="mailto:james@local.com" class="btn btn-custom btn-custom-secondary btn-wide"><i class="ion-email"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget widget-other-location">
+                                <h2 class="widget-title content t-left">You might also like</h2>
+                                <div class="content">
+                                    <div class="location-box">
+                                        <a href="listing.html" class="preview-image image-cover-div"><img src="assets/img/placeholder/user-comment.jpg" alt="" /></a>
+                                        <div class="location-box-content">
+                                            <h3 class="title"><a href="listing.html">Blue Ribbon Sushi</a></h3>
+                                            <div class="ratings">
+                                                4.5 <i class="icon-star-ratings-4-5"></i>
+                                            </div>
+                                            <div class="types">
+                                                Cocktail Bars
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="location-box">
+                                        <a href="listing.html" class="preview-image image-cover-div"><img src="assets/img/placeholder/user-comment.jpg" alt="" /></a>
+                                        <div class="location-box-content">
+                                            <h3 class="title"><a href="listing.html">Korchma Taras Bulba</a></h3>
+                                            <div class="ratings">
+                                                4.5 <i class="icon-star-ratings-4-5"></i>
+                                            </div>
+                                            <div class="types">
+                                                Cocktail Bars
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget widget-ads">
+                                <a href="#"><img src="assets/img/placeholder/ads.jpg" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer container container-palette">
+            <div class="footer-content section">
+                <div class="container">
+                    <div class="row footer-results">
+                        <div class="col-md-3 col-sm-6 logo hidden-sm">
+                            <a href="#">Cari Sekolah</a>
+                        </div>                
+                        <div class="col-md-3 col-sm-6 f-box">
+                            <div class="title">Useful Links</div>
+                            <ul class="list-f">
+                                <li><a href="#">About Local</a></li>
+                                <li><a href="#">Work With Us</a></li>
+                                <li><a href="#">Advertising</a></li>
+                                <li><a href="#">Reviews</a></li>
+                            </ul>
+                        </div>              
+                        <div class="col-md-3 col-sm-6 f-box">
+                            <div class="title">Sekolah Favorit</div>
+                            <ul class="list-f">
+                                <li><a href="listing.html">SMKN 8 Malang</a></li>
+                                <li><a href="listing.html">SMPN 13 Malang</a></li>
+                                <li><a href="listing.html">SDN 2 Tlogomas Malang</a></li>
+                                <li><a href="listing.html">SMAN 8 Malang</a></li>
+                            </ul>
+                        </div>                
+                        <div class="col-md-3 col-sm-6 f-box">
+                            <div class="title">Follow Us</div>
+                            <ul class="list-social">
+                                <li><a href="https://www.facebook.com/share.php?u=http://test.com&amp;title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/intent/tweet?text=Hello%20world"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <span>CariSekolah&#169;2021.  Made in SMKN 8 Malang</span>
+                </div>
+            </div>
+        </footer> <!-- /.footer -->
+        <div class="modal fade modal-form" id="login-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Log in to Local</h4>
+                    </div>
+                    <div class="modal-body search-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="mail" placeholder="Mail" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="password" placeholder="Password" />
+                            </div>                            
+                            <div class="form-group">
+                                <button type="button" class="btn btn-custom btn-custom-secondary btn-wide">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <a href="#" class="btn btn-custom btn-custom-primary btn-wide">Log In With Facebook</a>
+                        </div>                    
+                        <div class="bottom-actions">
+                            New to Local? <a href="#" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#creataccount-modal" class="link">Create an account</a>
+                        </div>
+                        <div class="bottom-actions">
+                            Forgot Password? <a href="#" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#forgot-password-modal" class="link">Reset password</a>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade modal-form" id="creataccount-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Sign Up for Local</h4>
+                    </div>
+                    <div class="modal-body search-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="Name" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="mail" placeholder="Email Address" />
+                            </div>                            
+                            <div class="form-group">
+                                <button type="button" class="btn btn-custom btn-custom-secondary btn-wide">Create Account</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <a href="#" class="btn btn-custom btn-custom-primary btn-wide">Sign Up With Facebook</a>
+                        </div>               
+                        <div class="bottom-actions">
+                            Already on Local? <a href="#" class="link">Log In</a>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <div class="modal fade modal-form" id="forgot-password-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Forgot Password</h4>
+                    </div>
+                    <p class="notice">Please enter your email address and we will send you an email about how to reset your password.</p>
+                    <div class="modal-body search-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="mail" placeholder="Email Address" />
+                            </div>                            
+                            <div class="form-group">
+                                <button type="button" class="btn btn-custom btn-custom-secondary btn-wide">Reset Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <div class="se-pre-con"></div>
+        <!-- Start Jquery -->
+        <script src="assets/js/jquery-2.2.1.min.js"></script>
+        <script src="assets/libraries/jquery.mobile/jquery.mobile.custom.min.js"></script>
+        <!-- End Jquery -->
+        <!-- Start BOOTSTRAP -->
+        <script src="assets/libraries/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/js/bootstrap-select.min.js"></script>
+        <script src="assets/libraries/bootstrap-colorpicker-master/dist/js/bootstrap-colorpicker.min.js"></script>
+        <!-- End Bootstrap -->
+        <!-- Start Template files -->
+        <script src="assets/js/local.js"></script>
+        <!-- End  Template files -->
+        <!-- Start blueimp  -->
+        <script src="assets/js/blueimp-gallery.min.js" type="text/javascript"></script>
+        <!-- End blueimp  -->
+        <script src="assets/libraries/owl.carousel/dist/owl.carousel.min.js"></script>
+        <!-- Start JS MAP  -->
+        <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&amp;&key=AIzaSyAqLlMqwv4wpy6cfSBGJddPpyoZ_eP14Kc" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/js/map_infobox.js"></script>
+        <script type="text/javascript" src="assets/js/markerclusterer.js"></script>
+        <script src="assets/js/map.js" type="text/javascript"></script>
+        <!-- End JS MAP  -->
+        <script src="assets/js/jquery.helpers.js" type="text/javascript"></script>
+        <!-- Start picker  -->
+        <script type="text/javascript" src="assets/libraries/select-picker-auhau/dist/picker.min.js"></script>
+        <!-- End picker  -->
+        <!-- Start custom styles  -->
+        <script src="assets/js/jquery.helpers.js" type="text/javascript"></script>
+        <script src="assets/js/custom.js" type="text/javascript"></script>
+        <!-- End custom styles  -->
+        <script src="assets/js/moment-with-locales.min.js" type="text/javascript"></script>
+        <script src="assets/js/moment-timezone-with-data.js" type="text/javascript"></script>
+        <script src="assets/js/facebook.js"></script>
+    </body>
+</html>

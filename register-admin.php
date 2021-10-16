@@ -1,6 +1,6 @@
 <?php
 
-require 'function1.php';
+require 'function.php';
 
 if ( isset($_POST["register"]) ) {
     if ( registrasi($_POST) > 0 )  {
@@ -46,25 +46,25 @@ if ( isset($_POST["register"]) ) {
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Daftar</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form action="" method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Nama Pengguna"/>
+                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Email"/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Kata Sandi"/>
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Kata Sandi"/>
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Ulang kata sandi"/>
+                                <label for="password2"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="password2" id="password2" placeholder="Ulang kata sandi"/>
                             </div>
                             <div class="form-group form-button">
-                                <a href="login-admin.html" type="submit" name="signup" id="signup"  class="form-submit" value="Register">Daftar</a>
+                                 <input type="submit" name="register" class="form-submit" value="daftar"/>
                             </div>
                         </form>
                     </div>

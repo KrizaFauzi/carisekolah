@@ -7,7 +7,7 @@ if ( isset($_POST["register"]) ) {
         echo "<script>
             alert ('berhasil registrasi');
             </script>";
-            header("location: login-admin.html");
+            header("location: login-admin.php");
             exit;
     }else{
         echo mysqli_error($db);
@@ -70,7 +70,7 @@ if ( isset($_POST["register"]) ) {
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="login-admin.html" class="signup-image-link">Sudah mempunyai akun</a>
+                        <a href="login-admin.php" class="signup-image-link">Sudah mempunyai akun</a>
                     </div>
                 </div>
             </div>

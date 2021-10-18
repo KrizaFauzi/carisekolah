@@ -1,31 +1,6 @@
-<?php 
+<?php
 
-session_start();
 require 'function.php';
-
-if (isset($_COOKIE['id'])&& isset($_COOKIE['key'])) {
-    $id = $_COOKIE['id'];
-    $key = $_COOKIE['key'];
-
-    $result = mysqli_query($db, "SELECT username FROM registerdv WHERE id = $id ");
-    $row = mysqli_fetch_assoc($result);
-
-    if ($key === hash('sha256', $row['username'])) {
-        $_SESSION['login'] = true;
-
-    }
-
-    }
-
-
-
-
-if ( isset($_SESSION['login'])) {
-  header("location: admin_1.html");
-  exit;
-}
-
-
 
 if (isset($_POST['login'])) {
     
@@ -34,25 +9,23 @@ if (isset($_POST['login'])) {
 
     $result = mysqli_query($db, "SELECT * FROM registerdv WHERE username = '$username'");
 
-    if (mysqli_num_rows($result) === 1 ) {
-        
+    if (mysqli_num_rows($result) === 1) {
+
         $row = mysqli_fetch_assoc($result);
-        if (password_verify($password, $row["password"]) ){
-            $_SESSION['login'] = true; 
-            if (isset($_POST['remember'])) {
-                setcookie('id' , $row['id'] , time() + 60);
-                setcookie('key' , hash('sha256', $row['username']),time()+60);
-            }
-            header ("location: admin_1.html");
+        if(password_verify($password, $row["password"]){
+            header ("location: admin-sekolah.html");
             exit;
-
-
         }
     }
-
-    $error = true;
-
+   
 }
+
+
+
+
+
+
+
 
 
 ?>
@@ -90,14 +63,14 @@ if (isset($_POST['login'])) {
 
                     <div class="signin-form">
                         <h2 class="form-title">Masuk</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form action="" method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Nama Pengguna"/>
+                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                             </div>
                             <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Kata sandi"/>
+                                <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Kata sandi"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

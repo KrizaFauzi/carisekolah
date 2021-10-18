@@ -1,22 +1,4 @@
-<?php
 
-require 'function1.php';
-
-if ( isset($_POST["register"]) ) {
-    if ( registrasi($_POST) > 0 )  {
-        echo "<script>
-            alert ('berhasil registrasi');
-            </script>";
-            header("location: login-admin.html");
-            exit;
-    }else{
-        echo mysqli_error($db);
-    }
-
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,22 +1,4 @@
-<?php
 
-require 'function1.php';
-
-if ( isset($_POST["register"]) ) {
-    if ( registrasi($_POST) > 0 )  {
-        echo "<script>
-            alert ('berhasil registrasi');
-            </script>";
-            header("location: login.php");
-            exit;
-    }else{
-        echo mysqli_error($db);
-    }
-
-}
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -70,7 +52,7 @@ if ( isset($_POST["register"]) ) {
                             <a href="admin_5.html"><i class="nav-icon ion-android-star"></i><span class="nav-label">ulasan</span></a>
                         </li>                                   
                         <li>
-                            <a href="#"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
+                            <a href="logout.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
                         </li>
                     </ul>
                 </div>

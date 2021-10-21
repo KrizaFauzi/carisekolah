@@ -52,22 +52,19 @@
                         <figure><img src="images/signin-img.png" alt="sing up image"></figure>
                        <a href="register-admin.php" class="signup-image-link">Daftarkan akun</a>
                     </div>
-
                     <div class="signin-form">
                         <h2 class="form-title">Masuk</h2>
                         <form  action="" method="post">
                             <div class="form-group">
-                               
-                                <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                                  <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                  <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                             </div>
                             <div class="form-group">
-                                
-                                <input type="password" name="password" id="password" placeholder="Kata sandi"/>
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Kata sandi"/>
                             </div>
                             <div class="form-group form-button">
-                                 <input type="submit" name="login" class="form-submit" value="masuk"/>
+                                 <button type="submit" name="login" >Masuk</button>
                             </div>
                         </form>
 

@@ -1,30 +1,23 @@
 <?php
+ require 'function.php';
 
-require 'function.php';
+ if (isset($_POST["login"])) {
+     
+     $username = $_POST["username"];
+     $password = $_POST["password"];
 
-if (isset($_POST['login'])) {
-    
-    $username = $_POST["username"];
-    $password = $_POST["password"];
+     $result = mysqli_query($db , "SELECT * FROM registerdv WHERE username = '$username'");
 
-    $result = mysqli_query($db, "SELECT * FROM registerdv WHERE username = '$username'");
+     if ( mysqli_num_rows($result) === 1) {
 
-    if (mysqli_num_rows($result) === 1) {
-
-        $row = mysqli_fetch_assoc($result);
-        if(password_verify($password, $row["password"]){
-            header ("location: admin-sekolah.html");
+         $row = mysqli_fetch_assoc($result);
+         if(password_verify($password, $row["password"])){
+            header("location: admin_1.html");
             exit;
-        }
-    }
-   
-}
 
-
-
-
-
-
+         }
+     }
+ }
 
 
 
@@ -50,8 +43,7 @@ if (isset($_POST['login'])) {
 </head>
 <body>
 
-    <div class="main">
-
+    <div class="main"> 
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="container">
@@ -60,25 +52,19 @@ if (isset($_POST['login'])) {
                         <figure><img src="images/signin-img.png" alt="sing up image"></figure>
                        <a href="register-admin.php" class="signup-image-link">Daftarkan akun</a>
                     </div>
-
                     <div class="signin-form">
                         <h2 class="form-title">Masuk</h2>
-                        <form action="" method="POST" class="register-form" id="login-form">
+                        <form  action="" method="post">
                             <div class="form-group">
-                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
+                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                  <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Kata sandi"/>
                             </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
-                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Ingat akun</label>
-                            </div>
                             <div class="form-group form-button">
-                               
-                                <a href="admin_1.html" type="submit" name="signin" id="signin" class="form-submit" value="Log in">Masuk</a>
+                                 <button type="submit" name="login" >Masuk</button>
                             </div>
                         </form>
 

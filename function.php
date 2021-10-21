@@ -16,7 +16,6 @@ function registrasi($data) {
 	global $db;
 
 	$username = strtolower(stripcslashes($data["username"]));
-	$email = strtolower(stripcslashes($data["email"]));
 	$password = mysqli_real_escape_string($db, $data["password"]);
 	$password2 = mysqli_real_escape_string($db,$data["password2"]);
 	
@@ -42,7 +41,7 @@ function registrasi($data) {
 	
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
-	mysqli_query($db, "INSERT INTO registerdv VALUES('','$username' ,'$email','$password')");
+	mysqli_query($db, "INSERT INTO registerdv VALUES('','$username' ,'$password')");
 
 
 	return mysqli_affected_rows($db);

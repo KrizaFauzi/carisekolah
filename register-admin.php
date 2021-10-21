@@ -51,11 +51,7 @@ if ( isset($_POST["register"]) ) {
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" id="username" placeholder="Nama Pengguna"/>
                             </div>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Email"/>
-                            </div>
-                            <div class="form-group">
+                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="password" placeholder="Kata Sandi"/>
                             </div>

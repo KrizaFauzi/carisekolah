@@ -20,7 +20,52 @@
         <!-- End custom styles  -->
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
-    <body>
+    <script>
+    var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+<body>
+        <style >
+.multiselect {
+  width: 200px;
+}
+
+
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}</style>
         <div class="page-wrapper">
             <!-- START mainbar -->
             <div class="sidebar">
@@ -75,7 +120,7 @@
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Main Info
+                                Isi Data Website Sekolahmu
                             </h2>
                         </div>
                         <div class="box-content">
@@ -100,10 +145,44 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="#">Jurusan<span class="option">(khusus SMA/SMK)</span></label>
-                                                <input type="text" class="form-control" id="#" placeholder="">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="#">Jurusan </label>
+                                            <div class="multiselect">
+                                                <div onclick="showCheckboxes()">
+                                                    <select class="form-control">
+                                                      <option><span class="option"> (khusus SMK)</span></option>
+                                                     </select>
+                                                 </div>
+                                                  <div id="checkboxes">
+                                                          <label for="RPL">
+                                                          <input type="checkbox" id="RPL" />RPL</label>
+
+                                                          <label for="TKJ">
+                                                          <input type="checkbox" id="TKJ" />TKJ</label>
+
+                                                          <label for="Mekatronika">
+                                                          <input type="checkbox" id="Mekatronika" />Mektronika</label>
+
+                                                          
+                                                          <label for="kesehatan">
+                                                          <input type="checkbox" id="kesehatan" />Kesehatan dan     Pekerjaan Sosial</label>
+
+                                                          <label for="Bisnis">
+                                                          <input type="checkbox" id="Bisnis" />Bisnis dan Manajemen</label>
+
+                                                          <label for="TKR">
+                                                          <input type="checkbox" id="TKR" />TKR</label>
+
+                                                          <label for="Kemaritiman">
+                                                          <input type="checkbox" id="Kemaritiman" />Kemaritiman</label>
+
+                                                          <label for="Pariwisata">
+                                                          <input type="checkbox" id="Pariwisata" />Pariwisata</label>
+
+                                                          <label for="lainnya">
+                                                          <input type="text" id="lainnya" />lainnya</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -148,7 +227,7 @@
                                             <textarea class="form-control" id="" rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="fieldDesription">Visi Misi Sekolah</label>
+                                            <label for="fieldDesription">Berita sekolah</label>
                                             <textarea class="form-control" id="" rows="10"></textarea>
                                         </div>
                                     </div>

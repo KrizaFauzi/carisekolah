@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Halaman Admin Sekolah</title>
+        <title>Admin Sekolah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="icon" href="assets/img/logocs.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -190,14 +190,19 @@ function showCheckboxes() {
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="input_file1">Foto sekolah <span class="option">(Pilihan)</span></label>
+                                            <div class="form-group-in">
+                                                <label for="input_file1">Foto Sekolah</label>
                                                 <input type="file" class="hidden" id="input_file1">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">Browse Files</button>
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">cari file</button>
+                                            </div>
+                                            <div class="form-group-in">
+                                                <label for="input_file1">Logo/Icon Sekolah</label>
+                                                <input type="file" class="hidden" id="input_file1">
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">cari file</button>
                                             </div>
                                         </div>
                                     </div>   
-                                </div>   
+                                </div> 
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -276,7 +281,7 @@ function showCheckboxes() {
                                                 <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                                 <div class="form-group-in">
@@ -343,8 +348,9 @@ function showCheckboxes() {
                                             </div>
                                         </div>
                                        
-                                        <button type="submit" class="btn btn-success">Kirim</button>
+                                       
                                     </div>
+                                     <button type="submit" class="btn btn-success">Kirim</button>
                                 </div>
                             </form>
                         </div>

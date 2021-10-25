@@ -1,3 +1,9 @@
+<?php
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -130,7 +136,7 @@ function showCheckboxes() {
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="#">Nama Sekolah</label>
-                                                <input type="text" class="form-control" id="fieldListingName" placeholder="Nama Sekolah ">
+                                                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah" placeholder="nama Sekolah ">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -161,12 +167,12 @@ function showCheckboxes() {
                                                           <label for="TKJ">
                                                           <input type="checkbox" id="TKJ" />TKJ</label>
 
-                                                          <label for="riau">
-                                                          <input type="checkbox" id="riau" />Mektronika</label>
+                                                          <label for="Mekatronika">
+                                                          <input type="checkbox" id="Mekatronika" />Mektronika</label>
 
                                                           
-                                                          <label for="Jabar">
-                                                          <input type="checkbox" id="Jabar" />Jawa b</label>
+                                                          <label for="Kesehatan">
+                                                          <input type="checkbox" id="Kesehatan" />Kesehatan dan Pekerjaan Sosial</label>
 
                                                           <label for="Bisnis">
                                                           <input type="checkbox" id="Bisnis" />Bisnis dan Manajemen</label>
@@ -191,18 +197,18 @@ function showCheckboxes() {
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group-in">
-                                                <label for="input_file1">Foto Sekolah</label>
-                                                <input type="file" class="hidden" id="input_file1" multiple="">
+                                                <label for="gambar-1">Foto Sekolah</label>
+                                                <input type="file" class="hidden" id="gambar-1">
                                                 <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
 
-                                                <input type="file" class="hidden" id="input_file1" multiple="">
+                                                <input type="gambar-2" class="hidden" id="gambar-2">
                                                 <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
 
-                                                <input type="file" class="hidden" id="input_file1" multiple="">
+                                                <input type="file" class="hidden" id="gambar-3">
                                                 <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button>
                                             </div>
                                             <div class="form-group-in">
-                                                <label for="input_file1">Logo/Icon Sekolah</label>
+                                                <label for="gambar-3">Logo/Icon Sekolah</label>
                                                 <input type="file" class="hidden" id="input_file1">
                                                 <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">Upload gambar</button>
                                             </div>
@@ -213,20 +219,20 @@ function showCheckboxes() {
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="fieldPhone">Nomor Telp Sekolah</label>
-                                                <input type="text" class="form-control" id="fieldPhone" placeholder="+62">
+                                                <label for="no_sekolah">Nomor Telp Sekolah</label>
+                                                <input type="text" class="form-control" id="no_sekolah" placeholder="+62">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="fieldWebsite">Email</label>
-                                                <input type="text" class="form-control" id="" placeholder="********@gmail.com">
+                                                <label for="email">Email</label>
+                                                <input type="text" class="form-control" id="email" placeholder="********@gmail.com">
                                             </div>        
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group" style="width: 900px;">
-                                                <label for="fieldWebsite">Website Official Sekolah</label>
-                                                <input type="text" class="form-control" id="" placeholder="https://">
+                                                <label for="ofc_web">Website Official Sekolah</label>
+                                                <input type="text" class="form-control" id="ofc_web" placeholder="https://">
                                             </div>        
                                         </div>                                  
                                     </div>                                   
@@ -234,12 +240,12 @@ function showCheckboxes() {
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="fieldDesription">Deskrpsi sekolah</label>
-                                            <textarea class="form-control" id="" rows="10"></textarea>
+                                            <label for="deskripsi">Deskrpsi sekolah</label>
+                                            <textarea class="form-control" id="deskripsi" rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
-                                            <label for="fieldDesription">Berita sekolah</label>
-                                            <textarea class="form-control" id="" rows="10"></textarea>
+                                            <label for="berita">Berita sekolah</label>
+                                            <textarea class="form-control" id="berita" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -257,14 +263,14 @@ function showCheckboxes() {
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputAddress">Alamat</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="Jl teluk pacitan.....">
+                                            <label for="alamat">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputGps">Link Google maps</label>
-                                            <input type="text" class="form-control" id="inputGps" placeholder="google.com/maps/....">
+                                            <label for="link-map">Link Google maps</label>
+                                            <input type="text" class="form-control" id="link-map" placeholder="google.com/maps/....">
                                         </div>
                                     </div>                                   
                                 </div>

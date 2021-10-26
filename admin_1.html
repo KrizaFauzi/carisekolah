@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(isset($_SESSION['is_login']))
+{
+    header('loacation:logindev/index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -52,7 +58,7 @@
                             <a href="admin_5.html"><i class="nav-icon ion-android-star"></i><span class="nav-label">Testimoni</span></a>
                         </li>                                   
                         <li>
-                            <a href="../logout.php"nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
+                            <a href="logindev/logout.php"nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
                         </li>
                     </ul>
                 </div>

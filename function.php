@@ -1,6 +1,6 @@
 <?php 
 //koneksi ke database
-$db = mysqli_connect("localhost", "root", "", "dvlprcs");
+$db = mysqli_connect("localhost", "root", "", "cari_sekolah");
 
 function query($query){
 	global $db;
@@ -11,39 +11,31 @@ function query($query){
 	}
 	return $rows;
 }
-
-function registrasi($data) {
+ 
+function tambah($data){
 	global $db;
+	$nama_pembeli = htmlspecialchars($data["nama_pembeli"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$no_telp = htmlspecialchars($data["no_telp"]);
+	$no_ktp = htmlspecialchars($data["no_ktp"]);
+	$merk_mobil = htmlspecialchars($data["merk_mobil"]);
+	$warna = htmlspecialchars($data["warna"]);
 
-	$username = strtolower(stripcslashes($data["username"]));
-	$password = mysqli_real_escape_string($db, $data["password"]);
-	$password2 = mysqli_real_escape_string($db,$data["password2"]);
-	
-	$result = mysqli_query($db, "SELECT username FROM registerdv WHERE username = '$username'");
-
-	if (mysqli_fetch_assoc($result) ) {
-		echo "<script>
-			alert ('username sudah terdaftar');
-			</script>";
-
+	$gambar = upload();
+	if ( !$gambar ) {
 		return false;
 	}
 
 
-
-
-	if ($password != $password2) {
-		echo "<script>
-			alert ('konfirmasi password tidak valid');
-			</script>";
-			return false;
-	}
-	
-	$password = password_hash($password, PASSWORD_DEFAULT);
-
-	mysqli_query($db, "INSERT INTO registerdv VALUES('','$username' ,'$password')");
-
+	$query = "INSERT INTO tb_website
+				VALUES
+				('', '$nama_pembeli', '$alamat', '$no_telp', '$no_ktp', '$merk_mobil', '$warna', '$gambar') 
+				";
+	mysqli_query($db, $query);
 
 	return mysqli_affected_rows($db);
-	}
-?>
+}
+
+
+
+ ?>

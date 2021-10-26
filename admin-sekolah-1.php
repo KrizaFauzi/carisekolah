@@ -1,10 +1,16 @@
+<?php
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Admin 3</title>
+        <title>Admin Sekolah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="assets/img/logocs.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
         <link rel="stylesheet" href="assets/libraries/font-awesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="assets/libraries/ionicons-2.0.1/css/ionicons.min.css" />
@@ -20,14 +26,59 @@
         <!-- End custom styles  -->
         <script src="assets/js/modernizr.custom.js"></script>
     </head>
-    <body>
+    <script>
+    var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+<body>
+        <style >
+.multiselect {
+  width: 200px;
+}
+
+
+
+.selectBox select {
+  width: 100%;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}</style>
         <div class="page-wrapper">
             <!-- START mainbar -->
             <div class="sidebar">
                 <div class="bar-head">
                     <div class="logo">
-                        <a href="#" class="link">Cari Sekolah</a>
-                        <a href="#" class="link-mobile">C</a>
+                        <a href="index.html" class="link">Cari Sekolah</a>
+                        <a href="index.html" class="link-mobile">C</a>
                     </div>
                 </div>
                 <div class="widget left-menu">
@@ -37,27 +88,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <ul class="nav-side">
+                    <ul class="nav-side">                  
                         <li>
-                            <a href="admin_1.html"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dashboard</span></a>
+                            <a href="admin-sekolah.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
+                        </li>                    
+                        <li  class="active">
+                            <a href="admin-sekolah-1.html"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
                         <li>
-                            <a href="admin_2.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">My Listings</span></a>
-                        </li>                    
-                        <li class="active">
-                            <a href="admin_3.html"><i class="nav-icon ion-plus"></i><span class="nav-label">Add listings</span></a>
-                        </li>                    
+                            <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
+                        </li>                         
                         <li>
-                            <a href="admin_4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profile</span></a>
-                        </li>                       
+                            <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
+                        </li>                             
                         <li>
-                            <a href="admin_5.html"><i class="nav-icon ion-android-star"></i><span class="nav-label">Reviews</span></a>
-                        </li>    
-                        <li>
-                            <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Home</span></a>
-                        </li>                                      
-                        <li>
-                            <a href="logout.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Log Out</span></a>
+                            <a href="#"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Keluar</span></a>
                         </li>
                     </ul>
                 </div>
@@ -66,22 +111,22 @@
             <!-- END mainbar -->
             <!-- START mainbar -->
             <div class="mainbar">
-                <div class="bar-head top-bar clearfix">		
+                <div class="bar-head top-bar clearfix">     
                     <div class="profile-card pull-right">
-                        <a href="#" class="profile-card-image">
-                            <img src="assets/img/placeholder/post-preview.jpg" alt="">
+                        <a href="admin-sekolah-4.html" class="profile-card-image">
+                            <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
-                            Angela Devis
+                            Kriza
                         </div>
                     </div><!-- /.profile-card -->
-                    <a href="admin_3.html" class="btn btn-transparent pull-right">Add Listing</a>				
+                    <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>                
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Main Info
+                                Isi Data Website Sekolahmu 
                             </h2>
                         </div>
                         <div class="box-content">
@@ -90,24 +135,60 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="fieldListingName">Listing Name</label>
-                                                <input type="text" class="form-control" id="fieldListingName" placeholder="Your Listing name">
+                                                <label for="#">Nama Sekolah</label>
+                                                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah" placeholder="nama Sekolah ">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="fieldCategory">Category</label>
-                                                <select id="fieldCategory" class="form-control">
-                                                    <option>Choose Your Business Category</option>
-                                                    <option>House</option>
-                                                    <option>Flat</option>
+                                                <label for="#">Kategeori </label>
+                                                <select id="#" class="form-control">
+                                                    <option>-pilih kategeori-</option>
+                                                    <option>SMA</option>
+                                                    <option>SMK</option>
+                                                    <option>SMP/MTS</option>
+                                                    <option>SD/MI</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="fieldKeywords">Keywords <span class="option">(optional)</span></label>
-                                                <input type="text" class="form-control" id="fieldKeywords" placeholder="Enter Keywords">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="#">Jurusan </label>
+                                            <div class="multiselect">
+                                                <div onclick="showCheckboxes()">
+                                                    <select class="form-control">
+                                                      <option><span class="option"> (khusus SMK)</span></option>
+                                                     </select>
+                                                 </div>
+                                                  <div id="checkboxes">
+                                                          <label for="RPL">
+                                                          <input type="checkbox" id="RPL" />RPL</label>
+
+                                                          <label for="TKJ">
+                                                          <input type="checkbox" id="TKJ" />TKJ</label>
+
+                                                          <label for="Mekatronika">
+                                                          <input type="checkbox" id="Mekatronika" />Mektronika</label>
+
+                                                          
+                                                          <label for="Kesehatan">
+                                                          <input type="checkbox" id="Kesehatan" />Kesehatan dan Pekerjaan Sosial</label>
+
+                                                          <label for="Bisnis">
+                                                          <input type="checkbox" id="Bisnis" />Bisnis dan Manajemen</label>
+
+                                                          <label for="TKR">
+                                                          <input type="checkbox" id="TKR" />TKR</label>
+
+                                                          <label for="Kemaritiman">
+                                                          <input type="checkbox" id="Kemaritiman" />Kemaritiman</label>
+
+                                                          <label for="Pariwisata">
+                                                          <input type="checkbox" id="Pariwisata" />Pariwisata</label>
+
+                                                          <label for="lainnya">
+                                                          <input type="text" id="lainnya" />lainnya</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -115,35 +196,56 @@
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label for="input_file1">Gallery Images <span class="option">(optional)</span></label>
+                                            <div class="form-group-in">
+                                                <label for="gambar-1">Foto Sekolah</label>
+                                                <input type="file" class="hidden" id="gambar-1">
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
+
+                                                <input type="gambar-2" class="hidden" id="gambar-2">
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
+
+                                                <input type="file" class="hidden" id="gambar-3">
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button>
+                                            </div>
+                                            <div class="form-group-in">
+                                                <label for="gambar-3">Logo/Icon Sekolah</label>
                                                 <input type="file" class="hidden" id="input_file1">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">Browse Files</button>
+                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">Upload gambar</button>
                                             </div>
                                         </div>
                                     </div>   
-                                </div>   
+                                </div> 
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="fieldPhone">Phone</label>
-                                                <input type="text" class="form-control" id="fieldPhone" placeholder="(310) 317-9140">
+                                                <label for="no_sekolah">Nomor Telp Sekolah</label>
+                                                <input type="text" class="form-control" id="no_sekolah" placeholder="+62">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="fieldWebsite">Website</label>
-                                                <input type="text" class="form-control" id="fieldWebsite" placeholder="http://">
-                                            </div>
-                                        </div>                                   
+                                                <label for="email">Email</label>
+                                                <input type="text" class="form-control" id="email" placeholder="********@gmail.com">
+                                            </div>        
+                                        </div>
+                                         <div class="col-md-6">
+                                            <div class="form-group" style="width: 900px;">
+                                                <label for="ofc_web">Website Official Sekolah</label>
+                                                <input type="text" class="form-control" id="ofc_web" placeholder="https://">
+                                            </div>        
+                                        </div>                                  
                                     </div>                                   
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="fieldDesription">Desription</label>
-                                            <textarea class="form-control" id="fieldDesription" rows="8"></textarea>
+                                            <label for="deskripsi">Deskrpsi sekolah</label>
+                                            <textarea class="form-control" id="deskripsi" rows="10"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="berita">Berita sekolah</label>
+                                            <textarea class="form-control" id="berita" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +255,7 @@
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Location
+                                Lokasi
                             </h2>
                         </div>
                         <div class="box-content">
@@ -161,19 +263,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputAddress">Location</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="e.g. New York">
+                                            <label for="alamat">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputGps">GPS <span class="option">(optional)</span></label>
-                                            <input type="text" class="form-control" id="inputGps" placeholder="Enter Here">
+                                            <label for="link-map">Link Google maps</label>
+                                            <input type="text" class="form-control" id="link-map" placeholder="google.com/maps/....">
                                         </div>
                                     </div>                                   
-                                    <div class="col-md-12">
-                                        <div class="property-map" id="mapsAddress"></div>
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -181,115 +280,89 @@
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Open Hours
+                                Jadwal Sekolah
                             </h2>
                         </div>
                         <div class="box-content">
                             <form>
                                 <div class="form-group-in">
-                                    <label>Monday</label>
+                                    <label>Senin</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Tuesday</label>
+                                    <label>Selasa</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Wednesday</label>
+                                    <label>Rabu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Thursday</label>
+                                    <label>Kamis</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Friday</label>
+                                    <label>Jumat</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Saturday</label>
+                                    <label>Sabtu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Sunday</label>
+                                    <label>Minggu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Open">
+                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Close">
-                                            </div>
-                                        </div>
+                                       
+                                       
                                     </div>
+                                     <button type="submit" class="btn btn-success">Kirim</button>
                                 </div>
                             </form>
                         </div>

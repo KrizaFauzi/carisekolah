@@ -81,7 +81,6 @@ if(isset($_POST['login']))
   		<input type="checkbox" value="remember-me" name="remember"> Ingat saya
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Masuk</button>
-  <a href="register.php" class="btn btn-lg btn-success btn-block">Daftar</a>
   <p class="mt-5 mb-3 text-muted">Cari Sekolah &copy; 2021</p>
 </form>
 </body>

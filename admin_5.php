@@ -1,3 +1,12 @@
+<?php
+ session_start();
+
+ if ( !isset($_SESSION['is_login'])) {
+   header("location:logindev/index.php");
+   exit;
+ }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -41,17 +50,17 @@
                     </button>
                     <ul class="nav-side">
                         <li>
-                            <a href="admin_1.html"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
+                            <a href="admin_1.php"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
                         </li>                    
                         <li>
-                            <a href="admin_2.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>                    
+                            <a href="admin_2.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>                    
                         <li>
                         </li>                       
                         <li class="active">
-                            <a href="admin_5.html"><i class="nav-icon ion-android-star"></i><span class="nav-label">testimoni</span></a>
+                            <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">testimoni</span></a>
                         </li>                            
                         <li>
-                            <a href="login.html"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar</span></a>
+                            <a href="logindev/logout.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar</span></a>
                         </li>
                     </ul>
                 </div>

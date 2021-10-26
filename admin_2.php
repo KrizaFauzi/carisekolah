@@ -1,8 +1,17 @@
+<?php
+ session_start();
+
+ if ( !isset($_SESSION['is_login'])) {
+   header("location:logindev/index.php");
+   exit;
+ }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Admin 5</title>
+        <title>Halaman developer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="icon" href="assets/img/logocs.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -41,17 +50,16 @@
                     </button>
                     <ul class="nav-side">
                         <li>
-                            <a href="admin_1.html"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
+                            <a href="admin_1.php"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
                         </li>                    
-                        <li>
-                            <a href="admin_2.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>                    
-                        <li>
-                        </li>                       
                         <li class="active">
-                            <a href="admin_5.html"><i class="nav-icon ion-android-star"></i><span class="nav-label">testimoni</span></a>
-                        </li>                            
+                            <a href="admin_2.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>
+                        </li>                       
                         <li>
-                            <a href="login.html"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar</span></a>
+                            <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">ulasan</span></a>
+                        </li>                             
+                        <li>
+                            <a href="logindev/logout.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
                         </li>
                     </ul>
                 </div>
@@ -60,67 +68,49 @@
             <!-- END mainbar -->
             <!-- START mainbar -->
             <div class="mainbar">
-                <!-- /.top-bar -->
+            <!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-reviews">
                         <div class="section-header">
                             <h2 class="title">
-                                Testimoni 
+                                Nama sekolah yang telah terdaftar 
                             </h2>
                         </div>
                         <table class="table-panel footable table-listings">
                             <tr>
                                 <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    <a href="#" class="link">
-                                        <img class="image-preview preview-75x70"  src="assets/img/placeholder/pp_developer2.jpeg" alt="">
-                                    </a>
+                                    
                                 </td>
                                 <td class="preview-mobile" data-type="html">
-                                    <div class="reviews-box">
-                                        <div class="header">
-                                            <b>kriza</b> untuk <a href="#" class="link"> cari sekolah</a>
-                                        </div>
-                                        <p class="description">
-                                            sangat membantu
-                                        </p>
-                                        
+                                    <div>
+                                        <a href="#" class="listing-link">SMKN 8 MALANG </a>
                                     </div>
+                                    <div>
+                                        <span class="link">
+                                            <a href="listing.html">Coba Kunjungi </a>
+                                        </span>
                                 </td>
-                                
-                                   
                                 <td data-title="" data-breakpoints="xs" data-type="html">
                                     <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="preview">
-                                    <a href="#" class="link">
-                                        <img class="image-preview preview-75x70"  src="assets/img/placeholder/pp_developer1.jpeg" alt="">
-                                    </a>
+                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
+                                    
                                 </td>
-                                <td>
-                                    <div class="reviews-box">
-                                        <div class="header"> 
-                                            <b>filzah</b> untuk  <a href="#" class="link"> cari sekolah </a>
-                                        </div>
-                                        <p class="description">
-                                            sangat bermanfaat
-                                        </p>
-                                        
+                                <td class="preview-mobile" data-type="html">
+                                    <div>
+                                        <a href="#" class="listing-link">SMPN 13 Malang </a>
+                                    </div>
+                                    <div>
+                                        <span class="link">
+                                            <a href="listing.html">Coba Kunjungi </a>
+                                        </span>
                                 </td>
-                                
-                                
                                 <td data-title="" data-breakpoints="xs" data-type="html">
                                     <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
-                                <td>
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
-                                </td>
                             </tr>
-                            
                         </table>
                     </div>
                 </div>

@@ -272,7 +272,50 @@ function showCheckboxes() {
                                             <label for="link-map">Link Google maps</label>
                                             <input type="text" class="form-control" id="link-map" placeholder="google.com/maps/....">
                                         </div>
-                                    </div>                                   
+                                    </div>
+                                    <div class="col-md-4">
+                                         <div class="form-group" style="width: 436px;">
+                                             <label for="#">Provinsi </label>
+                                             <select id="#" class="form-control">
+                                                 <option>-pilih provinsi-</option>
+                                                 <option>Aceh</option>
+                                                 <option>Sumatra Utara</option>
+                                                 <option>Sumatra Barat</option>
+                                                 <option>Riau</option>
+                                                 <option>Kepulauan Riau</option>
+                                                 <option>Jambi</option>
+                                                 <option>Sumatera Selatan</option>
+                                                 <option>Kepulauan Bangka Belitung</option>
+                                                 <option>Begkulu</option>
+                                                 <option>Lampung</option>
+                                                 <option>DKI Jakarta</option>
+                                                 <option>Banten</option>
+                                                 <option>Jawa Barat</option>
+                                                 <option>Jawa Tengah</option>
+                                                 <option>DI Yogyakarta</option>
+                                                 <option>Jawa Timur</option>
+                                                 <option>Bali</option>
+                                                 <option>Nusa Tenggara Barat</option>
+                                                 <option>Nusa Tenggara Timur</option>
+                                                 <option>Kalimantan Barat</option>
+                                                 <option>Kalimantan Tengah</option>
+                                                 <option>Kalimantan Selatan</option>
+                                                 <option>Kalimantan Timur</option>
+                                                 <option>Kalimantan Utara</option>
+                                                 <option>Sulawesi Utara </option>
+                                                 <option>Gorontalo</option>
+                                                 <option>Sulawesi Tengah</option>
+                                                 <option>Sulawesi Barat</option>
+                                                 <option>Sulawesi Selatan</option>
+                                                 <option>Sulawesi Tenggara</option>
+                                                 <option>Maluku</option>
+                                                 <option>Maluku Utara</option>
+                                                 <option>Papua Barat</option>
+                                                 <option>papua</option>
+
+                                             </select>
+                                         </div>
+                                     </div>                                
                                 </div>
                             </form>
                         </div>

@@ -6,7 +6,7 @@ if(isset($_POST['register']))
 	$username = $_POST['username'];
 	$password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 	$nama = $_POST['nama'];
-	if($database->register($username,$email,$password,))
+	if($database->register($username,$password,$nama))
 	{
 		header('location:index.php');
 	}
@@ -24,7 +24,7 @@ if(isset($_POST['register']))
 
 		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
 
-		<!-- Bootstrap core CSS -->
+		
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<style>
@@ -44,11 +44,11 @@ if(isset($_POST['register']))
 		}
 	</style>
 
-	<!-- custom styles for this template -->
+	
 		<link rel="stylesheet" href="sticky-footer.css">
   	</head>
   	<body class="d-flex flex-column h-100">
-  		<!-- begin page content -->
+  		
  <main role="main" class="flex-shrink-0">
  	<div class="container">
  		<h1 class="mt-5">Form Daftar</h1>
@@ -63,9 +63,9 @@ if(isset($_POST['register']))
  		</div>
 
  		<div class="form-group row">
- 			<label for="email" class="col-sm-2 col-form-label">Email</label>
+ 			<label for="nama" class="col-sm-2 col-form-label">Nama</label>
  			<div class="col-sm-10">
- 				<input type="text" class="form-control" id="email" name="email" placeholder="email">
+ 				<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
  			</div>
  		</div>
 
@@ -88,7 +88,7 @@ if(isset($_POST['register']))
 
 <footer class="footer mt-auto py-3">
 	<div class="container">
-		<span class="text-muted">cari sekolah &copy; 2021</span>
+		<span class="text-muted">Cari Sekolah &copy; 2021</span>
 	</div>
 </footer>
 </body>

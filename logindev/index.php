@@ -5,13 +5,13 @@ $database = new database();
 
 if(isset($_SESSION['is_login']))
 {
-	header('location:carisekolah/admin_1.html');
+	header('location:../admin_1.php');
 }
 
 if(isset($_SESSION['username']))
 {
 	$database->relogin($_SESSION['username']);
-	header('location:carisekolah/admin_1.html');
+	header('location:../admin_1.php');
 }
 
 if(isset($_POST['login']))
@@ -29,7 +29,7 @@ if(isset($_POST['login']))
 
 	if($database->login($username,$password,$remember))
 	{
-		header('location:carisekolah/admin_1.html');
+		header('location:../admin_1.php');
 	}
 }
 ?>
@@ -45,7 +45,7 @@ if(isset($_POST['login']))
 
 		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 
-		
+		<!-- Bootstrap core CSS -->
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -65,25 +65,24 @@ if(isset($_POST['login']))
 			}
 		}
 	</style>
-	
+	<!-- Custom styles for this template -->
 	<link rel="stylesheet" href="assets/css/signin.css">
   </head>
   <body class="text-center">
   	<form class="form-signin" method="post" action="">
-  <img class="mb-4" src="assets/css/csg.png" alt="" width="200px" >
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <img class="mb-4" src="assets/css/csg.png" alt="" width="200" >
+  <h1 class="h3 mb-3 font-weight-normal">Login</h1>
   <label for="username" class="sr-only">Username</label>
   <input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
   <label for="password" class="sr-only">Password</label>
   <input type="password" id="password" class="form-control" name="password" required>
   <div class="checkbox mb-3">
   	<label>
-  		<input type="checkbox" value="remember-me" name="remember"> Remember me
-  	</label>
+  		<input type="checkbox" value="remember-me" name="remember"> Ingat saya
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Masuk</button>
   <a href="register.php" class="btn btn-lg btn-success btn-block">Daftar</a>
-  <p class="mt-5 mb-3 text-muted">cari sekolah &copy; 2021</p>
+  <p class="mt-5 mb-3 text-muted">Cari Sekolah &copy; 2021</p>
 </form>
 </body>
 </html>

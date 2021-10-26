@@ -11,15 +11,15 @@ class database{
 	}
 
 
-	function register($username,$email,$password)
+	function register($username,$password,$nama)
 	{
-		$insert = mysqli_query($this->koneksi, "insert into logindev values ('','$username','$email','$password')");
+		$insert = mysqli_query($this->koneksi, "insert into login_dev values ('','$username','$password','$nama')");
 		return $insert;
 	}
 
 	function login($username,$password,$remember)
 	{
-		$query = mysqli_query($this->koneksi,"select * from logindev where username='$username'");
+		$query = mysqli_query($this->koneksi,"select * from login_dev where username='$username'");
 		$data_user = $query->fetch_array();
 		if(password_verify($password,$data_user['password']))
 		{
@@ -38,7 +38,7 @@ class database{
 
 	function relogin($username)
 	{
-		$query = mysqli_query($this->koneksi,"select * from logindev where username='$username'");
+		$query = mysqli_query($this->koneksi,"select * from login_dev where username='$username'");
 		$data_user = $query->fetch_array();
 		$_SESSION['username'] = $username;
 		$_SESSION['nama'] = $data_user['nama'];

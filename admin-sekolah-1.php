@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
 		echo 
 			"<script>
 				alert('data berhasil ditambahkan');
-				document.location.href = 'admin-sekolah.html';
+				document.location.href = 'admin-sekolah.php';
 			</script>";
 	}else {
 		echo 
@@ -107,10 +107,10 @@ function showCheckboxes() {
                     </button>
                     <ul class="nav-side">                  
                         <li>
-                            <a href="admin-sekolah.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
+                            <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
                         </li>                    
                         <li  class="active">
-                            <a href="admin-sekolah-1.html"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
+                            <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
                         <li>
                             <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>

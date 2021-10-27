@@ -228,6 +228,13 @@ function upload4(){
 
 /*=============================================! FUNGSI UPLOAD !=============================================*/
 
+function hapus($id){
+	global $db;
+	mysqli_query($db, "DELETE FROM tb_sekolah WHERE id = $id");
+
+	return mysqli_affected_rows($db);
+}
+
 $kategori="";
 
 

@@ -98,10 +98,7 @@
                                 
                                    
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
+                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
                             </tr>
                             <tr>
@@ -123,12 +120,8 @@
                                 
                                 
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
+                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
-                                <td>
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
-                                </td>
-                            </tr>
                             
                         </table>
                     </div>

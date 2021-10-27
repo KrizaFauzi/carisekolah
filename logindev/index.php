@@ -8,15 +8,15 @@ if(isset($_SESSION['is_login']))
 	header('location:../admin_1.php');
 }
 
-if(isset($_SESSION['username']))
+if(isset($_SESSION['gmail']))
 {
-	$database->relogin($_SESSION['username']);
+	$database->relogin($_SESSION['gmail']);
 	header('location:../admin_1.php');
 }
 
 if(isset($_POST['login']))
 {
-	$username = $_POST['username'];
+	$gmail = $_POST['gmail'];
 	$password = $_POST['password'];
 	if(isset($_POST['remember']))
 	{
@@ -27,7 +27,7 @@ if(isset($_POST['login']))
 		$remember = FALSE;
 	}
 
-	if($database->login($username,$password,$remember))
+	if($database->login($gmail,$password,$remember))
 	{
 		header('location:../admin_1.php');
 	}
@@ -45,7 +45,7 @@ if(isset($_POST['login']))
 
 		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
 
-		<!-- Bootstrap core CSS -->
+		
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -65,22 +65,23 @@ if(isset($_POST['login']))
 			}
 		}
 	</style>
-	<!-- Custom styles for this template -->
+	
 	<link rel="stylesheet" href="assets/css/signin.css">
   </head>
   <body class="text-center">
   	<form class="form-signin" method="post" action="">
   <img class="mb-4" src="assets/css/csg.png" alt="" width="200" >
   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-  <label for="username" class="sr-only">Username</label>
-  <input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
+  <label for="gmail" class="sr-only">gmail</label>
+  <input type="text" id="gmail" class="form-control" placeholder="Gmail" name="gmail" required autofocus>
   <label for="password" class="sr-only">Password</label>
-  <input type="password" id="password" class="form-control" name="password" required>
+  <input type="password" id="password" class="form-control" placeholder="Password" name="password" required>
   <div class="checkbox mb-3">
   	<label>
   		<input type="checkbox" value="remember-me" name="remember"> Ingat saya
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Masuk</button>
+  
   <p class="mt-5 mb-3 text-muted">Cari Sekolah &copy; 2021</p>
 </form>
 </body>

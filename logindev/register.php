@@ -5,8 +5,8 @@ if(isset($_POST['register']))
 {
 	$username = $_POST['username'];
 	$password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-	$nama = $_POST['nama'];
-	if($database->register($username,$password,$nama))
+	$gmail = $_POST['gmail'];
+	if($database->register($username,$password,$gmail))
 	{
 		header('location:index.php');
 	}
@@ -63,9 +63,9 @@ if(isset($_POST['register']))
  		</div>
 
  		<div class="form-group row">
- 			<label for="nama" class="col-sm-2 col-form-label">Nama</label>
+ 			<label for="gmail" class="col-sm-2 col-form-label">gmail</label>
  			<div class="col-sm-10">
- 				<input type="text" class="form-control" id="nama" name="nama" placeholder="Nama">
+ 				<input type="text" class="form-control" id="gmail" name="gmail" placeholder="gmail">
  			</div>
  		</div>
 

@@ -7,7 +7,7 @@ if(isset($_POST["submit"])){
 		echo 
 			"<script>
 				alert('data berhasil ditambahkan');
-				document.location.href = 'listing.html';
+				document.location.href = 'admin-sekolah.html';
 			</script>";
 	}else {
 		echo 
@@ -161,10 +161,10 @@ function showCheckboxes() {
                                                 <label for="kategori">Kategeori </label>
                                                 <select id="kategori" name="kategori" class="form-control">
                                                     <option value=""       >-pilih kategeori-</option>
-                                                    <option value="SMA"    >SMA</option>
-                                                    <option value="SMK"    >SMK</option>
-                                                    <option value="SMP/MTS">SMP/MTS</option>
-                                                    <option value="SD/MI"  >SD/MI</option>
+                                                    <option value="SMA"     <?php if($kategori == "sma") echo "selected"?>>SMA</option>
+                                                    <option value="SMK"     <?php if($kategori == "smk") echo "selected"?>>SMK</option>
+                                                    <option value="SMP/MTS" <?php if($kategori == "smp/sd") echo "selected"?>>SMP/MTS</option>
+                                                    <option value="SD/MI"   <?php if($kategori == "sd/mi") echo "selected"?>>SD/MI</option>
                                                 </select>
                                             </div>
                                         </div>

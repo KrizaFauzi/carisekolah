@@ -102,7 +102,6 @@
                                     <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
                                 </td>
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="edit.html" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
                                     <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
                                 </td>
                             </tr>

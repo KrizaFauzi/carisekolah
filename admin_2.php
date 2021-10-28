@@ -5,7 +5,9 @@
    header("location:logindev/index.php");
    exit;
  }
-
+ require 'function.php';
+ $jbm = query("SELECT * FROM tb_sekolah");
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,40 +79,35 @@
                             </h2>
                         </div>
                         <table class="table-panel footable table-listings">
+<?php $i=1; ?>
+<?php foreach ($jbm as $row) : ?>                            
                             <tr>
+                                <td><?= $i ?></td>
                                 <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    
+                                    <a href="#" class="link">
+                                       <img class="image-preview preview-95x88"  src="img/<?= $row["logo"]; ?>" alt="">
+                                    </a>
                                 </td>
                                 <td class="preview-mobile" data-type="html">
                                     <div>
-                                        <a href="#" class="listing-link">SMKN 8 MALANG </a>
+                                        <a href="listing.html" class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
                                     </div>
                                     <div>
-                                        <span class="link">
-                                            <a href="listing.html">Coba Kunjungi </a>
+                                        <span class="listing-tags tags">
+                                            <a href="map-side-list.html"></a>  ·  <a href="map-side-list.html"></a>
                                         </span>
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    
-                                </td>
-                                <td class="preview-mobile" data-type="html">
-                                    <div>
-                                        <a href="#" class="listing-link">SMPN 13 Malang </a>
                                     </div>
-                                    <div>
-                                        <span class="link">
-                                            <a href="listing.html">Coba Kunjungi </a>
-                                        </span>
+                                </td>
+                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
+                                    <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
                                 </td>
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
+                                    <a href="edit.html" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
+                                    <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
                                 </td>
                             </tr>
+<?php $i++; ?>
+<?php endforeach; ?> 
                         </table>
                     </div>
                 </div>

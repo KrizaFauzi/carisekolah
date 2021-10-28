@@ -1,12 +1,12 @@
 <?php
  session_start();
 
- if ( !isset($_SESSION['is_login'])) {
-   header("location:logindev/index.php");
-   exit;
+ 
+ if($_SESSION['level']==""){
+  header("location:index.php?pesan=gagal");
  }
 
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,7 +60,7 @@
                             <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">testimoni</span></a>
                         </li>                            
                         <li>
-                            <a href="logindev/logout.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar</span></a>
+                            <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar</span></a>
                         </li>
                     </ul>
                 </div>
@@ -98,10 +98,7 @@
                                 
                                    
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
+                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
                             </tr>
                             <tr>
@@ -123,12 +120,8 @@
                                 
                                 
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('Are you sure?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
+                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
-                                <td>
-                                    <button class='btn-clear'><i class="ion-close-round"></i></button>
-                                </td>
-                            </tr>
                             
                         </table>
                     </div>

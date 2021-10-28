@@ -1,6 +1,23 @@
 <?php
+require 'function.php';
 
+if(isset($_POST["submit"])){
 
+	if(tambah($_POST) > 0 ){
+		echo 
+			"<script>
+				alert('data berhasil ditambahkan');
+				document.location.href = 'admin-sekolah.php';
+			</script>";
+	}else {
+		echo 
+			"<script>
+				alert('data gagal ditambahkan');
+				document.location.href = 'admin-sekolah-1.php';
+			</script>";
+	}
+
+}
 
 
 ?>
@@ -90,10 +107,10 @@ function showCheckboxes() {
                     </button>
                     <ul class="nav-side">                  
                         <li>
-                            <a href="admin-sekolah.html"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
+                            <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
                         </li>                    
                         <li  class="active">
-                            <a href="admin-sekolah-1.html"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
+                            <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
                         <li>
                             <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
@@ -130,33 +147,33 @@ function showCheckboxes() {
                             </h2>
                         </div>
                         <div class="box-content">
-                            <form>
+                            <form action="" method="post" enctype="multipart/form-data" >
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="#">Nama Sekolah</label>
-                                                <input type="text" class="form-control" id="nama_sekolah" name="nama_sekolah" placeholder="nama Sekolah ">
+                                                <label for="nama_sekolah">Nama Sekolah</label>
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" placeholder="nama Sekolah ">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="#">Kategeori </label>
-                                                <select id="#" class="form-control">
-                                                    <option>-pilih kategeori-</option>
-                                                    <option>SMA</option>
-                                                    <option>SMK</option>
-                                                    <option>SMP/MTS</option>
-                                                    <option>SD/MI</option>
+                                                <label for="kategori">Kategeori </label>
+                                                <select id="kategori" name="kategori" class="form-control">
+                                                    <option value=""       >-pilih kategeori-</option>
+                                                    <option value="SMA"     <?php if($kategori == "sma") echo "selected"?>>SMA</option>
+                                                    <option value="SMK"     <?php if($kategori == "smk") echo "selected"?>>SMK</option>
+                                                    <option value="SMP/MTS" <?php if($kategori == "smp/sd") echo "selected"?>>SMP/MTS</option>
+                                                    <option value="SD/MI"   <?php if($kategori == "sd/mi") echo "selected"?>>SD/MI</option>
                                                 </select>
                                             </div>
                                         </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="#">Jurusan </label>
-                                            <div class="multiselect">
+                                            <label for="jurusan">Jurusan </label>
+                                            <div class="multiselect" >
                                                 <div onclick="showCheckboxes()">
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="jurusan" id="jurusan">
                                                       <option><span class="option"> (khusus SMK)</span></option>
                                                      </select>
                                                  </div>
@@ -197,21 +214,41 @@ function showCheckboxes() {
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group-in">
-                                                <label for="gambar-1">Foto Sekolah</label>
-                                                <input type="file" class="hidden" id="gambar-1">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
-
-                                                <input type="gambar-2" class="hidden" id="gambar-2">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button><br>
-
-                                                <input type="file" class="hidden" id="gambar-3">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1" >Upload gambar</button>
+                                                <label >Foto Sekolah 1</label>
+                                                    <p class="image_upload">
+                                                        <label for="gambar_1">
+                                                        <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                        <input type="file" class="hidden" name="gambar_1" id="gambar_1">
+                                                    </p>
+                                            </div>  
+                                            <div class="form-group-in">
+                                                <label >Foto Sekolah 2</label>
+                                                <p class="image_upload">
+                                                <label for="gambar_2">
+                                                    <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                 <input type="file" class="hidden" name="gambar_2" id="gambar_2">
+                                            </p>
                                             </div>
                                             <div class="form-group-in">
-                                                <label for="gambar-3">Logo/Icon Sekolah</label>
-                                                <input type="file" class="hidden" id="input_file1">
-                                                <button type="button" class="btn btn-danger btn-lg btn-block btn-local-danger" data-inputype-file="input_file1">Upload gambar</button>
+                                                <label >Foto Sekolah 3</label>
+                                                <p class="image_upload">
+                                                <label for="gambar_3">
+                                                    <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                 <input type="file" class="hidden" name="gambar_3" id="gambar_3">
+                                            </p>
                                             </div>
+                                            <div class="form-group-in">
+                                                <label >Logo</label>
+                                                <p class="image_upload">
+                                                <label for="logo">
+                                                    <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                 <input type="file" class="hidden" name="logo" id="logo">
+                                            </p>
+                                            </div>   
                                         </div>
                                     </div>   
                                 </div> 
@@ -220,19 +257,19 @@ function showCheckboxes() {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="no_sekolah">Nomor Telp Sekolah</label>
-                                                <input type="text" class="form-control" id="no_sekolah" placeholder="+62">
+                                                <input type="text" class="form-control" id="no_sekolah" name="no_sekolah" placeholder="+62">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email" placeholder="********@gmail.com">
+                                                <input type="text" class="form-control" id="email" name="email" placeholder="********@gmail.com">
                                             </div>        
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group" style="width: 900px;">
                                                 <label for="ofc_web">Website Official Sekolah</label>
-                                                <input type="text" class="form-control" id="ofc_web" placeholder="https://">
+                                                <input type="text" class="form-control" id="ofc_web" name="ofc_web" placeholder="https://">
                                             </div>        
                                         </div>                                  
                                     </div>                                   
@@ -241,14 +278,11 @@ function showCheckboxes() {
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="deskripsi">Deskrpsi sekolah</label>
-                                            <textarea class="form-control" id="deskripsi" rows="10"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="berita">Berita sekolah</label>
-                                            <textarea class="form-control" id="berita" rows="10"></textarea>
+                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>
+                                <button type="submit" name="submit" class="btn btn-success">Kirim</button>
                             </form>
                         </div>
                     </div>
@@ -275,8 +309,8 @@ function showCheckboxes() {
                                     </div>
                                     <div class="col-md-4">
                                          <div class="form-group" style="width: 436px;">
-                                             <label for="#">Provinsi </label>
-                                             <select id="#" class="form-control">
+                                             <label for="provinsi">Provinsi </label>
+                                             <select id="provinsi" class="form-control">
                                                  <option>-pilih provinsi-</option>
                                                  <option>Aceh</option>
                                                  <option>Sumatra Utara</option>
@@ -329,77 +363,77 @@ function showCheckboxes() {
                         <div class="box-content">
                             <form>
                                 <div class="form-group-in">
-                                    <label>Senin</label>
+                                    <label for="senin" >Senin</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" name="senin" id="senin" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Selasa</label>
+                                    <label for="selasa">Selasa</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" name="senin" id="selasa" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Rabu</label>
+                                    <label for="rabu">Rabu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" name="rabu" id="rabu" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                        
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Kamis</label>
+                                    <label for="kamis">Kamis</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" id="kamis" name="kamis" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Jumat</label>
+                                    <label for="jumat">Jumat</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" id="jumat" name="jumat" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Sabtu</label>
+                                    <label for="sabtu">Sabtu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" id="sabtu" name="sabtu" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                         
                                     </div>
                                 </div>
                                 <div class="form-group-in">
-                                    <label>Minggu</label>
+                                    <label for="minggu">Minggu</label>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Jadwal Masuk dan Pulang">
+                                                <input type="text" class="form-control" id="minggu" name="minggu" placeholder="Jadwal Masuk dan Pulang">
                                             </div>
                                         </div>
                                        

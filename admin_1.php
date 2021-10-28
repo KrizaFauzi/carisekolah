@@ -1,12 +1,12 @@
 <?php
  session_start();
 
- if ( !isset($_SESSION['is_login'])) {
-   header("location:logindev/index.php");
-   exit;
+ 
+ if($_SESSION['level']==""){
+  header("location:index.php?pesan=gagal");
  }
 
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,7 +60,7 @@
                             <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">Testimoni</span></a>
                         </li>                                   
                         <li>
-                            <a href="logindev/logout.php"nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
+                        <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
                         </li>
                     </ul>
                 </div>

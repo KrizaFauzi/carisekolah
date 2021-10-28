@@ -1,17 +1,15 @@
 <?php
- session_start();
 
- 
- if($_SESSION['level']==""){
-  header("location:index.php?pesan=gagal");
- }
+require 'function.php';
+$jbm = query("SELECT * FROM tb_sekolah");
 
- ?>
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Halaman developer</title>
+        <title>Admin Sekolah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="icon" href="assets/img/logocs.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -37,8 +35,8 @@
             <div class="sidebar">
                 <div class="bar-head">
                     <div class="logo">
-                        <a href="#" class="link">Cari Sekolah</a>
-                        <a href="#" class="link-mobile">L</a>
+                        <a href="index.html" class="link">Cari Sekolah</a>
+                        <a href="index.html" class="link-mobile">C</a>
                     </div>
                 </div>
                 <div class="widget left-menu">
@@ -48,18 +46,21 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <ul class="nav-side">
-                        <li>
-                            <a href="admin_1.php"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
-                        </li>                    
+                    <ul class="nav-side">                  
                         <li class="active">
-                            <a href="admin_2.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>
+                            <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
+                        </li>                    
+                        <li>
+                            <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
+                        </li>                    
+                        <li>
+                            <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
                         </li>                       
                         <li>
-                            <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">Testimoni</span></a>
+                            <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
                         </li>                             
                         <li>
-                            <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
+                            <a href="#"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Keluar</span></a>
                         </li>
                     </ul>
                 </div>
@@ -68,44 +69,54 @@
             <!-- END mainbar -->
             <!-- START mainbar -->
             <div class="mainbar">
-            <!-- /.top-bar -->
+                <div class="bar-head top-bar clearfix">		
+                    <div class="profile-card pull-right">
+                        <a href="admin-sekolah-4.html" class="profile-card-image">
+                            <img src="assets/img/placeholder/kirja.jpg" alt="">
+                        </a>
+                        <div class="profile-body">
+                            Kriza
+                        </div>
+                    </div><!-- /.profile-card -->
+                   <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>				
+                </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-reviews">
                         <div class="section-header">
                             <h2 class="title">
-                                Nama sekolah yang telah terdaftar 
+                                Website Yang Telah dibuat
                             </h2>
                         </div>
                         <table class="table-panel footable table-listings">
-                            <?php $i=1; ?>
-                            <?php foreach ($jbm as $row) : ?>                            
-                                    <tr>
-                                        <td><?= $i ?></td>
-                                        <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                            <a href="#" class="link">
-                                                <img class="image-preview preview-95x88"  src="img/<?= $row["logo"]; ?>" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="preview-mobile" data-type="html">
-                                            <div>
-                                                 <a href="listing.html" class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
-                                            </div>
-                                        
-                                            <div>
-                                                <span class="listing-tags tags">
-                                                    <a href="map-side-list.html"></a>  ·  <a href="map-side-list.html"></a>
-                                                </span>
-                                            </div>
-                                        </td>
-                                        <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                                i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
-                                        </td>
-                                        <td data-title="" data-breakpoints="xs" data-type="html">
-                                                <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                            <?php $i++; ?>
-                            <?php endforeach; ?> 
+<?php $i=1; ?>
+<?php foreach ($jbm as $row) : ?>                            
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
+                                    <a href="#" class="link">
+                                       <img class="image-preview preview-95x88"  src="img/<?= $row["logo"]; ?>" alt="">
+                                    </a>
+                                </td>
+                                <td class="preview-mobile" data-type="html">
+                                    <div>
+                                        <a href="listing.html" class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
+                                    </div>
+                                    <div>
+                                        <span class="listing-tags tags">
+                                            <a href="map-side-list.html">malang </a>  ·  <a href="map-side-list.html"> jatim </a>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
+                                    <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
+                                </td>
+                                <td data-title="" data-breakpoints="xs" data-type="html">
+                                    <a href="edit.html" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
+                                    <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
+                                </td>
+                            </tr>
+<?php $i++; ?>
+<?php endforeach; ?>   
                         </table>
                     </div>
                 </div>

@@ -238,6 +238,64 @@ function hapus($id){
 	return mysqli_affected_rows($db);
 }
 
+function ubah($data){
+	global $db;
+	$id =$data["id"];
+	$nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
+	$no_sekolah = htmlspecialchars($data["no_sekolah"]);
+	$email = htmlspecialchars($data["email"]);
+    $ofc_web = htmlspecialchars($data["ofc_web"]);
+	$deskripsi = htmlspecialchars($data["deskripsi"]);
+    $kategori = htmlspecialchars($data["kategori"]);
+    $alamat = htmlspecialchars($data["alamat"]);
+    $maps = htmlspecialchars($data["maps"]);
+    $provinsi = htmlspecialchars($data["provinsi"]);
+    $gambarLama_1 = htmlspecialchars($data["gambarLama_1"]);
+    $gambarLama_2 = htmlspecialchars($data["gambarLama_2"]);
+    $gambarLama_3 = htmlspecialchars($data["gambarLama_3"]);
+    $logoLama = htmlspecialchars($data["logoLama"]);
+
+
+	if ($_FILES['gambar_1']['error'] === 4 ) {
+		$gambar_1 = $gambarLama_1; 
+	}else{
+		$gambar_1 = upload(); 
+	}
+
+    if ($_FILES['gambar_2']['error'] === 4 ) {
+		$gambar_2 = $gambarLama_2; 
+	}else{
+		$gambar_2 = upload(); 
+	}
+
+    if ($_FILES['gambar_3']['error'] === 4 ) {
+		$gambar_3 = $gambarLama_3; 
+	}else{
+		$gambar_3 = upload(); 
+	}
+
+    if ($_FILES['logo']['error'] === 4 ) {
+		$logo = $logoLama; 
+	}else{
+		$logo = upload(); 
+	}
+
+	$query = "UPDATE data_pembeli SET 
+				nama_pembeli = '$nama_pembeli',
+				alamat       = '$alamat',
+				no_telp = '$no_telp',
+				no_ktp = '$no_ktp',
+				merk_mobil = '$merk_mobil',
+				warna = '$warna',
+				gambar = '$gambar'
+				WHERE id = $id
+				";
+
+     mysqli_query($db, $query);
+
+	return mysqli_affected_rows($db);
+}
+
 
 $kategori="";
 $provinsi="";

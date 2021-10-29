@@ -2,6 +2,7 @@
 <html>
 <head>
  <title>Halaman admin</title>
+ <link rel="icon" href="../assets/img/logocs.ico" type="image/x-icon" />
 </head>
 <body>
  <?php

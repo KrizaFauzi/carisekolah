@@ -19,6 +19,9 @@ function tambah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
+    $alamat = htmlspecialchars($data["alamat"]);
+    $maps = htmlspecialchars($data["maps"]);
+    $provinsi = htmlspecialchars($data["provinsi"]);
     $gambar_1 = upload1();
 	if ( !$gambar_1 ) {
 		return false;
@@ -38,7 +41,7 @@ function tambah($data){
 
 	$query = "INSERT INTO tb_sekolah
 				VALUES
-				('', '$nama_sekolah','$kategori', '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi'  ) 
+				('', '$nama_sekolah','$kategori' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi'  ) 
 				";
 	mysqli_query($db, $query);
 
@@ -235,7 +238,10 @@ function hapus($id){
 	return mysqli_affected_rows($db);
 }
 
+
 $kategori="";
+$provinsi="";
+
 
 
 

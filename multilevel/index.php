@@ -39,7 +39,7 @@
 
  <footer class="footer mt-auto py-3">
 	<center><div class="container">
-		<span class="text-muted">Cari Sekolah &copy; 2021</span>
+		<a href="../index.html" class="text-muted">Cari Sekolah &copy; 2021</a>
 	</div></center>
 </footer>
 </body>

@@ -1,10 +1,12 @@
 <?php
  session_start();
-
- 
  if($_SESSION['level']==""){
-  header("location:index.php?pesan=gagal");
+  header("location:multilevel/index.php");
  }
+
+ require 'function.php';
+ $jbm = query("SELECT * FROM tb_sekolah");
+ 
 
  ?>
 <!DOCTYPE html>

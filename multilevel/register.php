@@ -12,6 +12,7 @@ if(isset($_POST['register']))
 		header('location:index.php');
 	}
 }
+$level="";
 ?>
 <!doctype html>
 <html lang="en">
@@ -76,14 +77,16 @@ if(isset($_POST['register']))
  				<input type="password" class="form-control" name="password" id="password" placeholder="Password">
  			</div>
  		</div>
-
-		<div class="form-group row">
- 			<label for="level" class="col-sm-2 col-form-label">sebagai</label>
- 			<div class="col-sm-10">
- 				<input type="level" class="form-control" name="level" id="level" placeholder="level">
- 			</div>
- 		</div>
 		 
+		<div class="form-group row">
+ 			<label for="level"class="col-sm-2 col-form-label">Sebagai </label>
+				<div class="col-sm-10">	
+			 		<select id="level" name="level" class="form-control">
+                    	<option value=""       >Pilih level</option>
+                    	<option value="admin"     <?php if($level == "admin") echo "selected"?>>admin</option>
+                	</select>
+					</div>
+ 		</div>
  		<div class="form-group row">
  			<div class="col-sm-10">
  				<a href="index.php" class="btn btn-success">Masuk</a>

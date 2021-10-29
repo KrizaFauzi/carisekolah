@@ -158,7 +158,7 @@ function showCheckboxes() {
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="kategori">Kategeori </label>
+                                                <label for="kategori">Kategori </label>
                                                 <select id="kategori" name="kategori" class="form-control">
                                                     <option value=""       >-pilih kategeori-</option>
                                                     <option value="SMA"     <?php if($kategori == "sma") echo "selected"?>>SMA</option>
@@ -173,38 +173,35 @@ function showCheckboxes() {
                                             <label for="jurusan">Jurusan </label>
                                             <div class="multiselect" >
                                                 <div onclick="showCheckboxes()">
-                                                    <select class="form-control" name="jurusan" id="jurusan">
+                                                    <select class="form-control"id="jurusan">
                                                       <option><span class="option"> (khusus SMK)</span></option>
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
                                                           <label for="RPL">
-                                                          <input type="checkbox" id="RPL" />RPL</label>
+                                                          <input type="checkbox" name="jurusan" value="rpl" id="RPL"/>RPL</label>
 
                                                           <label for="TKJ">
-                                                          <input type="checkbox" id="TKJ" />TKJ</label>
+                                                          <input type="checkbox"  name="jurusan" value="tkj" id="TKJ"/>TKJ</label>
 
                                                           <label for="Mekatronika">
-                                                          <input type="checkbox" id="Mekatronika" />Mektronika</label>
+                                                          <input type="checkbox"  name="jurusan" value="mekatronika" id="Mekatronika"/>Mektronika</label>
 
                                                           
                                                           <label for="Kesehatan">
-                                                          <input type="checkbox" id="Kesehatan" />Kesehatan dan Pekerjaan Sosial</label>
+                                                          <input type="checkbox" name="jurusan" value="kesehatan" id="Kesehatan"/>Kesehatan dan Pekerjaan Sosial</label>
 
                                                           <label for="Bisnis">
-                                                          <input type="checkbox" id="Bisnis" />Bisnis dan Manajemen</label>
+                                                          <input type="checkbox"  name="jurusan" value="bisnis" id="Bisnis"/>Bisnis dan Manajemen</label>
 
                                                           <label for="TKR">
-                                                          <input type="checkbox" id="TKR" />TKR</label>
+                                                          <input type="checkbox" name="jurusan" value="tkr" id="TKR"/>TKR</label>
 
                                                           <label for="Kemaritiman">
-                                                          <input type="checkbox" id="Kemaritiman" />Kemaritiman</label>
+                                                          <input type="checkbox" name="jurusan" value="kemaritiman" id="Kemaritiman"/>Kemaritiman</label>
 
                                                           <label for="Pariwisata">
-                                                          <input type="checkbox" id="Pariwisata" />Pariwisata</label>
-
-                                                          <label for="lainnya">
-                                                          <input type="text" id="lainnya" />lainnya</label>
+                                                          <input type="checkbox" name="jurusan" value="pariwisata" id="Pariwisata"/>Pariwisata</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -282,77 +279,69 @@ function showCheckboxes() {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-success">Kirim</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="section-form section">
-                        <div class="section-header">
-                            <h2 class="title">
+                                <h2 class="title" style="font-weight: bold";>
                                 Lokasi
-                            </h2>
-                        </div>
-                        <div class="box-content">
-                            <form>
+                                </h2>
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="alamat">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" placeholder="Jl teluk pacitan.....">
+                                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="link-map">Link Google maps</label>
-                                            <input type="text" class="form-control" id="link-map" placeholder="google.com/maps/....">
+                                            <input type="text" class="form-control" id="link-map" name="maps" placeholder="google.com/maps/....">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                          <div class="form-group" style="width: 436px;">
                                              <label for="provinsi">Provinsi </label>
-                                             <select id="provinsi" class="form-control">
-                                                 <option>-pilih provinsi-</option>
-                                                 <option>Aceh</option>
-                                                 <option>Sumatra Utara</option>
-                                                 <option>Sumatra Barat</option>
-                                                 <option>Riau</option>
-                                                 <option>Kepulauan Riau</option>
-                                                 <option>Jambi</option>
-                                                 <option>Sumatera Selatan</option>
-                                                 <option>Kepulauan Bangka Belitung</option>
-                                                 <option>Begkulu</option>
-                                                 <option>Lampung</option>
-                                                 <option>DKI Jakarta</option>
-                                                 <option>Banten</option>
-                                                 <option>Jawa Barat</option>
-                                                 <option>Jawa Tengah</option>
-                                                 <option>DI Yogyakarta</option>
-                                                 <option>Jawa Timur</option>
-                                                 <option>Bali</option>
-                                                 <option>Nusa Tenggara Barat</option>
-                                                 <option>Nusa Tenggara Timur</option>
-                                                 <option>Kalimantan Barat</option>
-                                                 <option>Kalimantan Tengah</option>
-                                                 <option>Kalimantan Selatan</option>
-                                                 <option>Kalimantan Timur</option>
-                                                 <option>Kalimantan Utara</option>
-                                                 <option>Sulawesi Utara </option>
-                                                 <option>Gorontalo</option>
-                                                 <option>Sulawesi Tengah</option>
-                                                 <option>Sulawesi Barat</option>
-                                                 <option>Sulawesi Selatan</option>
-                                                 <option>Sulawesi Tenggara</option>
-                                                 <option>Maluku</option>
-                                                 <option>Maluku Utara</option>
-                                                 <option>Papua Barat</option>
-                                                 <option>papua</option>
+                                             <select id="provinsi" name="provinsi" class="form-control">
+                                                 <option value="" >-pilih provinsi-</option>
+                                                 <option value="Aceh" <?php if($provinsi == "Aceh") echo "selected"?>>Aceh</option>
+                                                 <option value="Sumatra Utara" <?php if($provinsi == "Sumatra Utara") echo "selected"?>>Sumatra Utara</option>
+                                                 <option value="Sumatra Barat" <?php if($provinsi == "Sumatra Barat") echo "selected"?>>Sumatra Barat</option>
+                                                 <option value="Riau" <?php if($provinsi == "Riau") echo "selected"?>>Riau</option>
+                                                 <option value="Kepulauan Riau" <?php if($provinsi == "Kepulauan Riau") echo "selected"?>>Kepulauan Riau</option>
+                                                 <option value="Jambi" <?php if($provinsi == "Jambi") echo "selected"?>>Jambi</option>
+                                                 <option value="Sumatra Selatan" <?php if($provinsi == "Sumatra Selatan") echo "selected"?>>Sumatera Selatan</option>
+                                                 <option value="Kepualauan Bangka Belitung" <?php if($provinsi == "Kepualauan Bangka Belitung") echo "selected"?>>Kepulauan Bangka Belitung</option>
+                                                 <option value="Bengkulu" <?php if($provinsi == "Bengkulu") echo "selected"?>>Begkulu</option>
+                                                 <option value="Lampung" <?php if($provinsi == "Lampung") echo "selected"?>>Lampung</option>
+                                                 <option value="DKI Jakarta" <?php if($provinsi == "DKI Jakarta") echo "selected"?>>DKI Jakarta</option>
+                                                 <option value="Banten" <?php if($provinsi == "Banten") echo "selected"?>>Banten</option>
+                                                 <option value="Jawa Barat" <?php if($provinsi == "Jawa Barat") echo "selected"?>>Jawa Barat</option>
+                                                 <option value="Jawa Tengah" <?php if($provinsi == "Jawa Tengah") echo "selected"?>>Jawa Tengah</option>
+                                                 <option value="DI Yogyakarta" <?php if($provinsi == "DI Yogyakarta") echo "selected"?>>DI Yogyakarta</option>
+                                                 <option value="Jawa Timur" <?php if($provinsi == "Jawa Timur") echo "selected"?>>Jawa Timur</option>
+                                                 <option value="Bali" <?php if($provinsi == "Bali") echo "selected"?>>Bali</option>
+                                                 <option value="Nusa Tenggara Barat" <?php if($provinsi == "Nusa Tenggara Barat") echo "selected"?>>Nusa Tenggara Barat</option>
+                                                 <option value="Nusa Tenggara Timur" <?php if($provinsi == "Nusa Tenggara Timur") echo "selected"?>>Nusa Tenggara Timur</option>
+                                                 <option value="Kalimantan Barat" <?php if($provinsi == "Kalimantan Barat") echo "selected"?>>Kalimantan Barat</option>
+                                                 <option value="Kalimantan Tengah" <?php if($provinsi == "Kalimantan Tengah") echo "selected"?>>Kalimantan Tengah</option>
+                                                 <option value="Kalimantan Selatan" <?php if($provinsi == "Kalimantan Selatan") echo "selected"?>>Kalimantan Selatan</option>
+                                                 <option value="Kalimantan Timur" <?php if($provinsi == "Kalimantan Timur") echo "selected"?>>Kalimantan Timur</option>
+                                                 <option value="Kalimantan Utara" <?php if($provinsi == "Kalimantan Utara") echo "selected"?>>Kalimantan Utara</option>
+                                                 <option value="Sulawesi Utara" <?php if($provinsi == "Sulawesi Utara") echo "selected"?>>Sulawesi Utara </option>
+                                                 <option value="Gorontalo" <?php if($provinsi == "Gorontalo") echo "selected"?>>Gorontalo</option>
+                                                 <option value="Sulawesi Tengah" <?php if($provinsi == "Sulawesi Tengah") echo "selected"?>>Sulawesi Tengah</option>
+                                                 <option value="Sulawesi Barat" <?php if($provinsi == "Sulawesi Barat") echo "selected"?>>Sulawesi Barat</option>
+                                                 <option value="Sulawesi Selatan" <?php if($provinsi == "Sulawesi Selatan") echo "selected"?>>Sulawesi Selatan</option>
+                                                 <option value="Sulawesi Tenggara" <?php if($provinsi == "Sulawesi Tenggara") echo "selected"?>>Sulawesi Tenggara</option>
+                                                 <option value="Maluku" <?php if($provinsi == "Maluku") echo "selected"?>>Maluku</option>
+                                                 <option value="Maluku Utara" <?php if($provinsi == "Maluku Utara") echo "selected"?>>Maluku Utara</option>
+                                                 <option value="Papua Barat" <?php if($provinsi == "Papua Barat") echo "selected"?>>Papua Barat</option>
+                                                 <option value="Papua" <?php if($provinsi == "Papua") echo "selected"?>>papua</option>
 
                                              </select>
                                          </div>
                                      </div>                                
                                 </div>
-                            </form>
-                        </div>
+                                <button type="submit" name="submit" class="btn btn-success">Kirim</button>
+                                                
+                                </form></div>
                     </div>
                     <div class="section-form section">
                         <div class="section-header">

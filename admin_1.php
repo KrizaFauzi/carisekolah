@@ -3,7 +3,7 @@
 
  
  if($_SESSION['level']==""){
-  header("location:index.php?pesan=gagal");
+  header("location:multilevel/index.php");
  }
 
  ?>

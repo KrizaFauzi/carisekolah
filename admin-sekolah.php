@@ -78,7 +78,7 @@ $jbm = query("SELECT * FROM tb_sekolah");
                             Kriza
                         </div>
                     </div><!-- /.profile-card -->
-                   <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>				
+                   <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>				
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-reviews">

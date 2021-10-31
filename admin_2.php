@@ -100,7 +100,7 @@
                                             </div>
                                         </td>
                                         <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                                i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
+                                                <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
                                         </td>
                                         <td data-title="" data-breakpoints="xs" data-type="html">
                                                 <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>

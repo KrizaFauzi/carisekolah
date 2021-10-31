@@ -339,6 +339,73 @@ function showCheckboxes() {
                                          </div>
                                      </div>                                
                                 </div>
+                                <h2 class="title" style="font-weight: bold";>
+                                Jadwal
+                                </h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="senin">Senin</label>
+                                            <input type="text" class="form-control" id="senin" name="senin" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="selasa">selasa</label>
+                                            <input type="text" class="form-control" id="selasa" name="selasa" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="rabu">rabu</label>
+                                            <input type="text" class="form-control" id="rabu" name="rabu" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="kamis">kamis</label>
+                                            <input type="text" class="form-control" id="kamis" name="kamis" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="jumat">jumat</label>
+                                            <input type="text" class="form-control" id="jumat" name="jumat" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sabtu">sabtu</label>
+                                            <input type="text" class="form-control" id="sabtu" name="sabtu" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="minggu">minggu</label>
+                                            <input type="text" class="form-control" id="minggu" name="minggu" placeholder="Jl teluk pacitan.....">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
                                 <button type="submit" name="submit" class="btn btn-success">Kirim</button>
                                                 
                                 </form></div>

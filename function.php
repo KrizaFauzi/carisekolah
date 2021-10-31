@@ -22,6 +22,13 @@ function tambah($data){
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
+    $senin = htmlspecialchars($data["senin"]);
+    $selasa = htmlspecialchars($data["selasa"]);
+    $rabu = htmlspecialchars($data["rabu"]);
+    $kamis = htmlspecialchars($data["kamis"]);
+    $jumat = htmlspecialchars($data["jumat"]);
+    $sabtu = htmlspecialchars($data["rabu"]);
+    $minggu = htmlspecialchars($data["minggu"]);
     $gambar_1 = upload1();
 	if ( !$gambar_1 ) {
 		return false;
@@ -41,7 +48,7 @@ function tambah($data){
 
 	$query = "INSERT INTO tb_sekolah
 				VALUES
-				('', '$nama_sekolah','$kategori' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi'  ) 
+				('', '$nama_sekolah','$kategori' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
 				";
 	mysqli_query($db, $query);
 

@@ -208,7 +208,7 @@ function upload4(){
     }
 
 
-    $ekstensiGambarValid = ['jpg','jpeg','png','ico'];
+    $ekstensiGambarValid = ['jpg','jpeg','png','ico','jfif'];
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)){

@@ -1,5 +1,6 @@
 <?php
 require 'function.php';
+
 $id = $_GET["id"];
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
@@ -139,16 +140,17 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                 <div class="content-box">
                                     <ul class="list-contact">
                                         <li class="icon address"><a href="<?= $jbm["maps"];?>"><?= $jbm["alamat"];?></li></a>
+                                        <li class="icon earth"><a href="mailto:<?= $jbm["email"];?>"><?= $jbm["email"];?></li></a>
                                         <li class="icon phone"><?= $jbm["no_sekolah"];?></li>
-                                        <li class="icon clock multi"><div class="title">Buka</div>
+                                        <li class="icon clock multi"><div class="title">jam masuk</div>
                                             <ul>
-                                                <li class="fill column"><span>Senin</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Selasa</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Rabu</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Kamis</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Jumat</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Sabtu</span> <span>7:00 AM - 14:00 PM</span></li>
-                                                <li class="fill column"><span>Minggu</span> <span>tutup</span></li>
+                                                <li class="fill column"><span>Senin :</span> <span><?= $jbm["senin"];?></span></li>
+                                                <li class="fill column"><span>Selasa :</span> <span><?= $jbm["selasa"];?></span></li>
+                                                <li class="fill column"><span>Rabu :</span> <span><?= $jbm["rabu"];?></span></li>
+                                                <li class="fill column"><span>Kamis :</span> <span><?= $jbm["kamis"];?></span></li>
+                                                <li class="fill column"><span>Jumat :</span> <span><?= $jbm["jumat"];?></span></li>
+                                                <li class="fill column"><span>Sabtu :</span> <span><?= $jbm["sabtu"];?></span></li>
+                                                <li class="fill column"><span>Minggu :</span> <span><?= $jbm["minggu"];?></span></li>
                                                
                                                 
                                             </ul>

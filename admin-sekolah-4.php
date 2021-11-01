@@ -75,10 +75,10 @@ if($_SESSION['level']==""){
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
-                            Kriza
+                            <?= $_SESSION['username'] ?>
                         </div>
                     </div><!-- /.profile-card -->
-                    <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>                
+                    <a href="multilevel/home_admin.php" class="btn btn-transparent pull-right">Ganti Sandi</a>       
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-form section">

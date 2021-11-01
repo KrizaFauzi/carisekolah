@@ -5,7 +5,9 @@ require 'function.php';
 $id = $_GET["id"];
 
 
-$jbm = query("SELECT * FROM tb_sekolah WHERE 	id = $id")[0];
+$jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
+
+
 
 
 
@@ -14,14 +16,16 @@ if(isset($_POST["submit"])){
 	if(ubah($_POST) > 0 ){
 		echo 
 			"<script>
-				alert('data berhasil diubah');
-				document.location.href = 'admin-sekolah.php';
+			alert('data berhasil diubah');
+			document.location.href = 'admin-sekolah.php';	
+				
 			</script>";
 	}else {
 		echo 
 			"<script>
-				alert('data gagal diubah');
-				document.location.href = 'admin-sekolah.php';
+			alert('data gagal diubah');
+			document.location.href = 'admin-sekolah.php';	
+				
 			</script>";
 	}
 
@@ -122,24 +126,24 @@ function showCheckboxes() {
                         </div>
                         <div class="box-content">
                             <form action="" method="post" enctype="multipart/form-data" >
-                            <input type="hidden" name="id" value="<?= $jbm["id"]; ?>">	
-	                    	<input type="hidden" name="gambarLama_1" value="<?= $jbm["gambar_1"]; ?>">
-                            <input type="hidden" name="gambarLama_2" value="<?= $jbm["gambar_2"]; ?>">
-                            <input type="hidden" name="gambarLama_3" value="<?= $jbm["gambar_3"]; ?>">
-                            <input type="hidden" name="logoLama" value="<?= $jbm["logo"]; ?>">
+                                <input type="hidden" name="id" value="<?= $jbm["id"]; ?>">	
+	                    	    <input type="hidden" name="gambarLama_1" value="<?= $jbm["gambar_1"]; ?>">
+                                <input type="hidden" name="gambarLama_2" value="<?= $jbm["gambar_2"]; ?>">
+                                <input type="hidden" name="gambarLama_3" value="<?= $jbm["gambar_3"]; ?>">
+                                <input type="hidden" name="logoLama" value="<?= $jbm["logo"]; ?>">
                                 <div class="form-section">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="nama_sekolah">Nama Sekolah</label>
-                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" placeholder="nama Sekolah ">
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" value="<?= $jbm["nama_sekolah"];?>" >
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="kategori">Kategori </label>
                                                 <select id="kategori" name="kategori" class="form-control">
-                                                    <option value=""       >-pilih kategeori-</option>
+                                                    <option value=""><?= $jbm["kategori"];?></option>
                                                     <option value="SMA"     <?php if($kategori == "sma") echo "selected"?>>SMA</option>
                                                     <option value="SMK"     <?php if($kategori == "smk") echo "selected"?>>SMK</option>
                                                     <option value="SMP/MTS" <?php if($kategori == "smp/sd") echo "selected"?>>SMP/MTS</option>
@@ -195,6 +199,7 @@ function showCheckboxes() {
                                                         <label for="gambar_1">
                                                         <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 1000px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
                                                 </label>
+                                                <img src="img/<?= $jbm['gambar_1'] ?>" width="250">
                                                         <input type="file" class="hidden" name="gambar_1" id="gambar_1">
                                                     </p>
                                             </div>  
@@ -204,6 +209,7 @@ function showCheckboxes() {
                                                 <label for="gambar_2">
                                                     <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 1000px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
                                                 </label>
+                                                <img src="img/<?= $jbm['gambar_2'] ?>" width="250">
                                                  <input type="file" class="hidden" name="gambar_2" id="gambar_2">
                                             </p>
                                             </div>
@@ -213,6 +219,7 @@ function showCheckboxes() {
                                                 <label for="gambar_3">
                                                     <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 1000px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
                                                 </label>
+                                                <img src="img/<?= $jbm['gambar_3'] ?>" width="250">
                                                  <input type="file" class="hidden" name="gambar_3" id="gambar_3">
                                             </p>
                                             </div>
@@ -222,6 +229,7 @@ function showCheckboxes() {
                                                 <label for="logo">
                                                     <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 1000px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
                                                 </label>
+                                                <img src="img/<?= $jbm['logo'] ?>" width="250">
                                                  <input type="file" class="hidden" name="logo" id="logo">
                                             </p>
                                             </div>   
@@ -233,19 +241,19 @@ function showCheckboxes() {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="no_sekolah">Nomor Telp Sekolah</label>
-                                                <input type="text" class="form-control" id="no_sekolah" name="no_sekolah" placeholder="+62">
+                                                <input type="text" class="form-control" id="no_sekolah" name="no_sekolah" value="<?= $jbm["no_sekolah"];?>">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email" name="email" placeholder="********@gmail.com">
+                                                <input type="text" class="form-control" id="email" name="email" value="<?= $jbm["email"];?>">
                                             </div>        
                                         </div>
                                          <div class="col-md-6">
                                             <div class="form-group" style="width: 900px;">
                                                 <label for="ofc_web">Website Official Sekolah</label>
-                                                <input type="text" class="form-control" id="ofc_web" name="ofc_web" placeholder="https://">
+                                                <input type="text" class="form-control" id="ofc_web" name="ofc_web" value="<?= $jbm["ofc_web"];?>">
                                             </div>        
                                         </div>                                  
                                     </div>                                   
@@ -254,7 +262,7 @@ function showCheckboxes() {
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="deskripsi">Deskrpsi sekolah</label>
-                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="10"></textarea>
+                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="10" value="<?= $jbm["deskripsi"];?>"><?= $jbm["deskripsi"];?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -265,20 +273,20 @@ function showCheckboxes() {
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="alamat">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Jl teluk pacitan.....">
+                                            <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $jbm["alamat"];?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="link-map">Link Google maps</label>
-                                            <input type="text" class="form-control" id="link-map" name="maps" placeholder="google.com/maps/....">
+                                            <input type="text" class="form-control" id="link-map" name="maps" value="<?= $jbm["maps"];?>">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                          <div class="form-group" style="width: 436px;">
                                              <label for="provinsi">Provinsi </label>
                                              <select id="provinsi" name="provinsi" class="form-control">
-                                                 <option value="" >-pilih provinsi-</option>
+                                                 <option value="<?= $jbm["provinsi"];?>" ><?= $jbm["provinsi"];?></option>
                                                  <option value="Aceh" <?php if($provinsi == "Aceh") echo "selected"?>>Aceh</option>
                                                  <option value="Sumatra Utara" <?php if($provinsi == "Sumatra Utara") echo "selected"?>>Sumatra Utara</option>
                                                  <option value="Sumatra Barat" <?php if($provinsi == "Sumatra Barat") echo "selected"?>>Sumatra Barat</option>
@@ -318,11 +326,64 @@ function showCheckboxes() {
                                          </div>
                                      </div>                                
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-success">Ubah</button>
-                                                
-                                </form></div>
-                    </div>
-                    </div>
+                                <h2 class="title" style="font-weight: bold";>
+                                Jadwal
+                                </h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="senin">Senin</label>
+                                            <input type="text" class="form-control" id="senin" name="senin" value="<?= $jbm["senin"];?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="selasa">selasa</label>
+                                            <input type="text" class="form-control" id="selasa" name="selasa" value="<?= $jbm["selasa"];?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="rabu">rabu</label>
+                                            <input type="text" class="form-control" id="rabu" name="rabu" value="<?= $jbm["rabu"];?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="kamis">kamis</label>
+                                            <input type="text" class="form-control" id="kamis" name="kamis" value="<?= $jbm["kamis"];?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="jumat">jumat</label>
+                                            <input type="text" class="form-control" id="jumat" name="jumat" value="<?= $jbm["jumat"];?>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sabtu">sabtu</label>
+                                            <input type="text" class="form-control" id="sabtu" name="sabtu" value="<?= $jbm["sabtu"];?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="minggu">minggu</label>
+                                            <input type="text" class="form-control" id="minggu" name="minggu" value="<?= $jbm["minggu"];?>">
+                                        </div>
+                                    </div>
+                                    <!--tempat kolom kedua-->
+                                </div>
+                                <button type="submit" name="submit" class="btn btn-success">Ubah</button>      
+                            </form>
+                        </div>
+                     </div>
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">

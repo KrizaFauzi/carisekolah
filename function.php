@@ -247,7 +247,7 @@ function hapus($id){
 
 function ubah($data){
 	global $db;
-	$id =$data["id"];
+	$id = $data["id"];
 	$nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
 	$no_sekolah = htmlspecialchars($data["no_sekolah"]);
 	$email = htmlspecialchars($data["email"]);
@@ -257,44 +257,63 @@ function ubah($data){
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
+    $senin = htmlspecialchars($data["senin"]);
+    $selasa = htmlspecialchars($data["selasa"]);
+    $rabu = htmlspecialchars($data["rabu"]);
+    $kamis = htmlspecialchars($data["kamis"]);
+    $jumat = htmlspecialchars($data["jumat"]);
+    $sabtu = htmlspecialchars($data["rabu"]);
+    $minggu = htmlspecialchars($data["minggu"]);
     $gambarLama_1 = htmlspecialchars($data["gambarLama_1"]);
     $gambarLama_2 = htmlspecialchars($data["gambarLama_2"]);
     $gambarLama_3 = htmlspecialchars($data["gambarLama_3"]);
     $logoLama = htmlspecialchars($data["logoLama"]);
 
-
 	if ($_FILES['gambar_1']['error'] === 4 ) {
 		$gambar_1 = $gambarLama_1; 
 	}else{
-		$gambar_1 = upload(); 
+		$gambar_1 = upload1(); 
 	}
 
     if ($_FILES['gambar_2']['error'] === 4 ) {
 		$gambar_2 = $gambarLama_2; 
 	}else{
-		$gambar_2 = upload(); 
+		$gambar_2 = upload2(); 
 	}
 
     if ($_FILES['gambar_3']['error'] === 4 ) {
 		$gambar_3 = $gambarLama_3; 
 	}else{
-		$gambar_3 = upload(); 
+		$gambar_3 = upload3(); 
 	}
 
     if ($_FILES['logo']['error'] === 4 ) {
 		$logo = $logoLama; 
 	}else{
-		$logo = upload(); 
+		$logo = upload4(); 
 	}
 
-	$query = "UPDATE data_pembeli SET 
-				nama_pembeli = '$nama_pembeli',
-				alamat       = '$alamat',
-				no_telp = '$no_telp',
-				no_ktp = '$no_ktp',
-				merk_mobil = '$merk_mobil',
-				warna = '$warna',
-				gambar = '$gambar'
+	$query = "UPDATE tb_sekolah SET 
+				nama_sekolah = '$nama_sekolah',
+				kategori   = '$kategori',
+				no_sekolah = '$no_sekolah',
+				gambar_1 = '$gambar_1',
+                gambar_2 = '$gambar_2',
+                gambar_3 = '$gambar_3',
+                logo = '$logo',
+				email = '$email',
+				ofc_web = '$ofc_web',
+				deskripsi = '$deskripsi',
+                alamat = '$alamat' ,
+                maps = '$maps' ,
+                provinsi = '$provinsi' ,
+                senin = '$senin' ,
+                selasa = '$selasa' ,
+                rabu = '$rabu' ,
+                kamis = '$kamis' ,
+                jumat = '$jumat' ,
+                sabtu = '$sabtu' ,
+                minggu = '$minggu'
 				WHERE id = $id
 				";
 
@@ -306,7 +325,6 @@ function ubah($data){
 
 $kategori="";
 $provinsi="";
-
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2021 at 05:43 AM
+-- Generation Time: Nov 01, 2021 at 03:22 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -41,15 +41,22 @@ CREATE TABLE `tb_sekolah` (
   `deskripsi` varchar(1000) NOT NULL,
   `alamat` varchar(40) NOT NULL,
   `maps` varchar(250) NOT NULL,
-  `provinsi` varchar(25) NOT NULL
+  `provinsi` varchar(25) NOT NULL,
+  `senin` varchar(20) NOT NULL,
+  `selasa` varchar(20) NOT NULL,
+  `rabu` varchar(20) NOT NULL,
+  `kamis` varchar(20) NOT NULL,
+  `jumat` varchar(20) NOT NULL,
+  `sabtu` varchar(20) NOT NULL,
+  `minggu` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_sekolah`
 --
 
-INSERT INTO `tb_sekolah` (`id`, `nama_sekolah`, `kategori`, `no_sekolah`, `gambar_1`, `gambar_2`, `gambar_3`, `logo`, `email`, `ofc_web`, `deskripsi`, `alamat`, `maps`, `provinsi`) VALUES
-(30, 'smkn8', 'SMA', '0192012', '617b6c375f1ef.jpg', '617b6c375f6e4.jpg', '617b6c375fc52.jpg', '617b6c376031a.jpg', 'admin@gmail.com', 'https://www.smkn8malang.sch.id/', 'ads', 'jl tlogo joyo', 'https://www.google.com/maps/d/embed?mid=1vaQW9tRWbCdhzm8qJHAo2EsEMig&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=-7.932245%2C112.6581&amp;spn=0.025503%2C0.047121&amp;z=14&amp;output=embed', 'Jawa Timur');
+INSERT INTO `tb_sekolah` (`id`, `nama_sekolah`, `kategori`, `no_sekolah`, `gambar_1`, `gambar_2`, `gambar_3`, `logo`, `email`, `ofc_web`, `deskripsi`, `alamat`, `maps`, `provinsi`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`) VALUES
+(34, 'SMKN 8 Malang', 'SMK', '0812 1678 7339', '617b91a5093ec.jpg', '617b91a5098a5.jpeg', '617b91a509b1a.png', '617b91a509d54.png', 'kriza@gmail.com', 'https://www.smkn8malang.sch.id/', 'SMKN 8 Malang mempunyai 4 program keahlian dan keempatnya merupakan unggulan, yaitu TKJ atau Teknik Komputer Jaringan, Teknik Mekatronika, RPL (Rekaya Perangkat Lunak) dan ELIN atau Elektronika Industri. Keempat program ini tergolong program yang terkini yang ada di sekolah-sekolah bidang teknologi.', 'Jl teluk pacitan', 'https://goo.gl/maps/bTb4eJehaBp8hZYA9', 'Jawa Timur', '', '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +76,7 @@ ALTER TABLE `tb_sekolah`
 -- AUTO_INCREMENT for table `tb_sekolah`
 --
 ALTER TABLE `tb_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -349,16 +349,12 @@ function showCheckboxes() {
                                             <input type="text" class="form-control" id="senin" name="senin" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="selasa">selasa</label>
                                             <input type="text" class="form-control" id="selasa" name="selasa" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -367,16 +363,12 @@ function showCheckboxes() {
                                             <input type="text" class="form-control" id="rabu" name="rabu" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="kamis">kamis</label>
                                             <input type="text" class="form-control" id="kamis" name="kamis" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -385,17 +377,12 @@ function showCheckboxes() {
                                             <input type="text" class="form-control" id="jumat" name="jumat" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
-                                    </div>
-                                </div>
-                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="sabtu">sabtu</label>
                                             <input type="text" class="form-control" id="sabtu" name="sabtu" placeholder="Jl teluk pacitan.....">
                                         </div>
                                     </div>
-                                    <!--tempat kolom kedua-->
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -413,7 +400,7 @@ function showCheckboxes() {
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Jadwal Sekolah
+                                Berita sekolah
                             </h2>
                         </div>
                         <div class="box-content">

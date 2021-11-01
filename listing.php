@@ -55,8 +55,8 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                         </div> 
                             <div class="top-bar-btns">
                             <ul class="nav-items">
-                                <li><a href="login.html" class="btn btn-custom-primary">Masuk</a></li>
-                                <li><a href="#" class="btn btn-danger">Keluar </a></li>
+                                <li><a href="multilevel/index.php" class="btn btn-custom-primary">Masuk</a></li>
+                                <li><a href="multilevel/keluar.php" class="btn btn-danger">Keluar </a></li>
                             </ul>
                         </div>
                         <div class="pull-right navigation-wrapper">
@@ -64,7 +64,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
                                 <li class="active"><a href="index.html">Beranda</a></li>
-                                <li><a href="admin-sekolah.html">Admin</a></li>
+                                <li><a href="multilevel/index.php">Admin</a></li>
                                 <li><a href="homepage-slider-top.html">Daftar Sekolah</a></li>
                                 </li>
                             </ul>

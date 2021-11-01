@@ -62,7 +62,7 @@ $jbm = query("SELECT * FROM tb_sekolah");
                             <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
                         <li>
-                            <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
+                            <a href="admin-sekolah-4.php"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
                         </li>                       
                         <li>
                             <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>

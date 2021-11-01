@@ -27,7 +27,7 @@ if($cek > 0){
   $_SESSION['username'] = $username;
   $_SESSION['level'] = "admin";
    
-  header("location:halaman_admin.php");
+  header("location:../admin-sekolah-4.php");
 
  
  }else if($data['level']=="devoloper"){

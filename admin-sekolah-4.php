@@ -7,17 +7,12 @@ if($_SESSION['level']==""){
  header("location:multilevel/index.php");
 }
 
-
-require 'function.php';
-$jbm = query("SELECT * FROM tb_sekolah");
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Admin Sekolah</title>
+        <title>Profil Admin Sekolah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <link rel="icon" href="assets/img/logocs.ico" type="image/x-icon" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900%7COpen+Sans" rel="stylesheet" />
@@ -27,9 +22,6 @@ $jbm = query("SELECT * FROM tb_sekolah");
         <link rel="stylesheet" href="assets/libraries/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
         <!-- End Bootstrap -->
-        <!-- Start footable-jquery -->	
-        <link rel="stylesheet" href="assets/libraries/footable-jquery/css/footable.bootstrap.min.css" />
-        <!-- End footable-jquery -->
         <!-- Start Template files -->
         <link rel="stylesheet" href="assets/css/admin-local.css" />
         <link rel="stylesheet" href="assets/css/admin-local-media.css" />
@@ -54,16 +46,16 @@ $jbm = query("SELECT * FROM tb_sekolah");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <ul class="nav-side">                  
-                        <li class="active">
+                     <ul class="nav-side">                  
+                        <li >
                             <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
                         </li>                    
                         <li>
                             <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
-                        <li>
+                        <li class="active">
                             <a href="admin-sekolah-4.html"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
-                        </li>                       
+                        </li>                         
                         <li>
                             <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
                         </li>                             
@@ -77,56 +69,63 @@ $jbm = query("SELECT * FROM tb_sekolah");
             <!-- END mainbar -->
             <!-- START mainbar -->
             <div class="mainbar">
-                <div class="bar-head top-bar clearfix">		
+                <div class="bar-head top-bar clearfix">     
                     <div class="profile-card pull-right">
-                        <a href="admin-sekolah-4.html" class="profile-card-image">
+                        <a href="#" class="profile-card-image">
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
                             Kriza
                         </div>
                     </div><!-- /.profile-card -->
-                   <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>				
+                    <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>                
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
-                    <div class="section-reviews">
+                    <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Website Yang Telah dibuat
+                                Perbarui Profil
                             </h2>
                         </div>
-                        <table class="table-panel footable table-listings">
-<?php $i=1; ?>
-<?php foreach ($jbm as $row) : ?>                            
-                            <tr>
-                                <td><?= $i ?></td>
-                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    <a href="#" class="link">
-                                       <img class="image-preview preview-95x88"  src="img/<?= $row["logo"]; ?>" alt="">
-                                    </a>
-                                </td>
-                                <td class="preview-mobile" data-type="html">
-                                    <div>
-                                        <a href="listing.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
+                        <div class="box-content">
+                            <div class="profile-editor clearfix">
+                                <div class="profile-editor-side">
+                                    <div class="profile-editor-preview">
+                                        <img src="assets/img/placeholder/post-preview.jpg" alt="">
                                     </div>
-                                    <div>
-                                        <span class="listing-tags tags">
-                                            <?= $row["alamat"];?>  ·  <?= $row["provinsi"];?>
-                                        </span>
-                                    </div>
-                                </td>
-                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                    <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York"><a href="<?= $row["maps"];?>"><?= $row["alamat"];?></span></a>
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="edit.php?id=<?= $row["id"];?>" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
-                                    <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
-                                </td>
-                            </tr>
-<?php $i++; ?>
-<?php endforeach; ?>   
-                        </table>
+                                </div>
+                                <div class="profile-editor-main">
+                                    <form>
+                                        <div class="form-group form-xs-group nomargin">
+                                            <label>Rincian utama</label>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-xs-group">
+                                                        <class type="text" class="form-control" placeholder="apalo">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group form-xs-group">
+                                                        <class  type="text" class="form-control" placeholder="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group form-xs-group">
+                                                        <class class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        </div>
+                                        <div class="form-group form-xs-group">
+                                            <button type="button" onclick="window.location.href='admin-sekolah-2.html' " class="btn btn-danger ">Perbarui Profil</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             <!-- END mainbar -->
@@ -147,9 +146,5 @@ $jbm = query("SELECT * FROM tb_sekolah");
         <!-- End custom styles  -->
         <script src="assets/js/moment-with-locales.min.js" type="text/javascript"></script>
         <script src="assets/js/moment-timezone-with-data.js" type="text/javascript"></script>
-        <!-- Start footable-jquery -->	
-        <script src="assets/libraries/footable-jquery/js/footable.js"></script>
-        <script src="assets/js/footable_custom.js"></script>
-        <!-- End footable-jquery -->
     </body>
 </html>

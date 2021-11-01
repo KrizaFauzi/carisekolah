@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+
+if($_SESSION['level']==""){
+ header("location:multilevel/index.php");
+}
+
 require 'function.php';
 
 if(isset($_POST["submit"])){
@@ -119,7 +126,7 @@ function showCheckboxes() {
                             <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
                         </li>                             
                         <li>
-                            <a href="#"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Keluar</span></a>
+                            <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Keluar</span></a>
                         </li>
                     </ul>
                 </div>

@@ -1,6 +1,13 @@
 <?php
 require 'function.php';
-$jbm = query("SELECT * FROM tb_sekolah");
+
+$jumlahDataPerhalaman = 6;
+$jumlahData = count(query("SELECT * FROM tb_sekolah"));
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman) ;
+$halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
+$awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
+
+$jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ");
 ?>
 
 <!DOCTYPE html>
@@ -191,21 +198,29 @@ $jbm = query("SELECT * FROM tb_sekolah");
                     <div class="text-center">
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
+                        <?php if( $halamanAktif > 1) :?>                                
                                 <li>
-                                    <a href="#" aria-label="Previous">
+                                    <a href="?page=<?= $halamanAktif - 1; ?>" aria-label="Previous">
                                         &laquo;
                                     </a>
                                 </li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
+                        <?php endif; ?>
+
+                        <?php for ($i=1; $i <=$jumlahHalaman; $i++) : ?> 
+                            <?php if ( $i == $halamanAktif) : ?>                               
+                                 <li class="active"><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                            <?php else :?>
+                                 <li><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                            <?php endif ;?>
+                         <?php endfor?>
+                         
+                        <?php if( $halamanAktif < $jumlahHalaman) :?> 
+                                <li>              
+                                    <a href="?page=<?= $halamanAktif + 1; ?>" aria-label="Next">
                                         &raquo;
                                     </a>
                                 </li>
+                        <?php endif; ?>                               
                             </ul>
                         </nav>
                     </div>

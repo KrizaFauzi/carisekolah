@@ -1,7 +1,7 @@
 <?php
 require 'function.php';
 
-$jumlahDataPerhalaman = 6;
+$jumlahDataPerhalaman = 1;
 $jumlahData = count(query("SELECT * FROM tb_sekolah"));
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman) ;
 $halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
@@ -195,6 +195,8 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
 <?php $i++; ?>
 <?php endforeach; ?>                                 
                     </div>
+
+
                     <div class="text-center">
                         <nav aria-label="Page navigation">
                             <ul class="pagination">
@@ -207,13 +209,13 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
                         <?php endif; ?>
 
                         <?php for ($i=1; $i <=$jumlahHalaman; $i++) : ?> 
-                            <?php if ( $i == $halamanAktif) : ?>                               
+                            <?php if ( $i == $halamanAktif) : ?>                            
                                  <li class="active"><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
                             <?php else :?>
                                  <li><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
                             <?php endif ;?>
                          <?php endfor?>
-                         
+
                         <?php if( $halamanAktif < $jumlahHalaman) :?> 
                                 <li>              
                                     <a href="?page=<?= $halamanAktif + 1; ?>" aria-label="Next">

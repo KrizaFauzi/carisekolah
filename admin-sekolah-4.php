@@ -78,7 +78,7 @@ if($_SESSION['level']==""){
                             <?= $_SESSION['username'] ?>
                         </div>
                     </div><!-- /.profile-card -->
-                    <a href="multilevel/home_admin.php" class="btn btn-transparent pull-right">Ganti Sandi</a>       
+                    <a href="multilevel/ganti.php" class="btn btn-transparent pull-right">Ganti Sandi</a>       
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-form section">

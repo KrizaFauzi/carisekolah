@@ -14,6 +14,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
     <title>ganti sandi</title>
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../assets/img/logocs.ico" type="image/x-icon" />
 </head>
 
 <body>

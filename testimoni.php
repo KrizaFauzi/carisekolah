@@ -156,7 +156,7 @@ if(isset($_POST['submit'])){
                                     <div class="preview-image"><a href="page_profile.html"><img src="assets/img/logocs.ico" style= "width: 100px;" alt="" /></a></div>
                                     <div class="content-box">
                                         <h2 class="title"><a href="tentangcs.html">CARI SEKOLAH</a></h2>
-                                        <div class="description"> Betapapun sulitnya hidup, selalu ada sesuatu yang dapat Anda lakukan dan berhasil .RENDI.  </div>
+                                        <div class="description"> Betapapun sulitnya hidup, selalu ada sesuatu yang dapat Anda lakukan dan berhasil.  </div>
                                         <a href="mailto:james@local.com" class="btn btn-custom btn-custom-secondary btn-wide"><i class="ion-email"></i></a>
                                     </div>
                                 </div>

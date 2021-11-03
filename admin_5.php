@@ -103,10 +103,8 @@ $jbm = query("SELECT * FROM testimoni");
                                         
                                     </div>
                                 </td>
-                                
-                                   
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
+                                    <a href="hapustesti.php?id=<?= $row["id"];?>" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
                             </tr>
 <?php $i++; ?>

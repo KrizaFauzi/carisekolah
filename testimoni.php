@@ -156,9 +156,20 @@ if(isset($_POST['submit'])){
                         </div>
 
                         <div class="col-md-3 swap-top right-side sidebar">
+                        
+                        <div class="widget-styles agent-box">
+                                <div class="content">
+                                    <div class="preview-image"><a href="page_profile.html"><img src="assets/img/logocs.ico" style= "width: 100px;" alt="" /></a></div>
+                                    <div class="content-box">
+                                        <h2 class="title"><a href="tentangcs.html">CARI SEKOLAH</a></h2>
+                                        <div class="description"> Betapapun sulitnya hidup, selalu ada sesuatu yang dapat Anda lakukan dan berhasil .RENDI.  </div>
+                                        <a href="mailto:james@local.com" class="btn btn-custom btn-custom-secondary btn-wide"><i class="ion-email"></i></a>
+                                    </div>
+                                </div>
+                        </div>
                         <div class="widget widget-styles widget-right-map">
                             <div class="body">
-                                <img src="assets/img/placeholder/g.png" style="width: 250px;" alt="" />  
+                                <img src="assets/img/placeholder/ads.jpg" style="width: 240px;" alt="" />  
                             </div>
                         </div>
                 </div>

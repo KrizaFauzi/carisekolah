@@ -90,22 +90,21 @@
                                         </td>
                                         <td class="preview-mobile" data-type="html">
                                             <div>
-                                                 <a href="listing.html" class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
+                                                 <a href="listing.php?id=<?= $row["id"];?>" class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
                                             </div>
-                                        
                                             <div>
                                                 <span class="listing-tags tags">
-                                                    <a href="map-side-list.html"></a>  ·  <a href="map-side-list.html"></a>
+                                                    <?= $row["kategori"];?>  ·  <?= $row["provinsi"];?>
                                                 </span>
                                             </div>
+                                            
                                         </td>
                                         <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                                <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York">teluk pacitan, arjosari </span>
+                                            <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York"><a href="<?= $row["maps"];?>"><?= $row["alamat"];?></span></a>
                                         </td>
                                         <td data-title="" data-breakpoints="xs" data-type="html">
-                                                <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
+                                                <a href="hapusdev.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
+                                        </tr>
                             <?php $i++; ?>
                             <?php endforeach; ?> 
                         </table>

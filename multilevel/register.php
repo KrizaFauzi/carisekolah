@@ -67,7 +67,7 @@ $level="";
  		<div class="form-group row">
  			<label for="gmail" class="col-sm-2 col-form-label">gmail</label>
  			<div class="col-sm-10">
- 				<input type="text" class="form-control" id="gmail" name="gmail" placeholder="gmail">
+ 				<input type="email" class="form-control" id="gmail" name="gmail" placeholder="gmail">
  			</div>
  		</div>
 

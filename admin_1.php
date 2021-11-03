@@ -1,4 +1,11 @@
 <?php
+$conn = mysqli_connect("localhost","root","","carisekolah");
+
+if (!$conn) {
+    echo "koneksi gagal" . mysql_connect_error();
+}
+
+
  session_start();
 
  
@@ -106,16 +113,26 @@
                                  <tr>
                                     <th scope="col">No.</th>
                                     <th scope="col">Username</th>
-                                    <th scope="col">email</th>
+                                    <th scope="col">gmail</th>
+                                    <th scope="col">Sebagai</th>
                                 </tr>
                             <tbody>
-
+                            <?php
+                                $no = 1;
+                                $query = mysqli_query($conn,"SELECT * FROM loginmulti");
+                                while ($dt = mysqli_fetch_assoc($query)) {
+                            ?>
+                            
                                 <tr>
-                                    <td>1</td>
-                                    <td>Kriza</td>
-                                    <td>kriz4nafis@gmail.com</td>
+                                    <td><?= $no++; ?></td>
+                                    <td><?= $dt['username']; ?></td>
+                                    <td><?= $dt['gmail']; ?></td>
+                                    <td><?= $dt['level']; ?></td>
                                 </tr>
-      
+                            <?php
+                            }
+                            ?>
+
 
                             </tbody>
                         </thead>

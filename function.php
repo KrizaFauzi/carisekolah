@@ -19,6 +19,7 @@ function tambah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
+    $jurusan = htmlspecialchars(implode(',',$data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
@@ -48,7 +49,7 @@ function tambah($data){
 
 	$query = "INSERT INTO tb_sekolah
 				VALUES
-				('', '$nama_sekolah','$kategori' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
+				('', '$nama_sekolah','$kategori','$jurusan' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
 				";
 	mysqli_query($db, $query);
 
@@ -254,6 +255,7 @@ function ubah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
+    $jurusan = htmlspecialchars(implode($data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
@@ -296,6 +298,7 @@ function ubah($data){
 	$query = "UPDATE tb_sekolah SET 
 				nama_sekolah = '$nama_sekolah',
 				kategori   = '$kategori',
+                jurusan   = '$jurusan',
 				no_sekolah = '$no_sekolah',
 				gambar_1 = '$gambar_1',
                 gambar_2 = '$gambar_2',
@@ -325,7 +328,7 @@ function ubah($data){
 
 $kategori="";
 $provinsi="";
-
+$jurusan[]="";
 
 
 ?>

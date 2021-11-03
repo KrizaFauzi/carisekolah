@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
                 VALUES
                 ('', '$email', '$nama', '$deskripsi')
                 ";
-                mysqli_query($koneksi, $query);
+                mysqli_query($db, $query);
 }
 
 

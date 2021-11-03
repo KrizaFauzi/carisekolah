@@ -1,4 +1,10 @@
 <?php
+
+require 'function.php';
+
+$jbm = query("SELECT * FROM testimoni");
+
+
  session_start();
 
  
@@ -78,19 +84,21 @@
                             </h2>
                         </div>
                         <table class="table-panel footable table-listings">
+<?php $i=1; ?>
+<?php foreach ($jbm as $row) : ?>
                             <tr>
                                 <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
                                     <a href="#" class="link">
-                                        <img class="image-preview preview-75x70"  src="assets/img/placeholder/pp_developer2.jpeg" alt="">
+                                        <img class="image-preview preview-75x70"  src="assets/img/placeholder/pp_developer1.jpeg" alt="">
                                     </a>
                                 </td>
                                 <td class="preview-mobile" data-type="html">
                                     <div class="reviews-box">
                                         <div class="header">
-                                            <b>kriza</b> untuk <a href="#" class="link"> cari sekolah</a>
+                                            <?= $row["nama"]; ?></a> untuk <a href="#" class="link"> cari sekolah</a>
                                         </div>
                                         <p class="description">
-                                            sangat membantu
+                                            <?= $row["deskripsi"]; ?>
                                         </p>
                                         
                                     </div>
@@ -101,27 +109,9 @@
                                     <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="preview">
-                                    <a href="#" class="link">
-                                        <img class="image-preview preview-75x70"  src="assets/img/placeholder/pp_developer1.jpeg" alt="">
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="reviews-box">
-                                        <div class="header"> 
-                                            <b>filzah</b> untuk  <a href="#" class="link"> cari sekolah </a>
-                                        </div>
-                                        <p class="description">
-                                            sangat bermanfaat
-                                        </p>
-                                        
-                                </td>
-                                
-                                
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="#" onclick="return confirm('yakin ta gak?')" class='btn btn-listing btn-danger'><i class="icon-remove"></i> hapus</a>
-                                </td>
+<?php $i++; ?>
+<?php endforeach; ?>  
+                           
                             
                         </table>
                     </div>

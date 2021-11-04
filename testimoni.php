@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
             <div class="container container-palette top-bar affix-menu">
             <div class="container">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">Cari Sekolah</a></div>
+                        <div class="pull-left logo"><a href="index.php">Cari Sekolah</a></div>
                         <div class="top-bar-btns">
                             <ul class="nav-items">
                                 <li><a href="multilevel/index.php" class="btn btn-custom-primary">Masuk</a></li>
@@ -74,7 +74,7 @@ if(isset($_POST['submit'])){
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
                                 <li><a href="multilevel/index.php">Admin</a></li>
                                 <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
@@ -82,7 +82,6 @@ if(isset($_POST['submit'])){
                         </div>
                     </div>
                 </div> 
-            </div>
         </header><!-- /.header -->
         <section class="section widget-top-title container container-palette" data-parallax="scroll" data-image-src="assets/img/placeholder/bg-3.jpg">
             <div class="container">

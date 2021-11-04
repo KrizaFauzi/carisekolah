@@ -204,69 +204,40 @@
                     </div>
                 </div>
             </section> <!-- /.section-category -->
-            <section class="section-reviews section container container-palette">
+            <section class="section-picks section container container-palette">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title slim">
                         <h2 class="title">Testimoni</h2>
-                        <span class="subtitle"></span>
                     </div>
-                    <div class="reviews-carousel">
-                        <div class="nav-r">
-                            <a href="#" class="nav-r-btn btn-left"><i class="ion-ios-arrow-left"></i></a>
-                            <a href="#" class="nav-r-btn btn-right"><i class="ion-ios-arrow-right"></i></a>
-                        </div>
-                        <div class="reviews-results clearfix">
+                    <div id="owl-carousel-items" class="owl-carousel-items owl-carousel owl-theme owl-carousel-property">
+                        <?php   
+                         $query = mysqli_query($conn,"SELECT * FROM testimoni");
+                         while ($ts = mysqli_fetch_assoc($query)) {
+                        ?>
+                       
+                       <div class="item">
                             <div class="review show">
-                                <div class="description">
-                                    Sangat Membantu Untuk mengetahui tentang sekolah sekolah
-                                </div>
+                                
                                 <div class="user-card">
                                     <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt="" />
+                                        <img src="assets/img/placeholder/pp_developer1.jpeg" alt="" style="height: 60px;" />
                                     </div>
                                     <div class="body">
-                                        <h3 class="name">Dorian Breen</h3>
-                                        <div class="contact"><span>untuk</span> <a href="index.php" class="link">Cari Sekolsh</a></div>
+                                        <h3 class="name"><td><?= $ts['nama']; ?></td></h3>
+                                        <div class="contact"><span><?= $ts['deskripsi']; ?></a></div>
                                     </div>
                                 </div>
-                            </div>                
-                            <div class="review">
-                                <div class="description">
-                                   sanggat membantu
-                                </div>
-                                <div class="user-card">
-                                    <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt=""  />
-                                    </div>
-                                    <div class="body">
-                                        <h3 class="name">Jonh Black</h3>
-                                        <div class="contact"><span>Untuk</span> <a href="index.php" class="link">Cari Sekolah</a></div>
-                                    </div>
-                                </div>
-                            </div>               
-                            <div class="review">
-                                <div class="description">
-                                     Website ini sanggat bermanfaat  
-                                </div>
-                                <div class="user-card">
-                                    <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt=""  />
-                                    </div>
-                                    <div class="body">
-                                        <h3 class="name">Katryn Niclos</h3>
-                                        <div class="contact"><span>untuk</span> <a href="index.php" class="link">Cari Sekolah</a></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                          
+                            
                         </div>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                 </div>
             </section> <!-- /.section-reviews -->
-            <section class="section-blog section container container-palette">
-                <div class="container">
-                    
-                </div>
-            </section> <!-- /.section-blog -->
+           <!-- /.section-blog -->
         </main>
         <footer class="footer container container-palette">
             <div class="footer-content section">

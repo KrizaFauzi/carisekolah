@@ -1,17 +1,10 @@
 <?php
 require 'function.php';
 
-
 $id = $_GET["id"];
-
-$jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
-
-$bsk = query("SELECT * FROM tb_berita");
-
-
+$bsk = query("SELECT * FROM tb_berita WHERE id = $id")[0];
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,8 +23,6 @@ $bsk = query("SELECT * FROM tb_berita");
         <!-- Start Template files -->
         <link rel="stylesheet" href="assets/css/local.css" />
         <link rel="stylesheet" href="assets/css/local-media.css" />
-        <link rel="stylesheet" href="assets/css/admin-local.css" />
-        <link rel="stylesheet" href="assets/css/admin-local-media.css" />
         <!-- End  Template files -->
         <!-- Start blueimp  -->
         <link rel="stylesheet" href="assets/css/blueimp-gallery.min.css" />
@@ -62,8 +53,8 @@ $bsk = query("SELECT * FROM tb_berita");
                         </div> 
                             <div class="top-bar-btns">
                             <ul class="nav-items">
-                                <li><a href="multilevel/index.php" class="btn btn-custom-primary">Masuk</a></li>
-                                <li><a href="multilevel/keluar.php" class="btn btn-danger">Keluar </a></li>
+                                <li><a href="login.html" class="btn btn-custom-primary">Masuk</a></li>
+                                <li><a href="#" class="btn btn-danger">Keluar </a></li>
                             </ul>
                         </div>
                         <div class="pull-right navigation-wrapper">
@@ -71,7 +62,7 @@ $bsk = query("SELECT * FROM tb_berita");
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
                                 <li class="active"><a href="index.php">Beranda</a></li>
-                                <li><a href="multilevel/index.php">Admin</a></li>
+                                <li><a href="admin-sekolah.php">Admin</a></li>
                                 <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                             </ul>
@@ -85,116 +76,48 @@ $bsk = query("SELECT * FROM tb_berita");
                 <div class="container">
                     <div class="content">
                         <div class="row-s">
-                            <div class="col-sm-4"><a href="img/<?= $jbm["gambar_1"];?>" class="image-cover-div" ><img src="img/<?= $jbm["gambar_1"];?>" alt="" /></a></div>
-                            <div class="col-sm-4"><a href="img/<?= $jbm["gambar_2"];?>" class="image-cover-div"><img src="img/<?= $jbm["gambar_2"];?>" alt="" /></a></div>
-                            <div class="col-sm-4"><a href="img/<?= $jbm["gambar_3"];?>" class="image-cover-div" ><img src="img/<?= $jbm["gambar_3"];?>" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div" ><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div" ><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div"><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
                         </div>
                     </div>
                 </div>
             </div>    
             <div class="widget container container-palette widget-listing-title">
                 <div class="container wb">
+                    
                     <div class="options">
-                        <div class="type-box"><img src="img/<?= $jbm["logo"];?>" style="width: 120px;" alt="" /></div>
-                        <div class="options-body">
-                            <h1 class="title"><?= $jbm["nama_sekolah"]; ?></h1>
-                            <div class="types">
-                            <?= $jbm["kategori"];?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="actions">    
-                        <a href="<?= $jbm["maps"];?>" class="btn btn-custom-s btn-custom-default"><i class="ion-location"></i>Lokasi</a>  
-                        <a class="btn btn-custom-s btn-custom-default" href="https://www.facebook.com/share.php?u=http://test.com&amp;title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="ion-share"></i>Bagikan</a>  
                     </div>
                 </div>
             </div> 
-            <div class="container container-palette widget">
-                <div class="container">
+            <div class="container container-palette widget" >
+                <div class="container" style="width: 1700px;">
                     <div class="row">
                         <div class="col-sm-9">
-                            <div class="widget-styles">
-                                <div class="content-box">
-                                <?= $jbm["deskripsi"];?>
-                                </div>
-                            </div>   
+                              
                             <div class="widget-styles">
                                 <div class="header content t-left"><h2>BERITA TERBARU SEKOLAH</h2></div>
                                 <ul class="list-reviews">
                                     <li class="content-box"> 
-                                           <table class="table-panel footable table-listings"> 
-<?php $i=1; ?>
-<?php foreach ($bsk as $row) : ?>                                                                                    
-                            <tr>
-                                <td><?= $i ?></td>
-                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    <a href="berita.php?id=<?= $row["id"];?>" class="link">
-                                       <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
-                                    </a>
-                                </td>
-                                <td class="preview-mobile" data-type="html">
-                                    <div>
-                                        <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
-                                    </div>
-                                    <div>
-                                        <span class="listing-tags tags">
-                                            <?= $row["asal"];?>  ·  <?= $row["isi_berita"];?>
-                                        </span>
-                                    </div>
-                                </td>
-                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                   
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    
-                                </td>
-                            </tr>
-<?php $i++; ?>
-<?php endforeach; ?>
-                                        </table>
+                                        <div class="list-reviews-body">
+                                            <div class="list-reviews-title">
+                                                <h1 style="font-weight: bold;"><?= $bsk["judul"]?></h1>
+                                            </div>
+                                            <div class="description"><?= $bsk["isi_berita"]?></div>
+                                        </div>
                                     </li>
+                                    <li class="content-box"> 
+                                    </li>
+                                    
                                 </ul>
-                                <div class="caption-title t-left content" id="write_review"></div>
-                                
-                            </div>
                         </div>
-                        <div class="col-sm-3">
-                                <div class="content-box">
-                                    <ul class="list-contact">
-                                        <li class="icon address"><a href="<?= $jbm["maps"];?>"><?= $jbm["alamat"];?></li></a>
-                                        <li class="icon earth"><a href="mailto:<?= $jbm["email"];?>"><?= $jbm["email"];?></li></a>
-                                        <li class="icon phone"><?= $jbm["no_sekolah"];?></li>
-                                        <li class="icon clock multi"><div class="title">jam masuk</div>
-                                            <ul>
-                                                <li class="fill column"><span>Senin :</span> <span><?= $jbm["senin"];?></span></li>
-                                                <li class="fill column"><span>Selasa :</span> <span><?= $jbm["selasa"];?></span></li>
-                                                <li class="fill column"><span>Rabu :</span> <span><?= $jbm["rabu"];?></span></li>
-                                                <li class="fill column"><span>Kamis :</span> <span><?= $jbm["kamis"];?></span></li>
-                                                <li class="fill column"><span>Jumat :</span> <span><?= $jbm["jumat"];?></span></li>
-                                                <li class="fill column"><span>Sabtu :</span> <span><?= $jbm["sabtu"];?></span></li>
-                                                <li class="fill column"><span>Minggu :</span> <span><?= $jbm["minggu"];?></span></li>
-                                               
-                                                
-                                            </ul>
-                                        </li>
-                                        <li class="ion-university"><div class="title">Jurusan</div>
-                                            <ul>
-                                                <li class="fill column"><?= $jbm["jurusan"];?></li>
-                                            </ul>
-                                        </li>
-                                        <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>">Website Official Sekolah</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                           
-
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </main>
                 <footer class="footer container container-palette">
-                <div class="footer-content section">
+            <div class="footer-content section">
                 <div class="container">
                     <div class="row footer-results">              
                         <div class="col-md-3 col-sm-6 f-box">
@@ -202,7 +125,7 @@ $bsk = query("SELECT * FROM tb_berita");
                             <ul class="list-f">
                                 <li><a href="tentangcs.html">Tentang Cari Sekolah</a></li>
                                 <li><a href="page_faq.html">Pertanyaan</a></li>
-                                <li><a href="testimoni.php">Testimoni</a></li>
+                                <li><a href="testimoni.html">Testimoni</a></li>
                                 
                             </ul>
                         </div>              

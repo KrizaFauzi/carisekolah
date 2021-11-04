@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
 		echo 
 			"<script>
 				alert('Data Sekolah Gagal Ditambahkan');
-				document.location.href = 'admin-sekolah-1.php';
+				document.location.href = 'admin-sekolah.php';
 			</script>";
 	}
 
@@ -33,13 +33,13 @@ if(isset($_POST["proses"])){
 		echo 
 			"<script>
 				alert('Berita Berhasil Ditambahkan');
-				document.location.href = 'admin-sekolah.php';
+				document.location.href = 'admin-sekolah-5.php';
 			</script>";
 	}else {
 		echo 
 			"<script>
 				alert('Berita Gagal Ditambahkan');
-				document.location.href = 'admin-sekolah-1.php';
+				document.location.href = 'admin-sekolah-5.php';
 			</script>";
 	}
 
@@ -131,16 +131,19 @@ function showCheckboxes() {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <ul class="nav-side">                  
-                        <li>
+                    <ul class="nav-side">
+                    <li >
                             <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
+                        </li>                  
+                        <li >
+                            <a href="admin-sekolah-5.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Berita yang telah dibuat</span></a>
                         </li>                    
-                        <li  class="active">
+                        <li class="active">
                             <a href="admin-sekolah-1.php"><i class="nav-icon ion-plus"></i><span class="nav-label">Tambah data website</span></a>
                         </li>                    
                         <li>
                             <a href="admin-sekolah-4.php"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
-                        </li>                         
+                        </li>                       
                         <li>
                             <a href="index.php"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
                         </li>                             
@@ -460,7 +463,7 @@ function showCheckboxes() {
                                                 </label>
                                                         <input type="file" class="hidden" name="berita_3" id="berita_3">
                                                     </p>
-                                            </div>  
+                                            </div> 
                                         </div>
                                     </div>   
                                 </div> 

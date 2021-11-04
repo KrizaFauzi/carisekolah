@@ -1,7 +1,6 @@
-<?php
+<?php 
 
 session_start();
-
 
 if($_SESSION['level']==""){
  header("location:multilevel/index.php");
@@ -9,8 +8,7 @@ if($_SESSION['level']==""){
 
 
 require 'function.php';
-$jbm = query("SELECT * FROM tb_sekolah");
-
+$jbm = query("SELECT * FROM tb_berita");
 
 ?>
 <!DOCTYPE html>
@@ -43,8 +41,8 @@ $jbm = query("SELECT * FROM tb_sekolah");
             <div class="sidebar">
                 <div class="bar-head">
                     <div class="logo">
-                        <a href="index.php" class="link">Cari Sekolah</a>
-                        <a href="index.php" class="link-mobile">C</a>
+                        <a href="index.html" class="link">Cari Sekolah</a>
+                        <a href="index.html" class="link-mobile">C</a>
                     </div>
                 </div>
                 <div class="widget left-menu">
@@ -55,10 +53,10 @@ $jbm = query("SELECT * FROM tb_sekolah");
                         <span class="icon-bar"></span>
                     </button>
                     <ul class="nav-side">
-                    <li class="active">
+                    <li >
                             <a href="admin-sekolah.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Website yang telah dibuat</span></a>
                         </li>                  
-                        <li >
+                        <li class="active">
                             <a href="admin-sekolah-5.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Berita yang telah dibuat</span></a>
                         </li>                    
                         <li>
@@ -89,13 +87,13 @@ $jbm = query("SELECT * FROM tb_sekolah");
                             Kriza
                         </div>
                     </div><!-- /.profile-card -->
-                   <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>				
+                   <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>				
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-reviews">
                         <div class="section-header">
                             <h2 class="title">
-                                Website Yang Telah dibuat
+                                Berita yang telah dibuat
                             </h2>
                         </div>
                         <table class="table-panel footable table-listings">
@@ -104,30 +102,30 @@ $jbm = query("SELECT * FROM tb_sekolah");
                             <tr>
                                 <td><?= $i ?></td>
                                 <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    <a href="#" class="link">
-                                       <img class="image-preview preview-95x88"  src="img/<?= $row["logo"]; ?>" alt="">
+                                    <a href="berita.php?id=<?= $row["id"];?>" class="link">
+                                       <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
                                     </a>
                                 </td>
                                 <td class="preview-mobile" data-type="html">
                                     <div>
-                                        <a href="listing.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["nama_sekolah"]; ?> </a>
+                                        <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
                                     </div>
                                     <div>
                                         <span class="listing-tags tags">
-                                            <?= $row["alamat"];?>  ·  <?= $row["provinsi"];?>
+                                            <?= $row["asal"];?>  
                                         </span>
                                     </div>
                                 </td>
                                 <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                    <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York"><a href="<?= $row["maps"];?>"><?= $row["alamat"];?></span></a>
+                                    
                                 </td>
                                 <td data-title="" data-breakpoints="xs" data-type="html">
-                                    <a href="edit.php?id=<?= $row["id"];?>" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
-                                    <a href="hapus.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
+                                    <a href="edit1.php?id=<?= $row["id"];?>" class='btn btn-listing btn-primary'><i class="ion-ios-compose-outline"></i> Ubah</a>
+                                    <a href="hapus1.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
                                 </td>
                             </tr>
 <?php $i++; ?>
-<?php endforeach; ?>   
+<?php endforeach; ?>      
                         </table>
                     </div>
                 </div>

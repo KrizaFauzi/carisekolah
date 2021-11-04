@@ -51,7 +51,7 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
             <div class="container container-palette top-bar affix-menu">
                 <div class="container">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">Cari Sekolah</a></div>
+                        <div class="pull-left logo"><a href="index.php">Cari Sekolah</a></div>
                         
                         <div class="top-bar-btns">
                             <ul class="nav-items">
@@ -69,9 +69,9 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
-                                <li><a href="admin-sekolah.html">Admin</a></li>
-                                <li><a href="homepage-slider-top.html">Daftar Sekolah</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
+                                <li><a href="admin-sekolah.php">Admin</a></li>
+                                <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                                 
                             </ul>

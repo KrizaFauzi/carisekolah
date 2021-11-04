@@ -43,8 +43,8 @@ $jbm = query("SELECT * FROM tb_sekolah");
             <div class="sidebar">
                 <div class="bar-head">
                     <div class="logo">
-                        <a href="index.html" class="link">Cari Sekolah</a>
-                        <a href="index.html" class="link-mobile">C</a>
+                        <a href="index.php" class="link">Cari Sekolah</a>
+                        <a href="index.php" class="link-mobile">C</a>
                     </div>
                 </div>
                 <div class="widget left-menu">
@@ -65,7 +65,7 @@ $jbm = query("SELECT * FROM tb_sekolah");
                             <a href="admin-sekolah-4.php"><i class="nav-icon ion-person"></i><span class="nav-label">Profil</span></a>
                         </li>                       
                         <li>
-                            <a href="index.html"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
+                            <a href="index.php"><i class="nav-icon ion-android-home"></i><span class="nav-label">Beranda</span></a>
                         </li>                             
                         <li>
                             <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">Keluar</span></a>

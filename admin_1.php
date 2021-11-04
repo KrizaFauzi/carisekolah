@@ -13,6 +13,17 @@ if (!$conn) {
   header("location:multilevel/index.php");
  }
 
+ $get1 = mysqli_query($conn,"SELECT * FROM loginmulti");
+ $count1 = mysqli_num_rows($get1);
+
+ $get2 = mysqli_query($conn,"SELECT * FROM tb_sekolah");
+ $count2 = mysqli_num_rows($get2); 
+
+ $get3 = mysqli_query($conn,"SELECT * FROM testimoni");
+ $count3 = mysqli_num_rows($get3);
+ 
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -81,21 +92,21 @@ if (!$conn) {
                     <div class="section-shortcut">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                <div class="box-shortcut">
+                                <div class="box-shortcut" style = "width:300px;">
 
-                                    <div class="box-shortcut-body">
-                                        <span class="count color-green">5</span><span class="title">jumlah sekolah</span>
+                                    <div class="box-shortcut-body" >
+                                        <span class="count color-green"><?=$count2;?></span><span class="title">jumlah sekolah</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                 <div class="box-shortcut">
-                                    <div class="box-shortcut-body"><span class="count color-yellow">1</span><span class="title">jumlah akun</span></div>
+                                    <div class="box-shortcut-body"><span class="count color-yellow"><?=$count1;?></span><span class="title">jumlah akun</span></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                 <div class="box-shortcut">
-                                    <div class="box-shortcut-body"><span class="count color-red">2</span><span class="title">ulasan</span></div>
+                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count3;?></span><span class="title">ulasan</span></div>
                                 </div>
                         </div>
                     </div>

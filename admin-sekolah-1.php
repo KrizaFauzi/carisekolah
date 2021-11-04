@@ -420,8 +420,8 @@ function showCheckboxes() {
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="berita">Judul Berita</label>
-                                                <input type="text" class="form-control"  name="berita" id="berita" placeholder="nama Berita ">
+                                                <label for="judul">Judul Berita</label>
+                                                <input type="text" class="form-control"  name="judul" id="judul" placeholder="nama Berita ">
                                             </div>
                                         </div>
                                         <div class="col-md-12">

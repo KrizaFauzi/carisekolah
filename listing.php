@@ -1,12 +1,10 @@
 <?php
 require 'function.php';
+$conn = mysqli_connect("localhost", "root", "", "carisekolah");
 
 $id = $_GET["id"];
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
-
-$tjd = query("SELECT * FROM tb_berita WHERE id = $id");
-
 
 
 ?>
@@ -52,7 +50,7 @@ $tjd = query("SELECT * FROM tb_berita WHERE id = $id");
             <div class="container container-palette top-bar affix-menu top-bar-color top-bar-white">
                 <div class="container-top">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">C</a></div>
+                        <div class="pull-left logo"><a href="index.php">C</a></div>
                         <div class="pull-left">
                             <div class="local-form">
                             </div>
@@ -67,9 +65,9 @@ $tjd = query("SELECT * FROM tb_berita WHERE id = $id");
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
                                 <li><a href="multilevel/index.php">Admin</a></li>
-                                <li><a href="homepage-slider-top.html">Daftar Sekolah</a></li>
+                                <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -121,7 +119,7 @@ $tjd = query("SELECT * FROM tb_berita WHERE id = $id");
                                     <li class="content-box"> 
                                         <div class="list-reviews-body">
                                             <div class="list-reviews-title">
-                                                <h2><a href="#"><?= $tjd["berita"];?></a></h2>
+                                                <h2><a href="#"><?= $bsk["judul"];?></a></h2>
                                             </div>
                                             <div class="description">Pergantian Kepala SMKN 8 Malang yang ke-6 kalinya terjadi (tepatnya) per tanggal 01 September 2021. Drs. Cone Kustarto Arifin menjabat sebagai Kepala Sekolah selama kurang lebih 1 tahun,
                                                  kemudian diganti dengan Kepala Sekolah yang baru yakni Drs. H. Moh. Guntur Sayekti, M.Pd. Kepala sekolah adalah seorang pemimpin yang memiliki tugas dan fungsi untuk mengatur agar sekolah dapat berjalan dengan baik dan maksimal. Ia harus mampu untuk melakukan terobosan dalam mengembangkan sekolah yang ia pimpin agar lebih baik dari sebelumnya,

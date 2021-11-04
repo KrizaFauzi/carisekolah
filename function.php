@@ -59,7 +59,7 @@ function tambah($data){
 
 function tm_berita($data){
 	global $db;
-	$berita = htmlspecialchars($data["berita"]);
+	$judul = htmlspecialchars($data["judul"]);
 	$asal = htmlspecialchars($data["asal"]);
 	$isi_berita = htmlspecialchars($data["isi_berita"]);
     $berita_1 = upload5();
@@ -75,9 +75,9 @@ function tm_berita($data){
 		return false;
 	}
 
-	$query = "INSERT INTO tb_berita
+	$query = "INSERT INTO tb_sekolah
 				VALUES
-				('', '$berita','$asal' , '$berita_1','$berita_2' , '$berita_3' ,'$isi_berita' ) 
+				('', '$judul','$asal' , '$berita_1','$berita_2' , '$berita_3' ,'$isi_berita' ) 
 				";
 	mysqli_query($db, $query);
 

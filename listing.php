@@ -157,7 +157,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                         </li>
                                         <li class="ion-university"><div class="title">Jurusan</div>
                                             <ul>
-                                                <li class="fill column"><span>Rekaya Perangkat Lunak</span></li>
+                                                <li class="fill column"><?= $jbm["jurusan"];?></li>
                                             </ul>
                                         </li>
                                         <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>"><?= $jbm["ofc_web"];?></a></li>

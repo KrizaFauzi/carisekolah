@@ -185,30 +185,15 @@ function showCheckboxes() {
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
-                                                          <label for="RPL">
-                                                          <input type="checkbox" name="jurusan" value="rpl" id="RPL"/>RPL</label>
-
-                                                          <label for="TKJ">
-                                                          <input type="checkbox"  name="jurusan" value="tkj" id="TKJ"/>TKJ</label>
-
-                                                          <label for="Mekatronika">
-                                                          <input type="checkbox"  name="jurusan" value="mekatronika" id="Mekatronika"/>Mektronika</label>
-
-                                                          
-                                                          <label for="Kesehatan">
-                                                          <input type="checkbox" name="jurusan" value="kesehatan" id="Kesehatan"/>Kesehatan dan Pekerjaan Sosial</label>
-
-                                                          <label for="Bisnis">
-                                                          <input type="checkbox"  name="jurusan" value="bisnis" id="Bisnis"/>Bisnis dan Manajemen</label>
-
-                                                          <label for="TKR">
-                                                          <input type="checkbox" name="jurusan" value="tkr" id="TKR"/>TKR</label>
-
-                                                          <label for="Kemaritiman">
-                                                          <input type="checkbox" name="jurusan" value="kemaritiman" id="Kemaritiman"/>Kemaritiman</label>
-
-                                                          <label for="Pariwisata">
-                                                          <input type="checkbox" name="jurusan" value="pariwisata" id="Pariwisata"/>Pariwisata</label>
+                                                           
+                                                          <input type="checkbox" name="jurusan[]" value="RPL" id="RPL"/>RPL</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="TKJ" id="TKJ"/>TKJ</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" id="Mekatronika"/>Mektronika</br> 
+                                                          <input type="checkbox" name="jurusan[]" value="Kesehatan dan Pekerjaan Sosial" id="Kesehatan"/>Kesehatan dan Pekerjaan Sosial</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" id="Bisnis"/>Bisnis dan Manajemen</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TKR" id="TKR"/>TKR</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Kemaritiman" id="Kemaritiman"/>Kemaritiman</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" id="Pariwisata"/>Pariwisata
                                                 </div>
                                             </div>
                                         </div>

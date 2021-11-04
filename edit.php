@@ -6,10 +6,7 @@ $id = $_GET["id"];
 
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
-
-
-
-
+$o = explode(',', $jbm['jurusan']);
 
 if(isset($_POST["submit"])){
 
@@ -28,6 +25,8 @@ if(isset($_POST["submit"])){
 				
 			</script>";
 	}
+
+
 
 }
 
@@ -161,30 +160,14 @@ function showCheckboxes() {
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
-                                                          <label for="RPL">
-                                                          <input type="checkbox" name="jurusan" value="rpl" id="RPL"/>RPL</label>
-
-                                                          <label for="TKJ">
-                                                          <input type="checkbox"  name="jurusan" value="tkj" id="TKJ"/>TKJ</label>
-
-                                                          <label for="Mekatronika">
-                                                          <input type="checkbox"  name="jurusan" value="mekatronika" id="Mekatronika"/>Mektronika</label>
-
-                                                          
-                                                          <label for="Kesehatan">
-                                                          <input type="checkbox" name="jurusan" value="kesehatan" id="Kesehatan"/>Kesehatan dan Pekerjaan Sosial</label>
-
-                                                          <label for="Bisnis">
-                                                          <input type="checkbox"  name="jurusan" value="bisnis" id="Bisnis"/>Bisnis dan Manajemen</label>
-
-                                                          <label for="TKR">
-                                                          <input type="checkbox" name="jurusan" value="tkr" id="TKR"/>TKR</label>
-
-                                                          <label for="Kemaritiman">
-                                                          <input type="checkbox" name="jurusan" value="kemaritiman" id="Kemaritiman"/>Kemaritiman</label>
-
-                                                          <label for="Pariwisata">
-                                                          <input type="checkbox" name="jurusan" value="pariwisata" id="Pariwisata"/>Pariwisata</label>
+                                                          <input type="checkbox" name="jurusan[]" value="RPL" <?php in_array("RPL",$o) ? print 'checked' :'' ?> >RPL</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="TKJ" <?php in_array("TKJ",$o) ? print 'checked' :'' ?>>TKJ</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" <?php in_array("Mekatronika",$o) ? print 'checked' :'' ?> />Mektronika</br> 
+                                                          <input type="checkbox" name="jurusan[]" value="kesehatan dan Pekerjaan Sosial" <?php in_array("Kesehatan dan Pekerjaan Sosial",$o) ? print 'checked' :'' ?> />Kesehatan dan Pekerjaan Sosial</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" <?php in_array("Bisnis dan Manajemen",$o) ? print 'checked' :'' ?> />Bisnis dan Manajemen</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TKR" <?php in_array("TKR",$o) ? print 'checked' :'' ?>>TKR</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Kemaritiman" <?php in_array("Kemaritiman",$o) ? print 'checked' :'' ?> />Kemaritiman</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" <?php in_array("Pariwisata",$o) ? print 'checked' :'' ?> />Pariwisata
                                                 </div>
                                             </div>
                                         </div>

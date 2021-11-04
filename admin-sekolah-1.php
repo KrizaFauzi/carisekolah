@@ -8,18 +8,37 @@ if($_SESSION['level']==""){
 
 require 'function.php';
 
+
 if(isset($_POST["submit"])){
 
 	if(tambah($_POST) > 0 ){
 		echo 
 			"<script>
-				alert('data berhasil ditambahkan');
+				alert('Data Sekolah berhasil ditambahkan');
 				document.location.href = 'admin-sekolah.php';
 			</script>";
 	}else {
 		echo 
 			"<script>
-				alert('data gagal ditambahkan');
+				alert('Data Sekolah Gagal Ditambahkan');
+				document.location.href = 'admin-sekolah-1.php';
+			</script>";
+	}
+
+}
+
+if(isset($_POST["proses"])){
+
+	if(tm_berita($_POST) > 0 ){
+		echo 
+			"<script>
+				alert('Berita Berhasil Ditambahkan');
+				document.location.href = 'admin-sekolah.php';
+			</script>";
+	}else {
+		echo 
+			"<script>
+				alert('Berita Gagal Ditambahkan');
 				document.location.href = 'admin-sekolah-1.php';
 			</script>";
 	}
@@ -392,92 +411,70 @@ function showCheckboxes() {
                     <div class="section-form section">
                         <div class="section-header">
                             <h2 class="title">
-                                Berita sekolah
+                                BERITA 
                             </h2>
                         </div>
                         <div class="box-content">
-                            <form>
-                                <div class="form-group-in">
-                                    <label for="senin" >Senin</label>
+                            <form action="" method="post" enctype="multipart/form-data" >
+                                <div class="form-section">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="senin" id="senin" placeholder="Jadwal Masuk dan Pulang">
+                                                <label for="berita">Judul Berita</label>
+                                                <input type="text" class="form-control"  name="berita" id="berita" placeholder="nama Berita ">
                                             </div>
                                         </div>
-
-                                    </div>
-                                </div>
-                                <div class="form-group-in">
-                                    <label for="selasa">Selasa</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="senin" id="selasa" placeholder="Jadwal Masuk dan Pulang">
+                                                <label for="asal">Sumber Berita</label>
+                                                <input type="text" class="form-control"  name="asal" id="asal" placeholder="Sumber Berita ">
                                             </div>
                                         </div>
-                                        
-                                    </div>
                                 </div>
-                                <div class="form-group-in">
-                                    <label for="rabu">Rabu</label>
+                                <div class="form-section">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="rabu" id="rabu" placeholder="Jadwal Masuk dan Pulang">
+                                        <div class="col-md-12">
+                                            <div class="form-group-in">
+                                                <label >Foto Berita 1</label>
+                                                    <p class="image_upload">
+                                                        <label for="berita_1">
+                                                        <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                        <input type="file" class="hidden" name="berita_1" id="berita_1">
+                                                    </p>
                                             </div>
+                                            <div class="form-group-in">
+                                                <label >Foto Berita 2</label>
+                                                    <p class="image_upload">
+                                                        <label for="berita_2">
+                                                        <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                        <input type="file" class="hidden" name="berita_2" id="berita_2">
+                                                    </p>
+                                            </div>
+                                            <div class="form-group-in">
+                                                <label >Foto Berita 3</label>
+                                                    <p class="image_upload">
+                                                        <label for="berita_3">
+                                                        <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow" style="width: 900px;" ><span class='glyphicon glyphicon-paperclip'></span> Sisipkan Gambar</a>
+                                                </label>
+                                                        <input type="file" class="hidden" name="berita_3" id="berita_3">
+                                                    </p>
+                                            </div>  
                                         </div>
-                                       
+                                    </div>   
+                                </div> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="isi_berita">ISI BERITA</label>
+                                            <textarea class="form-control" id="isi_berita" name="isi_berita" rows="10"></textarea>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group-in">
-                                    <label for="kamis">Kamis</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="kamis" name="kamis" placeholder="Jadwal Masuk dan Pulang">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="form-group-in">
-                                    <label for="jumat">Jumat</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="jumat" name="jumat" placeholder="Jadwal Masuk dan Pulang">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="form-group-in">
-                                    <label for="sabtu">Sabtu</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="sabtu" name="sabtu" placeholder="Jadwal Masuk dan Pulang">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="form-group-in">
-                                    <label for="minggu">Minggu</label>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="minggu" name="minggu" placeholder="Jadwal Masuk dan Pulang">
-                                            </div>
-                                        </div>
-                                       
-                                       
-                                    </div>
-                                     <button type="submit" class="btn btn-success">Kirim</button>
-                                </div>
-                            </form>
-                        </div>
+                                <button type="submit" name="proses" class="btn btn-success">Tambahkan Berita</button>
+                                                
+                                </form></div>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ function query($query){
 	}
 	return $rows;
 }
+
  
 function tambah($data){
 	global $db;
@@ -19,7 +20,7 @@ function tambah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
-    $jurusan = htmlspecialchars(implode(',',$data["jurusan"]));
+    $jurusan = htmlspecialchars(implode(',', $data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
@@ -50,6 +51,33 @@ function tambah($data){
 	$query = "INSERT INTO tb_sekolah
 				VALUES
 				('', '$nama_sekolah','$kategori','$jurusan' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
+				";
+	mysqli_query($db, $query);
+
+	return mysqli_affected_rows($db);
+}
+
+function tm_berita($data){
+	global $db;
+	$berita = htmlspecialchars($data["berita"]);
+	$asal = htmlspecialchars($data["asal"]);
+	$isi_berita = htmlspecialchars($data["isi_berita"]);
+    $berita_1 = upload5();
+	if ( !$berita_1 ) {
+		return false;
+	}
+    $berita_2 = upload6();
+	if ( !$berita_2 ) {
+		return false;
+	}
+    $berita_3 = upload7();
+	if ( !$berita_3 ) {
+		return false;
+	}
+
+	$query = "INSERT INTO tb_berita
+				VALUES
+				('', '$berita','$asal' , '$berita_1','$berita_2' , '$berita_3' ,'$isi_berita' ) 
 				";
 	mysqli_query($db, $query);
 
@@ -236,6 +264,141 @@ function upload4(){
 
 
 }
+function upload5(){
+		
+    $namaFile = $_FILES['berita_1']['name'];
+    $ukuranFile = $_FILES['berita_1']['size'];
+    $error = $_FILES['berita_1']['error'];
+    $tmpname = $_FILES['berita_1']['tmp_name'];
+
+
+    if ( $error === 4 ) {
+        echo "<script>
+        alert ('pilih gambar terlebih dahulu');
+        </script>";
+        
+        return false;
+    }
+
+
+    $ekstensiGambarValid = ['jpg','jpeg','png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)){
+        echo "<script>
+        alert ('yang anda upload bukan gambar');
+        </script>";
+        return false;
+    }
+
+    if ($ukuranFile > 2500000) { 
+        echo "<script>
+        alert ('ukuran file terlalu besar');
+        </script>";
+        return false;
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpname, 'img/'.$namaFileBaru);
+
+    return $namaFileBaru;
+
+
+}
+
+function upload6(){
+		
+    $namaFile = $_FILES['berita_2']['name'];
+    $ukuranFile = $_FILES['berita_2']['size'];
+    $error = $_FILES['berita_2']['error'];
+    $tmpname = $_FILES['berita_2']['tmp_name'];
+
+
+    if ( $error === 4 ) {
+        echo "<script>
+        alert ('pilih gambar terlebih dahulu');
+        </script>";
+        
+        return false;
+    }
+
+
+    $ekstensiGambarValid = ['jpg','jpeg','png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)){
+        echo "<script>
+        alert ('yang anda upload bukan gambar');
+        </script>";
+        return false;
+    }
+
+    if ($ukuranFile > 2500000) { 
+        echo "<script>
+        alert ('ukuran file terlalu besar');
+        </script>";
+        return false;
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpname, 'img/'.$namaFileBaru);
+
+    return $namaFileBaru;
+
+
+}
+
+function upload7(){
+		
+    $namaFile = $_FILES['berita_3']['name'];
+    $ukuranFile = $_FILES['berita_3']['size'];
+    $error = $_FILES['berita_3']['error'];
+    $tmpname = $_FILES['berita_3']['tmp_name'];
+
+
+    if ( $error === 4 ) {
+        echo "<script>
+        alert ('pilih gambar terlebih dahulu');
+        </script>";
+        
+        return false;
+    }
+
+
+    $ekstensiGambarValid = ['jpg','jpeg','png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)){
+        echo "<script>
+        alert ('yang anda upload bukan gambar');
+        </script>";
+        return false;
+    }
+
+    if ($ukuranFile > 2500000) { 
+        echo "<script>
+        alert ('ukuran file terlalu besar');
+        </script>";
+        return false;
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpname, 'img/'.$namaFileBaru);
+
+    return $namaFileBaru;
+
+
+}
+
 
 /*=============================================! FUNGSI UPLOAD !=============================================*/
 
@@ -255,7 +418,7 @@ function ubah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
-    $jurusan = htmlspecialchars(implode($data["jurusan"]));
+    $jurusan = htmlspecialchars(implode(',', $data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);

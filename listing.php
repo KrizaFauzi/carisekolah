@@ -5,6 +5,9 @@ $id = $_GET["id"];
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
 
+$tjd = query("SELECT * FROM tb_berita WHERE id = $id");
+
+
 
 ?>
 
@@ -118,7 +121,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                     <li class="content-box"> 
                                         <div class="list-reviews-body">
                                             <div class="list-reviews-title">
-                                                <h2><a href="#">Kepala Sekolah Baru dengan SEMANGAT BARU!</a></h2>
+                                                <h2><a href="#"><?= $tjd["berita"];?></a></h2>
                                             </div>
                                             <div class="description">Pergantian Kepala SMKN 8 Malang yang ke-6 kalinya terjadi (tepatnya) per tanggal 01 September 2021. Drs. Cone Kustarto Arifin menjabat sebagai Kepala Sekolah selama kurang lebih 1 tahun,
                                                  kemudian diganti dengan Kepala Sekolah yang baru yakni Drs. H. Moh. Guntur Sayekti, M.Pd. Kepala sekolah adalah seorang pemimpin yang memiliki tugas dan fungsi untuk mengatur agar sekolah dapat berjalan dengan baik dan maksimal. Ia harus mampu untuk melakukan terobosan dalam mengembangkan sekolah yang ia pimpin agar lebih baik dari sebelumnya,
@@ -160,7 +163,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                                 <li class="fill column"><?= $jbm["jurusan"];?></li>
                                             </ul>
                                         </li>
-                                        <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>"><?= $jbm["ofc_web"];?></a></li>
+                                        <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>">Website Official Sekolah</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -172,7 +175,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
             </div>
         </main>
                 <footer class="footer container container-palette">
-            <div class="footer-content section">
+                <div class="footer-content section">
                 <div class="container">
                     <div class="row footer-results">              
                         <div class="col-md-3 col-sm-6 f-box">
@@ -180,7 +183,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                             <ul class="list-f">
                                 <li><a href="tentangcs.html">Tentang Cari Sekolah</a></li>
                                 <li><a href="page_faq.html">Pertanyaan</a></li>
-                                <li><a href="testimoni.html">Testimoni</a></li>
+                                <li><a href="testimoni.php">Testimoni</a></li>
                                 
                             </ul>
                         </div>              

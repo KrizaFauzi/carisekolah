@@ -110,7 +110,7 @@
                     <div class="row result-container row-flex">
                         <?php
                             $no = 1;
-                            $query = mysqli_query($conn,"SELECT * FROM tb_sekolah LIMIT 0, 2 ");
+                            $query = mysqli_query($conn,"SELECT * FROM tb_sekolah LIMIT 0, 3 ");
 
                             if (isset($_GET['cari'])) {
                                 $query = mysqli_query($conn,"SELECT * FROM tb_sekolah WHERE nama_sekolah LIKE '%".$_GET['cari']."%'");

@@ -20,7 +20,7 @@ if(isset($_POST["submit"])){
 		echo 
 			"<script>
 				alert('data gagal ditambahkan');
-				document.location.href = 'admin-sekolah-4.php';
+				document.location.href = 'admin-sekolah-2.php';
 			</script>";
 	}
 
@@ -72,6 +72,7 @@ if(isset($_POST["submit"])){
                                 Perbarui Profil
                             </h2>
                         </div>
+                    </div>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="box-content">
                             <div class="profile-editor clearfix">
@@ -103,7 +104,7 @@ if(isset($_POST["submit"])){
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group form-xs-group">
-                                                        <textarea class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)" name="deskripsi"></textarea>
+                                                        <textarea class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)" name="tentang"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,11 +113,12 @@ if(isset($_POST["submit"])){
                                         <div class="form-group form-xs-group">
                                             <button type="submit" class="btn btn-xs btn-danger btn-local-danger" name="submit">Perbarui Profil</button>
                                         </div>
-                    </form>
+                    
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
+                    </form>
                     
                     </div>
                 </div>

@@ -15,7 +15,7 @@ function tambah($data){
 	global $db;
 	$nama = htmlspecialchars($data["nama"]);
 	$email = htmlspecialchars($data["email"]);
-    $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $tentang = htmlspecialchars($data["tentang"]);
 
 	$foto = upload();
 	if ( !$foto ) {
@@ -23,9 +23,9 @@ function tambah($data){
 	}
 
 
-	$query = "INSERT INTO tb_profiladmin
+	$query = "INSERT INTO profiladmin
 				VALUES
-				('', '$nama', '$email', '$deskripsi', '$foto') 
+				('', '$nama', '$email', '$tentang', '$foto') 
 				";
 	mysqli_query($db, $query);
 

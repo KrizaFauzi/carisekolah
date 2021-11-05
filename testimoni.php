@@ -103,7 +103,7 @@ if(isset($_POST['submit'])){
 <?php foreach ($jbm as $row) : ?> 
                                     <li class="content-box">
                                         <a href="#">
-                                            <img src="assets/img/placeholder/anony.png" alt="" style="width: 50px;" />
+                                            <img src="assets/img/placeholder/unkwon.jpg" alt="" style="width: 50px;" />
                                         </a>
                                         <div class="list-reviews-body">
                                             <div class="list-reviews-title">

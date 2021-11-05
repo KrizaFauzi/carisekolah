@@ -53,7 +53,7 @@ $bsk = query("SELECT * FROM tb_berita WHERE id = $id")[0];
                         </div> 
                             <div class="top-bar-btns">
                             <ul class="nav-items">
-                                <li><a href="login.html" class="btn btn-custom-primary">Masuk</a></li>
+                                <li><a href="multilevel/index.php" class="btn btn-custom-primary">Masuk</a></li>
                                 <li><a href="#" class="btn btn-danger">Keluar </a></li>
                             </ul>
                         </div>

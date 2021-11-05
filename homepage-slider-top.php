@@ -8,6 +8,8 @@ $halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
 $awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
 
 $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ");
+
+$tbs = query("SELECT * FROM tb_berita");
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +41,7 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
         <!-- Start JS MAP  -->
         <link rel="stylesheet" href="assets/css/map.css" />
         <!-- End JS MAP  -- >
-        <!-- Start select-picke  -->
+        <!  -- Start select-picke  -->
         <link rel="stylesheet" href="assets/libraries/select-picker-auhau/dist/picker.min.css" />
         <!-- End select-picke  -->
         <link rel="stylesheet" href="assets/css/custom.css" />
@@ -51,7 +53,7 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
             <div class="container container-palette top-bar affix-menu">
                 <div class="container">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">Cari Sekolah</a></div>
+                        <div class="pull-left logo"><a href="index.php">Cari Sekolah</a></div>
                         
                         <div class="top-bar-btns">
                             <ul class="nav-items">
@@ -69,9 +71,9 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
-                                <li><a href="admin-sekolah.html">Admin</a></li>
-                                <li><a href="homepage-slider-top.html">Daftar Sekolah</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
+                                <li><a href="admin-sekolah.php">Admin</a></li>
+                                <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                                 
                             </ul>
@@ -191,7 +193,9 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
                                     </div>
                                 </div>
                             </div>
-                        </div>                
+                        </div>
+                        
+                        
 <?php $i++; ?>
 <?php endforeach; ?>                                 
                     </div>
@@ -289,197 +293,27 @@ $jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ")
             <section class="section-picks section container container-palette">
                 <div class="container">
                     <div class="section-title slim">
-                        <h2 class="title">sekolah yang banyak di minati </h2>
+                        <h2 class="title">Berita Sekolah</h2>
                     </div>
                     <div id="owl-carousel-items" class="owl-carousel-items owl-carousel owl-theme owl-carousel-property">
+                    
+<?php $i=1; ?>
+<?php foreach ($tbs as $row) : ?>
                         <div class="item">
                             <div class="thumbnail thumbnail-property">
                                 <div class="thumbnail-image">
                                     <img src="assets/img/placeholder/card-preview.png" alt="" />
-                                    <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
+                                    <a href="berita.php?id=<?= $row["id"]; ?>"></a>
                                 </div>
                                 <div class="caption">
                                     <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMKN 8 MALANG </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            4.5 <i class="icon-star-ratings-4-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMK </a>
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">jl. teluk pacitan, arjosari </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>               
-                        <div class="item">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                        <img src="assets/img/placeholder/logoman2mlg.png" alt="" />
-                                    <a href="listing.html">
-                                    </a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">MAN 2 MALANG </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            5.0 <i class="icon-star-ratings-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMA </a>  
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">jl. bandung no.7, klojen,malang </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                
-                        <div class="item">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                    <img src="assets/img/placeholder/logosman3malang.jfif" alt="" />
-                                    <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMAN 3 MALANG </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            3.0 <i class="icon-star-ratings-3"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMA </a>
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">JL.sultan agung no.7,klojen, malang </span>
-                                        </a>
+                                        <h3 class="thumbnail-title"><a href="listing.html"><?= $row["judul"]; ?></a></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                    <img src="assets/img/placeholder/logosman1mlg.png" alt="" />
-                                    <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMAN 1 MALANG </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            4.5 <i class="icon-star-ratings-4-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMA </a>
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">JL.tugu no.1,kidul dalem, klojen </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                
-                        <div class="item">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                        <img src="assets/img/placeholder/logosmpn1mlg.jfif" alt="" />
-                                    <a href="listing.html">
-                                    </a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMPN 1 MALANG </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            5.0 <i class="icon-star-ratings-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMA </a> 
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">jl.lawu no.12 oro-oro dowo,klojen malang </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                
-                        <div class="item">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                    <img src="assets/img/placeholder/logosditinsanprmata.png" alt="" />
-                                    <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SDIT INSAN PERMATA </a></h3>
-                                        <span class="thumbnail-ratings">
-                                            3.0 <i class="icon-star-ratings-3"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SD/MI </a>
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">JL.akordion utara no.3 ,tunggulwulung </span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>              
+<?php $i++; ?>
+<?php endforeach; ?>                                
                     </div>
                 </div>
             </section> <!-- /.section-picks -->

@@ -1,3 +1,15 @@
+<?php
+ 
+ require 'function.php';
+ 
+ 
+ $conn = mysqli_connect("localhost","root","","carisekolah");
+
+ if (!$conn) {
+     echo "koneksi gagal" . mysql_connect_error();
+ }
+?>
+ 
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
@@ -39,7 +51,7 @@
             <div class="container container-palette top-bar overflow top-bar-white t-overflow affix-menu">
                 <div class="container">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">Cari Sekolah</a></div>
+                        <div class="pull-left logo"><a href="index.php">Cari Sekolah</a></div>
                         <div class="top-bar-btns">
                             <ul class="nav-items">
                                 <li><a href="multilevel/index.php" class="btn btn-custom-primary">Masuk</a></li>
@@ -50,7 +62,7 @@
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
                                 <li><a href="multilevel/index.php">Admin</a></li>
                                 <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
@@ -69,10 +81,10 @@
                         <div class="local-form">
                             <form action="#">
                                 <center><div class="form-group">
-                                    <input type="text" class="form-control" id="namasekolah" placeholder="Nama Sekolah" />
+                                    <input type="text" class="form-control" name="cari" placeholder="Nama Sekolah" style="width:300px;height:50px;"/>
                                 </div>         
                                 <div class="form-group form-group-btns">
-                                    <a href="listing.html" class="btn btn-custom btn-custom-secondary">Cari</a>
+                                    <button type="submit" class="btn btn-custom btn-custom-secondary"style="height:50px;">Cari</a>
                                 </div></center>
                             </form>
                         </div>
@@ -92,106 +104,45 @@
             <section class="section-picks section container container-palette">
                 <div class="container">
                     <div class="section-title">
-                        <h2 class="title">Sekolah favorit</h2>
-                        <span class="subtitle">Sekolah favorit yang kami rekomendasikan</span>
+                        <h2 class="title">Daftar Sekolah</h2>
+                        <span class="subtitle">Hasil pencarian </span>
                     </div>
                     <div class="row result-container row-flex">
+                        <?php
+                            $no = 1;
+                            $query = mysqli_query($conn,"SELECT * FROM tb_sekolah LIMIT 0, 3 ");
+
+                            if (isset($_GET['cari'])) {
+                                $query = mysqli_query($conn,"SELECT * FROM tb_sekolah WHERE nama_sekolah LIKE '%".$_GET['cari']."%'");
+                            }
+                            while ($dt = mysqli_fetch_assoc($query)) {
+                            ?> 
                         <div class="col-md-4 col-sm-12">
                             <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                    <center><img src="assets/img/placeholder/card-preview.png" style="width: 220px;" alt="" /></center>
+                                <div class="thumbnail-image" style="height: 350px;">
+                                    <center><img src="img/<?= $dt["logo"]; ?>"  alt="" /></center>
                                     <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
                                 </div>
                                 <div class="caption">
                                     <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMKN 8 Malang</a></h3>
-                                        <span class="thumbnail-ratings">
-                                            4.5 <i class="icon-star-ratings-4-5"></i>
-                                        </span>
+                                        <h3 class="thumbnail-title"><a href="listing.php?id=<?= $dt["id"];?>" class="listing-link"><?= $dt["nama_sekolah"]; ?></a></h3>
                                         <span class="type">
-                                            <a href="#">SMK</a>
+                                            <a href="#"><?= $dt["kategori"];?></a>
                                         </span>
                                     </div>
                                     <div class="caption-rs">
-                                        <a href="https://www.google.com/maps/place/Sekolah+Menengah+Kejuruan+Negeri+8+Malang/@-7.8885464,112.6125271,16z/data=!4m5!3m4!1s0x2dd6299ed2c476ad:0xfba1cc2ab944bab!8m2!3d-7.9362376!4d112.6618154?hl=id" class="btn-marker">
+                                        <a href="<?= $dt["maps"];?>" class="btn-marker">
                                             <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">Lokasi</span>
+                                            <span class="title"><?= $dt["alamat"];?></span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                        </div>                
-                        <div class="col-md-4 col-sm-6">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-
-                                    <center><img src="assets/img/placeholder/smpn13malang.png" style="width: 200px;" alt="" /></center>
-
-                                    <a href="listing.html">
-                                    </a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMPN 13 Malang</a></h3>
-                                        <span class="thumbnail-ratings">
-                                            5.0 <i class="icon-star-ratings-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMP</a>  
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">Lokasi</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                
-                        <div class="col-md-4 col-sm-6">
-                            <div class="thumbnail thumbnail-property">
-                                <div class="thumbnail-image">
-                                    <center><img src="assets/img/placeholder/smpn1gedangan.jpg" style="width: 300px;" alt="" /></center>
-                                    <a href="listing.html"></a>
-                                    <div class="icons">
-                                        <a href="https://www.facebook.com/share.php?u=http://test.com&amp;title="><i class="ion-android-share-alt"></i></a>
-                                        <a href="#" class='add_to_favorites'><i class="ion-android-favorite"></i></a>
-                                        <a href="listing.html"><i class="ion-location"></i></a>
-                                        <a href="listing.html"><i class="ion-forward"></i></a>
-                                    </div>
-                                </div>
-                                <div class="caption">
-                                    <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html">SMPN 1 Gedangan</a></h3>
-                                        <span class="thumbnail-ratings">
-                                            3.0 <i class="icon-star-ratings-4-5"></i>
-                                        </span>
-                                        <span class="type">
-                                            <a href="#">SMP</a>
-                                        </span>
-                                    </div>
-                                    <div class="caption-rs">
-                                        <a href="listing.html" class="btn-marker">
-                                            <span class="box"><i class="fa fa-map-marker"></i></span>
-                                            <span class="title">Lokasi</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>     
+                            <?php
+                            }
+                            ?>           
+                        
                     </div>
                 </div>
             </section> <!-- /.section-picks -->
@@ -253,69 +204,40 @@
                     </div>
                 </div>
             </section> <!-- /.section-category -->
-            <section class="section-reviews section container container-palette">
+            <section class="section-picks section container container-palette">
                 <div class="container">
-                    <div class="section-title">
+                    <div class="section-title slim">
                         <h2 class="title">Testimoni</h2>
-                        <span class="subtitle"></span>
                     </div>
-                    <div class="reviews-carousel">
-                        <div class="nav-r">
-                            <a href="#" class="nav-r-btn btn-left"><i class="ion-ios-arrow-left"></i></a>
-                            <a href="#" class="nav-r-btn btn-right"><i class="ion-ios-arrow-right"></i></a>
-                        </div>
-                        <div class="reviews-results clearfix">
+                    <div id="owl-carousel-items" class="owl-carousel-items owl-carousel owl-theme owl-carousel-property">
+                        <?php   
+                         $query = mysqli_query($conn,"SELECT * FROM testimoni");
+                         while ($ts = mysqli_fetch_assoc($query)) {
+                        ?>
+                       
+                       <div class="item">
                             <div class="review show">
-                                <div class="description">
-                                    Sangat Membantu Untuk mengetahui tentang sekolah sekolah
-                                </div>
+                                
                                 <div class="user-card">
                                     <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt="" />
+                                        <img src="assets/img/placeholder/pp_developer1.jpeg" alt="" style="height: 60px;" />
                                     </div>
                                     <div class="body">
-                                        <h3 class="name">Kriza Fauzi</h3>
-                                        <div class="contact"><span>untuk</span> <a href="Index.html" class="link">Cari Sekolsh</a></div>
+                                        <h3 class="name"><td><?= $ts['nama']; ?></td></h3>
+                                        <div class="contact"><span><?= $ts['deskripsi']; ?></a></div>
                                     </div>
                                 </div>
-                            </div>                
-                            <div class="review">
-                                <div class="description">
-                                   sanggat membantu
-                                </div>
-                                <div class="user-card">
-                                    <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt=""  />
-                                    </div>
-                                    <div class="body">
-                                        <h3 class="name">Ade rohma</h3>
-                                        <div class="contact"><span>Untuk</span> <a href="index.html" class="link">Cari Sekolah</a></div>
-                                    </div>
-                                </div>
-                            </div>               
-                            <div class="review">
-                                <div class="description">
-                                     Website ini sanggat bermanfaat  
-                                </div>
-                                <div class="user-card">
-                                    <div class="user-card-image image-cover">
-                                        <img src="assets/img/placeholder/anony.png" alt=""  />
-                                    </div>
-                                    <div class="body">
-                                        <h3 class="name">Hamba Allah</h3>
-                                        <div class="contact"><span>untuk</span> <a href="index.html" class="link">Cari Sekolah</a></div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                          
+                            
                         </div>
+                        <?php
+                        }
+                        ?>
+
                     </div>
                 </div>
             </section> <!-- /.section-reviews -->
-            <section class="section-blog section container container-palette">
-                <div class="container">
-                    
-                </div>
-            </section> <!-- /.section-blog -->
+           <!-- /.section-blog -->
         </main>
         <footer class="footer container container-palette">
             <div class="footer-content section">

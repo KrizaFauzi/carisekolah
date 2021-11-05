@@ -1,9 +1,13 @@
 <?php
 require 'function.php';
 
+
 $id = $_GET["id"];
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
+
+$bsk = query("SELECT * FROM tb_berita");
+
 
 
 ?>
@@ -26,6 +30,8 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
         <!-- Start Template files -->
         <link rel="stylesheet" href="assets/css/local.css" />
         <link rel="stylesheet" href="assets/css/local-media.css" />
+        <link rel="stylesheet" href="assets/css/admin-local.css" />
+        <link rel="stylesheet" href="assets/css/admin-local-media.css" />
         <!-- End  Template files -->
         <!-- Start blueimp  -->
         <link rel="stylesheet" href="assets/css/blueimp-gallery.min.css" />
@@ -49,7 +55,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
             <div class="container container-palette top-bar affix-menu top-bar-color top-bar-white">
                 <div class="container-top">
                     <div class="clearfix">
-                        <div class="pull-left logo"><a href="index.html">C</a></div>
+                        <div class="pull-left logo"><a href="index.php">C</a></div>
                         <div class="pull-left">
                             <div class="local-form">
                             </div>
@@ -64,9 +70,9 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                             <a href="" class="button-close"></a> 
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
-                                <li class="active"><a href="index.html">Beranda</a></li>
+                                <li class="active"><a href="index.php">Beranda</a></li>
                                 <li><a href="multilevel/index.php">Admin</a></li>
-                                <li><a href="homepage-slider-top.html">Daftar Sekolah</a></li>
+                                <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -116,21 +122,37 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                 <div class="header content t-left"><h2>BERITA TERBARU SEKOLAH</h2></div>
                                 <ul class="list-reviews">
                                     <li class="content-box"> 
-                                        <div class="list-reviews-body">
-                                            <div class="list-reviews-title">
-                                                <h2><a href="#">Kepala Sekolah Baru dengan SEMANGAT BARU!</a></h2>
-                                            </div>
-                                            <div class="description">Pergantian Kepala SMKN 8 Malang yang ke-6 kalinya terjadi (tepatnya) per tanggal 01 September 2021. Drs. Cone Kustarto Arifin menjabat sebagai Kepala Sekolah selama kurang lebih 1 tahun,
-                                                 kemudian diganti dengan Kepala Sekolah yang baru yakni Drs. H. Moh. Guntur Sayekti, M.Pd. Kepala sekolah adalah seorang pemimpin yang memiliki tugas dan fungsi untuk mengatur agar sekolah dapat berjalan dengan baik dan maksimal. Ia harus mampu untuk melakukan terobosan dalam mengembangkan sekolah yang ia pimpin agar lebih baik dari sebelumnya,
-                                                 sehingga visi dan misi sekolah yang telah dirumuskan dapat tercapai.
-                                                 Dalam menjalankan tugas dan fungsi kepemimpinan, kepala sekolah harus mempunyai kemampuan untuk menggerakkan, mengarahkan, membimbing, melindungi, membina, memberi teladan, memberi dorongan, dan memberi bantuan terhadap semua sumber daya manusia yang ada di suatu sekolah sehingga dapat didayagunakan secara maksimal untuk mencapai tujuan yang telah ditetapkan. 
-                                                 Terimakasih Pak Cone, Selamat Datang Pak Guntur. 
-                                                 "Bravo Asta Arkananta"</div>
-                                        </div>
-                                    </li>
-                                    <li class="content-box"> 
-                                    </li>
+                                           <table class="table-panel footable table-listings"> 
+<?php $i=1; ?>
+<?php foreach ($bsk as $row) : ?>                                                                                    
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
+                                    <a href="berita.php?id=<?= $row["id"];?>" class="link">
+                                       <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
+                                    </a>
+                                </td>
+                                <td class="preview-mobile" data-type="html">
+                                    <div>
+                                        <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
+                                    </div>
+                                    <div>
+                                        <span class="listing-tags tags">
+                                            <?= $row["asal"];?>  ·  <?= $row["isi_berita"];?>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
+                                   
+                                </td>
+                                <td data-title="" data-breakpoints="xs" data-type="html">
                                     
+                                </td>
+                            </tr>
+<?php $i++; ?>
+<?php endforeach; ?>
+                                        </table>
+                                    </li>
                                 </ul>
                                 <div class="caption-title t-left content" id="write_review"></div>
                                 
@@ -160,7 +182,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                                                 <li class="fill column"><?= $jbm["jurusan"];?></li>
                                             </ul>
                                         </li>
-                                        <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>"><?= $jbm["ofc_web"];?></a></li>
+                                        <li class="icon earth"><a href="<?= $jbm["ofc_web"];?>">Website Official Sekolah</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -172,7 +194,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
             </div>
         </main>
                 <footer class="footer container container-palette">
-            <div class="footer-content section">
+                <div class="footer-content section">
                 <div class="container">
                     <div class="row footer-results">              
                         <div class="col-md-3 col-sm-6 f-box">
@@ -180,7 +202,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
                             <ul class="list-f">
                                 <li><a href="tentangcs.html">Tentang Cari Sekolah</a></li>
                                 <li><a href="page_faq.html">Pertanyaan</a></li>
-                                <li><a href="testimoni.html">Testimoni</a></li>
+                                <li><a href="testimoni.php">Testimoni</a></li>
                                 
                             </ul>
                         </div>              

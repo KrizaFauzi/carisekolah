@@ -9,6 +9,11 @@ if($_SESSION['level']==""){
 require 'function1.php';
 
 if(isset($_POST["submit"])){
+    $id = $_POST["id"];
+    $username = $_POST["username"];
+    $tentang = $_POST["tentang"];
+    $foto = $_POST["foto"];
+
 
 	if(tambah($_POST) > 0 ){
 		echo 

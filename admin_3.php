@@ -1,19 +1,16 @@
-<?php
- session_start();
- if($_SESSION['level']==""){
-  header("location:multilevel/index.php");
- }
+<?php 
 
- require 'function.php';
- 
- 
- $conn = mysqli_connect("localhost","root","","carisekolah");
+session_start();
 
- if (!$conn) {
-     echo "koneksi gagal" . mysql_connect_error();
- }
+if($_SESSION['level']==""){
+ header("location:multilevel/index.php");
+}
+
+
+require 'function.php';
+$jbm = query("SELECT * FROM tb_berita");
+
 ?>
- 
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -83,55 +80,42 @@
                     <div class="section-reviews">
                         <div class="section-header">
                             <h2 class="title">
-                                Nama sekolah yang telah terdaftar 
+                                Daftar Berita
                             </h2>
                         </div>
-                        <form method="get" action="">   
-                            <input type="texs" name="cari" style="width:300px;height:35px;">
-                            <button type="submit" class="btn btn-primary" style="width:100px;height:35px;" >Cari</button>
-                        </form>
-                        <br/>
+                       
 
                         <table class="table-panel footable table-listings">
                                
-                                <?php
-                                    $no = 1;
-                                    $query = mysqli_query($conn,"SELECT * FROM tb_sekolah");
-
-                                    if (isset($_GET['cari'])) {
-                                        $query = mysqli_query($conn,"SELECT * FROM tb_sekolah WHERE nama_sekolah LIKE '%".$_GET['cari']."%'");
-                                    }
-                                    while ($dt = mysqli_fetch_assoc($query)) {
-                                    ?>                        
-                                    <tr>
-                                        
-                                        <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                            <a href="#" class="link">
-                                                <img class="image-preview preview-95x88"  src="img/<?= $dt["logo"]; ?>" alt="">
-                                            </a>
-                                        </td>
-                                        <td class="preview-mobile" data-type="html">
-                                            <div>
-                                                 <a href="listing.php?id=<?= $dt["id"];?>" class="listing-link"><?= $dt["nama_sekolah"]; ?> </a>
-                                            </div>
-                                            <div>
-                                                <span class="listing-tags tags">
-                                                    <?= $dt["kategori"];?>  ·  <?= $dt["provinsi"];?>
-                                                </span>
-                                            </div>
-                                            
-                                        </td>
-                                        <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                            <i class="ion-ios-location-outline"></i><span class="address" title="31 Crosby St, New York"><a href="<?= $dt["maps"];?>"><?= $dt["alamat"];?></span></a>
-                                        </td>
-                                        <td data-title="" data-breakpoints="xs" data-type="html">
-                                            <a href="hapusdev.php?id=<?= $dt["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                    }
-                                    ?>
-                             
+                        <?php $i=1; ?>
+<?php foreach ($jbm as $row) : ?>                            
+                            <tr>
+                                <td><?= $i ?></td>
+                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
+                                    <a href="berita.php?id=<?= $row["id"];?>" class="link">
+                                       <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
+                                    </a>
+                                </td>
+                                <td class="preview-mobile" data-type="html">
+                                    <div>
+                                        <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
+                                    </div>
+                                    <div>
+                                        <span class="listing-tags tags">
+                                            <?= $row["asal"];?>  
+                                        </span>
+                                    </div>
+                                </td>
+                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
+                                    
+                                </td>
+                                <td data-title="" data-breakpoints="xs" data-type="html">
+                                   
+                                    <a href="hapus1.php?id=<?= $row["id"];?>" onclick = "return confirm('yakin hapus data?');" class="btn btn-listing btn-danger">Hapus</a>
+                                </td>
+                            </tr>
+<?php $i++; ?>
+<?php endforeach; ?> 
                         </table>
                     </div>
                 </div>

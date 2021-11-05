@@ -68,17 +68,20 @@ if (!$conn) {
                         <span class="icon-bar"></span>
                     </button>
                     <ul class="nav-side">
-                        <li class="active">
-                            <a href="admin_1.php"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor</span></a>
+                        <li>
+                            <a href="admin_1.php"><i class="nav-icon ion-android-color-palette"></i><span class="nav-label">Dasbor </span></a>
                         </li>                    
                         <li>
-                            <a href="admin_2.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">daftar sekolah </span></a>
-                        </li>                                       
+                            <a href="admin_2.php"><i class="nav-icon ion-android-clipboard"></i><span class="nav-label">Daftar sekolah </span></a>
+                        </li>       
+                        <li>
+                            <a href="admin_3.php"><i class="ion-email"></i><span class="nav-label">Daftar berita</span></a>
+                        </li>                 
                         <li>
                             <a href="admin_5.php"><i class="nav-icon ion-android-star"></i><span class="nav-label">Testimoni</span></a>
-                        </li>                                   
+                        </li>                             
                         <li>
-                        <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
+                            <a href="multilevel/keluar.php"><i class="nav-icon ion-android-exit"></i><span class="nav-label">keluar </span></a>
                         </li>
                     </ul>
                 </div>

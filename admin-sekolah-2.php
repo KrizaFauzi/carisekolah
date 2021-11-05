@@ -93,6 +93,7 @@ if(isset($_POST["submit"])){
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
+                                                        <label for="nama">Nama</label>
                                                         <input type="text" class="form-control" name="nama" placeholder="Username">
                                                     </div>
                                                 </div>

@@ -23,7 +23,7 @@ function tambah($data){
 	}
 
 
-	$query = "INSERT INTO tb_profil
+	$query = "INSERT INTO tb_profiladmin
 				VALUES
 				('', '$nama', '$email', '$deskripsi', '$foto') 
 				";

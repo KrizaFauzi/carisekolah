@@ -121,7 +121,7 @@ if($_SESSION['level']==""){
                                         </div> 
                                         </div>
                                         <div class="form-group form-xs-group">
-                                            <button type="button" onclick="window.location.href='admin-sekolah-2.html' " class="btn btn-danger ">Perbarui Profil</button>
+                                            <button type="button" onclick="window.location.href='admin-sekolah-2.php' " class="btn btn-danger ">Perbarui Profil</button>
                                         </div>
                                     </form>
                                 </div>

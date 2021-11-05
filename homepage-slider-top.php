@@ -7,9 +7,19 @@ $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman) ;
 $halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
 $awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
 
-$jbm = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman ");
+$tbr = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman");
+
+if (isset($_GET["input"])) {
+    $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%' ");
+}else {
+    
+}
+
 
 $tbs = query("SELECT * FROM tb_berita");
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -123,32 +133,52 @@ $tbs = query("SELECT * FROM tb_berita");
             <div class="widget-search container container-palette">
                 <div class="filters filters-box boxed-wide">
                     <div class="container">
-                        <form action="homepage-slider-top.html" class="local-form"> 
+                        <form action="homepage-slider-top.php?=" class="local-form"> 
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <select name="input" class="selectpicker">
-                                            <option value="0">Jenjang Sekolah</option>
-                                            <option value="1">SMK</option>
-                                            <option value="2">SMA</option>
-                                            <option value="3">SMP/MTS</option>
-                                            <option value="4">SD/MI</option>
+                                                <option value="" >Pilih Provinsi</option>
+                                                 <option value="Aceh" >Aceh</option>
+                                                 <option value="Sumatra Utara">Sumatra Utara</option>
+                                                 <option value="Sumatra Barat">Sumatra Barat</option>
+                                                 <option value="Riau">Riau</option>
+                                                 <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                                 <option value="Jambi">Jambi</option>
+                                                 <option value="Sumatra Selatan">Sumatera Selatan</option>
+                                                 <option value="Kepualauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                                                 <option value="Bengkulu">"Begkulu</option>
+                                                 <option value="Lampung">Lampung</option>
+                                                 <option value="DKI Jakarta">DKI Jakarta</option>
+                                                 <option value="Banten"> Banten</option>
+                                                 <option value="Jawa Barat"> Jawa Barat</option>
+                                                 <option value="Jawa Tengah">Jawa Tengah</option>
+                                                 <option value="DI Yogyakarta"> DI Yogyakarta</option>
+                                                 <option value="Jawa Timur">Jawa Timur</option>
+                                                 <option value="Bali">Bali</option>
+                                                 <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                                 <option value="Nusa Tenggara Timur"> Nusa Tenggara Timur</option>
+                                                 <option value="Kalimantan Barat"> Kalimantan Barat</option>
+                                                 <option value="Kalimantan Tengah"> Kalimantan Tengah</option>
+                                                 <option value="Kalimantan Selatan"> Kalimantan Selatan</option>
+                                                 <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                                 <option value="Kalimantan Utara">Kalimantan Utara</option>
+                                                 <option value="Sulawesi Utara"> Sulawesi Utara </option>
+                                                 <option value="Gorontalo"> Gorontalo</option>
+                                                 <option value="Sulawesi Tengah">  Sulawesi Tengah</option>
+                                                 <option value="Sulawesi Barat"> Sulawesi Barat</option>
+                                                 <option value="Sulawesi Selatan">  Sulawesi Selatan</option>
+                                                 <option value="Sulawesi Tenggara"> Sulawesi Tenggara</option>
+                                                 <option value="Maluku"> Maluku</option>
+                                                 <option value="Maluku Utara"> Maluku Utara</option>
+                                                 <option value="Papua Barat"> Papua Barat</option>
+                                                 <option value="Papua">papua</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <select name="input" class="selectpicker">
-                                            <option value="0">Provinsi</option>
-                                            <option value="1">Jawa Timur</option>
-                                            <option value="2">Jawa Tengah</option>
-                                            <option value="3">Jawa Barat</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-custom btn-custom-secondary btn-wide">Cari</button>
+                                        <button type="submit"  class="btn btn-custom btn-custom-secondary btn-wide">Cari</button>
                                     </div>
                                 </div>
                             </div>
@@ -169,10 +199,12 @@ $tbs = query("SELECT * FROM tb_berita");
                 <div class="container">
                     <div class="row result-container row-flex">
 
-<?php $i=1; ?>
-<?php foreach ($jbm as $row) : ?>
 
-                     
+
+            <? if (isset($_GET('input'))) {
+                
+                ?> 
+               <?php foreach ($tbr as $row) : ?> 
                     <div class="col-md-4 col-sm-6">
                             <div class="thumbnail thumbnail-property">
                                 <div class="thumbnail-image" style="height: 350px;">
@@ -194,10 +226,14 @@ $tbs = query("SELECT * FROM tb_berita");
                                 </div>
                             </div>
                         </div>
+                <?php endforeach;?>             
+                   <?
+            }
+                   ?>   
+            <?endif ;?>         
                         
-                        
-<?php $i++; ?>
-<?php endforeach; ?>                                 
+
+                                 
                     </div>
 
 
@@ -307,7 +343,7 @@ $tbs = query("SELECT * FROM tb_berita");
                                 </div>
                                 <div class="caption">
                                     <div class="caption-ls">
-                                        <h3 class="thumbnail-title"><a href="listing.html"><?= $row["judul"]; ?></a></h3>
+                                        <h3 class="thumbnail-title"><a href="berita.php?id=<?= $row["id"]; ?>"><?= $row["judul"]; ?></a></h3>
                                     </div>
                                 </div>
                             </div>

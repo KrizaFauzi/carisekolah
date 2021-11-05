@@ -162,7 +162,7 @@ $bsk = query("SELECT * FROM tb_berita");
                                 <div class="content-box">
                                     <ul class="list-contact">
                                         <li class="icon address"><a href="<?= $jbm["maps"];?>"><?= $jbm["alamat"];?></li></a>
-                                        <li class="icon earth"><a href="mailto:<?= $jbm["email"];?>"><?= $jbm["email"];?></li></a>
+                                        <li class="icon address"><?= $jbm["provinsi"];?></li>                                        <li class="icon earth"><a href="mailto:<?= $jbm["email"];?>"><?= $jbm["email"];?></li></a>
                                         <li class="icon phone"><?= $jbm["no_sekolah"];?></li>
                                         <li class="icon clock multi"><div class="title">jam masuk</div>
                                             <ul>

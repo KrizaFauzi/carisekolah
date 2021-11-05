@@ -77,8 +77,8 @@ $bsk = query("SELECT * FROM tb_berita WHERE id = $id")[0];
                     <div class="content">
                         <div class="row-s">
                             <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div" ><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
-                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div" ><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
-                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_1"]?>" class="image-cover-div"><img src="img/<?= $bsk["berita_1"]?>" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_2"]?>" class="image-cover-div" ><img src="img/<?= $bsk["berita_2"]?>" alt="" /></a></div>
+                            <div class="col-sm-4"><a href="img/<?= $bsk["berita_3"]?>" class="image-cover-div"><img src="img/<?= $bsk["berita_3"]?>" alt="" /></a></div>
                         </div>
                     </div>
                 </div>

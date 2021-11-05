@@ -57,6 +57,13 @@ function tambah($data){
 	return mysqli_affected_rows($db);
 }
 
+function testimoni($data){
+    global $db;
+    $email = htmlspecialchars($data["email"]);
+    $nama = htmlspecialchars($data["nama"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
+}
+
 function tm_berita($data){
 	global $db;
 	$judul = htmlspecialchars($data["judul"]);

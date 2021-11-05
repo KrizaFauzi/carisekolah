@@ -74,11 +74,11 @@ function tm_berita($data){
 		return false;
 	}
     $berita_2 = upload6();
-	if ( !$berita_1 ) {
+	if ( !$berita_2 ) {
 		return false;
 	}
     $berita_3 = upload7();
-	if ( !$berita_1 ) {
+	if ( !$berita_3 ) {
 		return false;
 	}
     

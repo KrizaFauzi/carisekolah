@@ -338,7 +338,7 @@ $tbs = query("SELECT * FROM tb_berita");
                         <div class="item">
                             <div class="thumbnail thumbnail-property">
                                 <div class="thumbnail-image">
-                                    <img src="assets/img/placeholder/card-preview.png" alt="" />
+                                    <img src="img/<?= $row["berita_1"]; ?>" alt="" />
                                     <a href="berita.php?id=<?= $row["id"]; ?>"></a>
                                 </div>
                                 <div class="caption">

@@ -21,6 +21,9 @@ if (!$conn) {
 
  $get3 = mysqli_query($conn,"SELECT * FROM testimoni");
  $count3 = mysqli_num_rows($get3);
+
+ $get4 = mysqli_query($conn,"SELECT * FROM tb_berita");
+ $count4 = mysqli_num_rows($get4);
  
 
 
@@ -94,24 +97,29 @@ if (!$conn) {
                 <div class="mainbar-body">
                     <div class="section-shortcut">
                         <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                <div class="box-shortcut" style = "width:300px;">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
+                                <div class="box-shortcut" >
 
                                     <div class="box-shortcut-body" >
-                                        <span class="count color-green"><?=$count2;?></span><span class="title">jumlah sekolah</span>
+                                        <span class="count color-green"><?=$count2;?></span><span class="title"> Sekolah</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                <div class="box-shortcut">
-                                    <div class="box-shortcut-body"><span class="count color-yellow"><?=$count1;?></span><span class="title">jumlah akun</span></div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
+                                <div class="box-shortcut" >
+                                    <div class="box-shortcut-body"><span class="count color-yellow"><?=$count1;?></span><span class="title">Akun</span></div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                <div class="box-shortcut">
-                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count3;?></span><span class="title">ulasan</span></div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
+                                <div class="box-shortcut" >
+                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count3;?></span><span class="title">Ulasan</span></div>
                                 </div>
-                        </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
+                                <div class="box-shortcut" >
+                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count4;?></span><span class="title">Berita</span></div>
+                                </div>
+                            </div>
                     </div>
                     <div class="row swap-md-down">
                         <div class="col-lg-9 swap-bottom">

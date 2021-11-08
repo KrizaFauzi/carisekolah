@@ -7,41 +7,23 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 
 require 'function.php';
 
-if ($jurusan == 'chekced') {
-    if(isset($_POST["submit"])){
+if(isset($_POST["submit"])){
 
-        if(tambah($_POST) > 0 ){
-            echo 
+    if(tambah($_POST) > 0 ){
+        echo 
+        "<script>
+            alert('Data Sekolah Berhasil Ditambahkan');
+            document.location.href = 'admin-sekolah.php';
+        </script>";
+        
+    }else {
+        echo 
             "<script>
-                alert('Data Sekolah Berhasil Ditambahkan');
+                alert('Data Sekolah Gagal Ditambahkan');
                 document.location.href = 'admin-sekolah.php';
             </script>";
-            
-        }else {
-            echo 
-                "<script>
-                    alert('Data Sekolah Gagal Ditambahkan');
-                    document.location.href = 'admin-sekolah.php';
-                </script>";
-        }
-    
     }
-}else{
-    if(isset($_POST["submit"])){
 
-        if(tambah1($_POST) > 0 ){
-            
-            
-        }else {
-            echo 
-                "<script>
-                    alert('Data Sekolah Gagal Ditambahkan');
-                    document.location.href = 'admin-sekolah.php';
-                </script>";
-        }
-    
-    }
- 
 }
 
 
@@ -223,11 +205,11 @@ function showCheckboxes() {
                                             <div class="multiselect" >
                                                 <div onclick="showCheckboxes()">
                                                     <select class="form-control"id="jurusan">
-                                                      <option><span class="option"> (khusus SMK)</span></option>
+                                                      <option><span class="option"> (mohon diisi)</span></option>
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
-                                                           
+                                                          <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus " />tidak ada jurusan khusus </br>
                                                           <input type="checkbox" name="jurusan[]" value="RPL" id="RPL"/>RPL</br>
                                                           <input type="checkbox"  name="jurusan[]" value="TKJ" id="TKJ"/>TKJ</br>
                                                           <input type="checkbox"  name="jurusan[]" value="Mekatronika" id="Mekatronika"/>Mektronika</br> 

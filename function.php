@@ -57,50 +57,6 @@ function tambah($data){
 	return mysqli_affected_rows($db);
 }
 
-function tambah1($data){
-	global $db;
-	$nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
-	$no_sekolah = htmlspecialchars($data["no_sekolah"]);
-	$email = htmlspecialchars($data["email"]);
-    $ofc_web = htmlspecialchars($data["ofc_web"]);
-	$deskripsi = htmlspecialchars($data["deskripsi"]);
-    $kategori = htmlspecialchars($data["kategori"]);
-    $jurusan = "";
-    $alamat = htmlspecialchars($data["alamat"]);
-    $maps = htmlspecialchars($data["maps"]);
-    $provinsi = htmlspecialchars($data["provinsi"]);
-    $senin = htmlspecialchars($data["senin"]);
-    $selasa = htmlspecialchars($data["selasa"]);
-    $rabu = htmlspecialchars($data["rabu"]);
-    $kamis = htmlspecialchars($data["kamis"]);
-    $jumat = htmlspecialchars($data["jumat"]);
-    $sabtu = htmlspecialchars($data["rabu"]);
-    $minggu = htmlspecialchars($data["minggu"]);
-    $gambar_1 = upload1();
-	if ( !$gambar_1 ) {
-		return false;
-	}
-    $gambar_2 = upload2();
-	if ( !$gambar_2 ) {
-		return false;
-	}
-    $gambar_3 = upload3();
-	if ( !$gambar_3 ) {
-		return false;
-	}
-    $logo = upload4();
-	if ( !$logo ) {
-		return false;
-	}
-
-	$query = "INSERT INTO tb_sekolah
-				VALUES
-				('', '$nama_sekolah','$kategori','$jurusan' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
-				";
-	mysqli_query($db, $query);
-
-	return mysqli_affected_rows($db);
-}
 
 function testimoni($data){
     global $db;

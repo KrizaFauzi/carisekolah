@@ -156,10 +156,11 @@ function showCheckboxes() {
                                             <div class="multiselect" >
                                                 <div onclick="showCheckboxes()">
                                                     <select class="form-control"id="jurusan">
-                                                      <option><span class="option"> (khusus SMK)</span></option>
+                                                      <option><span class="option"> (Mohon diisi</span></option>
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
+                                                          <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus" <?php in_array("tidak ada jurusan khusus",$o) ? print 'checked' :'' ?> >tidak ada jurusan khusus</br>
                                                           <input type="checkbox" name="jurusan[]" value="RPL" <?php in_array("RPL",$o) ? print 'checked' :'' ?> >RPL</br>
                                                           <input type="checkbox"  name="jurusan[]" value="TKJ" <?php in_array("TKJ",$o) ? print 'checked' :'' ?>>TKJ</br>
                                                           <input type="checkbox"  name="jurusan[]" value="Mekatronika" <?php in_array("Mekatronika",$o) ? print 'checked' :'' ?> />Mektronika</br> 

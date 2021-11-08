@@ -1,11 +1,13 @@
 <?php
 
 session_start();
-if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+if (empty($_SESSION["id"]) or empty($_SESSION['level']) ) {
     echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
 
+
 require 'function.php';
+
 
 if(isset($_POST["submit"])){
 
@@ -165,7 +167,7 @@ function showCheckboxes() {
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
-                            Kriza
+                         <?= $_SESSION['username']; ?>
                         </div>
                     </div><!-- /.profile-card -->
                     <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>                
@@ -423,12 +425,19 @@ function showCheckboxes() {
                             <form action="" method="post" enctype="multipart/form-data" >
                                 <div class="form-section">
                                     <div class="row">
+                                    <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="nama_sekolah">berita untuk sekolah</label>
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" placeholder="(mohon diisi sama dengan nama sekolahnya)" >
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="judul">Judul Berita</label>
                                                 <input type="text" class="form-control"  name="judul" id="judul" placeholder="nama Berita ">
                                             </div>
                                         </div>
+                                        
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="asal">Sumber Berita</label>

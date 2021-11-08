@@ -66,31 +66,15 @@ function testimoni($data){
 }
 
 function tm_berita($data){
-	global $db;
-	$judul = htmlspecialchars($data["judul"]);
-	$asal = htmlspecialchars($data["asal"]);
-	$isi_berita = htmlspecialchars($data["isi_berita"]);
-    $berita_1 = upload5();
-	if ( !$berita_1 ) {
-		return false;
-	}
-    $berita_2 = upload6();
-	if ( !$berita_2 ) {
-		return false;
-	}
-    $berita_3 = upload7();
-	if ( !$berita_3 ) {
-		return false;
-	}
+    global $db;
+    $user_id = $_SESSION["id"];
+   
     
-
-	$query = "INSERT INTO tb_berita
-				VALUES
-				('', '$judul','$asal' , '$berita_1', '$berita_2', '$berita_3','$isi_berita' ) 
-				";
-	mysqli_query($db, $query);
-
-	return mysqli_affected_rows($db);
+    mysqli_query($db, "INSERT INTO tb_berita
+                VALUES
+                (NULL, '$user_id' )");
+    return mysqli_affected_rows($db);
+    
 }
 
 /*=============================================! FUNGSI UPLOAD !=============================================*/

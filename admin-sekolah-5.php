@@ -42,8 +42,8 @@ $jbm = query("SELECT * FROM tb_berita");
             <div class="sidebar">
                 <div class="bar-head">
                     <div class="logo">
-                        <a href="index.html" class="link">Cari Sekolah</a>
-                        <a href="index.html" class="link-mobile">C</a>
+                        <a href="index.php" class="link">Cari Sekolah</a>
+                        <a href="index.php" class="link-mobile">C</a>
                     </div>
                 </div>
                 <div class="widget left-menu">

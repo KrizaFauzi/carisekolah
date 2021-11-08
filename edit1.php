@@ -80,11 +80,18 @@ if(isset($_POST["proses"])){
                         <div class="box-content">
                             <form action="" method="post" enctype="multipart/form-data" >
                                 <input type="hidden" name="id" value="<?= $jbm["id"]; ?>">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION["id"] ?>">
                                 <input type="hidden" name="beritaLama_1" value="<?= $jbm["berita_1"]; ?>">
                                 <input type="hidden" name="beritaLama_2" value="<?= $jbm["berita_2"]; ?>">
                                 <input type="hidden" name="beritaLama_3" value="<?= $jbm["berita_3"]; ?>">
                                 <div class="form-section">
                                     <div class="row">
+                                    <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="nama_sekolah">berita untuk sekolah</label>
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" value="<?= $jbm["judul"];?>">
+                                            </div>
+                                        </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="judul">Judul Berita</label>

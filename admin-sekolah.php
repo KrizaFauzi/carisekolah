@@ -2,14 +2,14 @@
 
 
 session_start();
-if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+if (empty($_SESSION["username"]) or empty($_SESSION['level'])) {
     echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
 
 
 
 require 'function.php';
-$jbm = query("SELECT * FROM tb_sekolah");
+$jbm = query("SELECT * FROM tb_sekolah WHERE user_id ='" . $_SESSION["id"] . "' ");
 
 
 ?>

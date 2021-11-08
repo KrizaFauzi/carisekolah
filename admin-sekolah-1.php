@@ -427,8 +427,8 @@ function showCheckboxes() {
                                     <div class="row">
                                     <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="nama_sekolah">berita untuk sekolah</label>
-                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" placeholder="(mohon diisi sama dengan nama sekolahnya)" >
+                                                <label for="1">berita untuk sekolah</label>
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="1" placeholder="(mohon diisi sama dengan nama sekolahnya)" >
                                             </div>
                                         </div>
                                         <div class="col-md-12">

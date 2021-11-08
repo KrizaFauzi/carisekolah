@@ -14,6 +14,7 @@ function query($query){
  
 function tambah($data){
 	global $db;
+    $user_id = $_SESSION["id"];
 	$nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
 	$no_sekolah = htmlspecialchars($data["no_sekolah"]);
 	$email = htmlspecialchars($data["email"]);
@@ -68,11 +69,25 @@ function testimoni($data){
 function tm_berita($data){
     global $db;
     $user_id = $_SESSION["id"];
-   
-    
+    $nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
+    $judul = htmlspecialchars($data["judul"]);
+    $asal = htmlspecialchars($data["asal"]);
+    $isi_berita = htmlspecialchars($data["isi_berita"]);
+    $berita_1 = upload5();
+    if ( !$berita_1 ) {
+        return false;
+    }
+    $berita_2 = upload6();
+    if ( !$berita_2 ) {
+        return false;
+    }
+    $berita_3 = upload7();
+    if ( !$berita_3 ) {
+        return false;
+    }
     mysqli_query($db, "INSERT INTO tb_berita
                 VALUES
-                (NULL, '$user_id' )");
+                (NULL, '$user_id', '$nama_sekolah', '$judul','$asal' , '$berita_1', '$berita_2', '$berita_3','$isi_berita' )");
     return mysqli_affected_rows($db);
     
 }

@@ -9,7 +9,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 
 
 require 'function.php';
-$jbm = query("SELECT * FROM tb_berita");
+$jbm = query("SELECT * FROM tb_berita WHERE user_id ='" . $_SESSION["id"] . "'  ");
 
 ?>
 <!DOCTYPE html>

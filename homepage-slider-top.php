@@ -10,6 +10,7 @@ $awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
 $tbr = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman");
 
 if (isset($_GET["input"])) {
+    $tbr = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman");
     $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%' ");
 }else {
     

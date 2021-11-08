@@ -7,24 +7,45 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 
 require 'function.php';
 
+if ($jurusan == 'chekced') {
+    if(isset($_POST["submit"])){
 
-if(isset($_POST["submit"])){
+        if(tambah($_POST) > 0 ){
+            echo 
+            "<script>
+                alert('Data Sekolah Berhasil Ditambahkan');
+                document.location.href = 'admin-sekolah.php';
+            </script>";
+            
+        }else {
+            echo 
+                "<script>
+                    alert('Data Sekolah Gagal Ditambahkan');
+                    document.location.href = 'admin-sekolah.php';
+                </script>";
+        }
+    
+    }
+}else{
+    if(isset($_POST["submit"])){
 
-	if(tambah($_POST) > 0 ){
-		echo 
-			"<script>
-				alert('Data Sekolah berhasil ditambahkan');
-				document.location.href = 'admin-sekolah.php';
-			</script>";
-	}else {
-		echo 
-			"<script>
-				alert('Data Sekolah Gagal Ditambahkan');
-				document.location.href = 'admin-sekolah.php';
-			</script>";
-	}
-
+        if(tambah1($_POST) > 0 ){
+            
+            
+        }else {
+            echo 
+                "<script>
+                    alert('Data Sekolah Gagal Ditambahkan');
+                    document.location.href = 'admin-sekolah.php';
+                </script>";
+        }
+    
+    }
+ 
 }
+
+
+
 
 if(isset($_POST["proses"])){
 

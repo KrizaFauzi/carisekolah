@@ -60,7 +60,7 @@ if(isset($_POST["submit"])){
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
-                            Kriza
+                            <?= $_SESSION['username'] ?>
                         </div>
                     </div><!-- /.profile-card -->
 

@@ -84,7 +84,7 @@ $jbm = query("SELECT * FROM tb_berita");
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
-                            Kriza
+                            <?= $_SESSION['username'] ?>
                         </div>
                     </div><!-- /.profile-card -->
                    <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>				

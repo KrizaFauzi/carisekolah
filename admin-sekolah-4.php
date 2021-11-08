@@ -1,10 +1,9 @@
 <?php
 
+
 session_start();
-
-
-if($_SESSION['level']==""){
- header("location:multilevel/index.php");
+if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
+    echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
 }
 
 ?>
@@ -104,7 +103,7 @@ if($_SESSION['level']==""){
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <class type="text" class="form-control" placeholder="apalo">
+                                                        <class type="text" class="form-control" placeholder=""><h4><?= $_SESSION['username'] ?></h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">

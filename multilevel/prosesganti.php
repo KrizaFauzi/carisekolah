@@ -25,7 +25,7 @@ if ($data) {
         $ubah = mysqli_query($koneksi, "UPDATE loginmulti set password = '$pass_ok'  
                                         WHERE id = '$data[id]' ");
         if ($ubah) {
-            echo "<script>alert('Password anda berhasil diubah, silahkan logout untuk menguji password baru anda.!');document.location='ganti.php'</script>";
+            echo "<script>alert('Password anda berhasil diubah, silahkan logout untuk menguji password baru anda.!');document.location='index.php'</script>";
         }
     } else {
         echo "<script>alert('Maaf, Password Baru & Konfirmasi password yang anda inputkan tidak sama!');document.location='ganti.php'</script>";

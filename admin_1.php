@@ -13,7 +13,7 @@ if (!$conn) {
   header("location:multilevel/index.php");
  }
 
- $get1 = mysqli_query($conn,"SELECT * FROM loginmulti");
+ $get1 = mysqli_query($conn,"SELECT * FROM loginmulti WHERE level = 'admin'");
  $count1 = mysqli_num_rows($get1);
 
  $get2 = mysqli_query($conn,"SELECT * FROM tb_sekolah");
@@ -112,7 +112,7 @@ if (!$conn) {
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
                                 <div class="box-shortcut" >
-                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count3;?></span><span class="title">Ulasan</span></div>
+                                    <div class="box-shortcut-body"><span class="count color-red"><?=$count3;?></span><span class="title">Testimoni</span></div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3"  style = "width:240px;">
@@ -141,7 +141,7 @@ if (!$conn) {
                             <tbody>
                             <?php
                                 $no = 1;
-                                $query = mysqli_query($conn,"SELECT * FROM loginmulti");
+                                $query = mysqli_query($conn,"SELECT * FROM loginmulti WHERE level = 'admin'");
                                 while ($dt = mysqli_fetch_assoc($query)) {
                             ?>
                             

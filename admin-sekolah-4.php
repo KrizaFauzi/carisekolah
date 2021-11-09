@@ -108,7 +108,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <class  type="text" class="form-control" placeholder="email">
+                                                        <class  type="text" class="form-control" placeholder="email"><h4><?= $_SESSION["gmail"]?></h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">

@@ -26,7 +26,6 @@ if($cek > 0){
  if($data['level']=="admin"){
 
   $_SESSION["id"] = $data["id"];
-  $_SESSION["gmail"] = $gmail;
   $_SESSION['username'] = $username;
   $_SESSION['level'] = $data["level"]=="admin";
    
@@ -36,7 +35,7 @@ if($cek > 0){
  }else if($data['level']=="devoloper"){
    
    $_SESSION["id"] = $data["id"];
-   $_SESSION["gmail"] = $gmail;
+
   $_SESSION['username'] = $username;
   $_SESSION['level'] = $data["level"]=="devoloper";
 

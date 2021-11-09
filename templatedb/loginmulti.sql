@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Okt 2021 pada 05.18
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 7.4.21
+-- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `loginmulti`
+-- Table structure for table `loginmulti`
 --
 
 CREATE TABLE `loginmulti` (
@@ -36,32 +36,35 @@ CREATE TABLE `loginmulti` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `loginmulti`
+-- Dumping data for table `loginmulti`
 --
 
 INSERT INTO `loginmulti` (`id`, `username`, `password`, `gmail`, `level`) VALUES
 (10, '1', '2', '3', 'devoloper'),
-(15, '12', '12', '12', 'admin');
+(15, '12', '12', '12', 'admin'),
+(16, 'admin', '123', 'carisekolah12@gmail.com', 'admin'),
+(17, '12', '12', 'carisekolah12@gmail.com', 'admin'),
+(18, 'f', 'f', 'f@gmail.com', 'admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `loginmulti`
+-- Indexes for table `loginmulti`
 --
 ALTER TABLE `loginmulti`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `loginmulti`
+-- AUTO_INCREMENT for table `loginmulti`
 --
 ALTER TABLE `loginmulti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

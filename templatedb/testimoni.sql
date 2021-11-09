@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Nov 2021 pada 05.25
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 7.4.21
+-- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `testimoni`
+-- Table structure for table `testimoni`
 --
 
 CREATE TABLE `testimoni` (
@@ -35,7 +35,7 @@ CREATE TABLE `testimoni` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `testimoni`
+-- Dumping data for table `testimoni`
 --
 
 INSERT INTO `testimoni` (`id`, `email`, `nama`, `deskripsi`) VALUES
@@ -43,27 +43,31 @@ INSERT INTO `testimoni` (`id`, `email`, `nama`, `deskripsi`) VALUES
 (4, 'sdk@gmail', 'bdbam', 'bkabsx,'),
 (5, 'ade@gmail', 'adee', 'smkn 8 malang'),
 (6, 'ade@gmail', 'adee', 'smkn 8 malang'),
-(7, 'saxbkabsk@gbsmz', 'bx kb', 'bck kxsa');
+(7, 'saxbkabsk@gbsmz', 'bx kb', 'bck kxsa'),
+(8, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 's'),
+(9, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 's'),
+(10, 'kriz4@gmail.com', 'Arayana Maulana', 's'),
+(11, 'kriz4@gmail.com', 'Arayana Maulana', 's');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `testimoni`
+-- Indexes for table `testimoni`
 --
 ALTER TABLE `testimoni`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `testimoni`
+-- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -82,7 +82,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE user_id ='" . $_SESSION["id"] . "' 
             <div class="mainbar">
                 <div class="bar-head top-bar clearfix">		
                     <div class="profile-card pull-right">
-                        <a href="admin-sekolah-4.html" class="profile-card-image">
+                        <a href="admin-sekolah-4.php" class="profile-card-image">
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">

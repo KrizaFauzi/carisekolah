@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2021 at 09:13 AM
+-- Generation Time: Nov 09, 2021 at 03:08 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_sekolah` (
   `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `nama_sekolah` varchar(60) NOT NULL,
   `kategori` varchar(250) NOT NULL,
   `jurusan` varchar(250) NOT NULL,
@@ -56,11 +57,8 @@ CREATE TABLE `tb_sekolah` (
 -- Dumping data for table `tb_sekolah`
 --
 
-INSERT INTO `tb_sekolah` (`id`, `nama_sekolah`, `kategori`, `jurusan`, `no_sekolah`, `gambar_1`, `gambar_2`, `gambar_3`, `logo`, `email`, `ofc_web`, `deskripsi`, `alamat`, `maps`, `provinsi`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`) VALUES
-(61, 'SMKN 8 Malang', '', 'RPL,TKJ,Mekatronika,kesehatan dan Pekerjaan Sosial,Bisnis dan Manajemen,TKR,Kemaritiman,Pariwisata', '0812 1678 7339', '618343404014a.png', '6183434040571.jpeg', '61834340408b4.jpg', '6183434040b6e.png', 'carisekolah@gmail.com', 'https://www.smkn8malang.sch.id/', 'sad', 'perum bumi mondoroko', 'https://goo.gl/maps/bTb4eJehaBp8hZYA9', 'Jawa Timur', '12', '12', '12', '12', '12', '12', '12'),
-(63, 'smpn 7 malang', 'SMA', 'RPL,TKJ,Mekatronika', '0812 1678 7339', '61839273a15ab.jpeg', '61839273a19d0.jpeg', '61839273a1c8c.jpeg', '61839273a1ee2.jpeg', 'kriz4@gmail.com', 'https://www.smkn8malang.sch.id/', 'sad', 'sda', 'sad', 'DI Yogyakarta', '12', 'q12', '1', '2', '12', '1', '12'),
-(64, 'smpn 7 malang', 'SMK', 'RPL,TKJ,Mekatronika,Kesehatan dan Pekerjaan Sosial,Bisnis dan Manajemen,TKR,Kemaritiman,Pariwisata', '0812 1678 7339', '6183929cb44cb.jpeg', '6183929cb47c5.jpeg', '6183929cb49e0.jpeg', '6183929cb4bcf.jpeg', 'kriza@gmail.com', 'https://www.smkn8malang.sch.id/', '321', '132', '213', 'Jawa Tengah', '132', '123', '123', '123', '123', '123', '123'),
-(65, 'SMAN 8 Malang', 'SMK', 'RPL,TKJ,Mekatronika,Kesehatan dan Pekerjaan Sosial,Bisnis dan Manajemen,TKR,Kemaritiman,Pariwisata', '0812 1678 7339', '618392c9ac91d.jpg', '618392c9acc42.jpg', '618392c9acebe.jpg', '618392c9ad113.png', 'admin@gmail.com', 'sad', 'dsa', 'perum bumi mondoroko', 'https://goo.gl/maps/bTb4eJehaBp8hZYA9', 'Bengkulu', '12', '12', '12', '12', '21', '12', '12');
+INSERT INTO `tb_sekolah` (`id`, `user_id`, `nama_sekolah`, `kategori`, `jurusan`, `no_sekolah`, `gambar_1`, `gambar_2`, `gambar_3`, `logo`, `email`, `ofc_web`, `deskripsi`, `alamat`, `maps`, `provinsi`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`) VALUES
+(94, 15, 'SMKN 8 Malang', '', 'tidak ada jurusan khusus', '0812 1678 7339', '6189af0168fa8.png', '6189af01696f7.jpeg', '6189af0169971.jpg', '6189af0169c1a.png', 'kriz4nafis@gmail.com', 'https://www.smkn8malang.sch.id/', 'sdasdadadadkasdjsahkajksdkjakdlakldksaldklsdaskdlskdalsdkalsdk\r\nlaksdskddddddddddddddddddd\r\ndddddddddddddd\r\nddddddddddddddddddddddd\r\nddddddddddddddddd\r\nddddddddddddddddddddddddddd\r\ndddddddddddd\r\nddddddddddddddddddddddd\r\nddddddddddddddddd\r\ndddddddddddddddddddddddddd\r\n\r\ndddddddddddddd\r\ndddddddddddddddddddddd\r\ndddddddddddddddddd\r\nddddddddddddddddddddddddddd\r\ndddddddddddddd\r\ndddddddddddddddddddddddddddddddddddddd\r\ndddddddddddddddddddddddddddddd\r\nddddddddddddddddddddddddddddddddd\r\nddddddddddddd\r\nddddddddddddddddddddddddddddddddddddddddddd\r\ndddddddddddddddddddd\r\nddddddddddddd\r\nddddddddddddddddddddddddddddddddddddddddddd\r\ndddddddddddddddddddddd\r\nddddddddddddddddddddddd\r\nddddddddddddddddddddddddddddd\r\n\r\ndddddddddddd\r\nddddddddddddddddddddddddddddddddd\r\ndddddddddddddddd\r\nddddddddddddddddddddddddddddd\r\n\r\n\r\n\r\nddddddddddd\r\ndddddddddddddddddddddddddddddddddddddddddddddd\r\ndddd\r\nddddddddddddddddddddddddddddd\r\n\r\n\r\n\r\ndddddd\r\ndddddddddd\r\nddddddddddddddddddddddddd\r\nddddddddd\r\ndddddddd\r\nddddddddddddddddddd', 'Jl teluk pacitan', 'https://www.google.com/maps/d/embed?mid=1vaQW9tRWbCdhzm8qJHAo2EsEMig&amp;msa=0&amp;ie=UTF8&amp;t=m&amp;ll=-7.932245%2C112.6581&amp;spn=0.025503%2C0.047121&amp;z=14&amp;output=embed', 'Jawa Timur', '12', '12', '12', '12', '12', '12', '12');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +68,8 @@ INSERT INTO `tb_sekolah` (`id`, `nama_sekolah`, `kategori`, `jurusan`, `no_sekol
 -- Indexes for table `tb_sekolah`
 --
 ALTER TABLE `tb_sekolah`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_1` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -80,7 +79,17 @@ ALTER TABLE `tb_sekolah`
 -- AUTO_INCREMENT for table `tb_sekolah`
 --
 ALTER TABLE `tb_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tb_sekolah`
+--
+ALTER TABLE `tb_sekolah`
+  ADD CONSTRAINT `tb_sekolah_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `loginmulti` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

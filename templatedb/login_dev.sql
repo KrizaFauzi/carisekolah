@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Okt 2021 pada 10.15
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 7.4.21
+-- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login_dev`
+-- Table structure for table `login_dev`
 --
 
 CREATE TABLE `login_dev` (
@@ -35,31 +35,32 @@ CREATE TABLE `login_dev` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `login_dev`
+-- Dumping data for table `login_dev`
 --
 
 INSERT INTO `login_dev` (`id`, `username`, `password`, `gmail`) VALUES
-(17, 'carisekolah', '$2y$10$1DA0BaUB.7B1mF.LjWPH.e0.DWA8p1RBR6yxTfmxMjvueOcksLj/S', 'carisekolah12@gmail.com');
+(17, 'carisekolah', '$2y$10$1DA0BaUB.7B1mF.LjWPH.e0.DWA8p1RBR6yxTfmxMjvueOcksLj/S', 'carisekolah12@gmail.com'),
+(18, '12', '$2y$10$.PKKYp6lee5WpK4RLtSDcO.69WqcfBEE31/4PAStAJGza8YrdeTSq', '12');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `login_dev`
+-- Indexes for table `login_dev`
 --
 ALTER TABLE `login_dev`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `login_dev`
+-- AUTO_INCREMENT for table `login_dev`
 --
 ALTER TABLE `login_dev`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

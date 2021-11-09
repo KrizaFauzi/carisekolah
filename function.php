@@ -51,7 +51,7 @@ function tambah($data){
 
 	$query = "INSERT INTO tb_sekolah
 				VALUES
-				('', '$nama_sekolah','$kategori','$jurusan' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
+				(NULL, '$user_id','$nama_sekolah','$kategori','$jurusan' , '$no_sekolah', '$gambar_1','$gambar_2' , '$gambar_3' , '$logo' , '$email', '$ofc_web' , '$deskripsi' , '$alamat'  , '$maps'  , '$provinsi' , '$senin' , '$selasa' , '$rabu' , '$kamis' , '$jumat' , '$sabtu' , '$minggu' ) 
 				";
 	mysqli_query($db, $query);
 

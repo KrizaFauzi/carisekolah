@@ -81,14 +81,14 @@ $jbm = query("SELECT * FROM tb_berita WHERE user_id ='" . $_SESSION["id"] . "'  
             <div class="mainbar">
                 <div class="bar-head top-bar clearfix">		
                     <div class="profile-card pull-right">
-                        <a href="admin-sekolah-4.html" class="profile-card-image">
+                        <a href="admin-sekolah-4.php" class="profile-card-image">
                             <img src="assets/img/placeholder/kirja.jpg" alt="">
                         </a>
                         <div class="profile-body">
                             <?= $_SESSION['username'] ?>
                         </div>
                     </div><!-- /.profile-card -->
-                   <a href="admin-sekolah-1.html" class="btn btn-transparent pull-right">Tambah Website</a>				
+                   <a href="admin-sekolah-1.php" class="btn btn-transparent pull-right">Tambah Website</a>				
                 </div><!-- /.top-bar -->
                 <div class="mainbar-body">
                     <div class="section-reviews">

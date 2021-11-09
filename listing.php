@@ -126,34 +126,34 @@ $bsk = query("SELECT * FROM tb_berita WHERE nama_sekolah = 'smpn 7 malang' ");
                                 <ul class="list-reviews">
                                     <li class="content-box"> 
                                            <table class="table-panel footable table-listings"> 
-<?php $i=1; ?>
-<?php foreach ($bsk as $row) : ?>                                                                                    
-                            <tr>
-                                <td><?= $i ?></td>
-                                <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
-                                    <a href="berita.php?id=<?= $row["id"];?>" class="link">
-                                       <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
-                                    </a>
-                                </td>
-                                <td class="preview-mobile" data-type="html">
-                                    <div>
-                                        <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
-                                    </div>
-                                    <div>
-                                        <span class="listing-tags tags">
-                                            <?= $row["asal"];?>  ·  <?= $row["isi_berita"];?>
-                                        </span>
-                                    </div>
-                                </td>
-                                <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
-                                   
-                                </td>
-                                <td data-title="" data-breakpoints="xs" data-type="html">
-                                    
-                                </td>
-                            </tr>
-<?php $i++; ?>
-<?php endforeach; ?>
+                                                <?php $i=1; ?>
+                                                <?php foreach ($bsk as $row) : ?>                                                                                    
+                                                    <tr>
+                                                        <td><?= $i ?></td>
+                                                        <td data-title="Preview" data-breakpoints="xs" data-type="html" class="preview">
+                                                            <a href="berita.php?id=<?= $row["id"];?>" class="link">
+                                                               <img class="image-preview preview-95x88"  src="img/<?= $row["berita_1"]; ?>" alt="">
+                                                            </a>
+                                                        </td>
+                                                        <td class="preview-mobile" data-type="html">
+                                                            <div>
+                                                                <a href="berita.php?id=<?= $row["id"];?>"  class="listing-link"><?= $row["judul"]; ?> </a>
+                                                            </div>
+                                                            <div>
+                                                                <span class="listing-tags tags">
+                                                                    <?= $row["asal"];?>  ·  <?= $row["isi_berita"];?>
+                                                                </span>
+                                                            </div>
+                                                        </td>
+                                                        <td data-title="Address" data-breakpoints="xs" data-type="html" class="location-cell">
+                                                           
+                                                        </td>
+                                                        <td data-title="" data-breakpoints="xs" data-type="html">
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                <?php $i++; ?>
+                                                <?php endforeach; ?>
                                         </table>
                                     </li>
                                 </ul>

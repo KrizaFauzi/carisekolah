@@ -207,19 +207,34 @@ function showCheckboxes() {
                                             <div class="multiselect" >
                                                 <div onclick="showCheckboxes()">
                                                     <select class="form-control"id="jurusan">
-                                                      <option><span class="option"> (mohon diisi)</span></option>
+                                                      <option><span class="option"> (WAJIB DIISI)</span></option>
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
                                                           <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus " />tidak ada jurusan khusus </br>
+                                                          <input type="checkbox" name="jurusan[]" value="Akuntansi" id="Akuntansi"/>Akuntansi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Alat Berat" id="Alat Berat"/>Alat Berat</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Animasi" id="Animasi"/>Animasi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Analisis kimia" id="Analisis kimia"/>Analisis kimia</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" id="Bisnis"/>Bisnis dan Manajemen</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Elin" id="Elin"/>Elin</br>
                                                           <input type="checkbox" name="jurusan[]" value="RPL" id="RPL"/>RPL</br>
                                                           <input type="checkbox"  name="jurusan[]" value="TKJ" id="TKJ"/>TKJ</br>
-                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" id="Mekatronika"/>Mektronika</br> 
-                                                          <input type="checkbox" name="jurusan[]" value="Kesehatan dan Pekerjaan Sosial" id="Kesehatan"/>Kesehatan dan Pekerjaan Sosial</br>
-                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" id="Bisnis"/>Bisnis dan Manajemen</br>
-                                                          <input type="checkbox" name="jurusan[]" value="TKR" id="TKR"/>TKR</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Farmasi" id="Farmasi"/>Farmasi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Jurnalistik" id="Jurnalistik"/>Jurnalistik</br>
                                                           <input type="checkbox" name="jurusan[]" value="Kemaritiman" id="Kemaritiman"/>Kemaritiman</br>
-                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" id="Pariwisata"/>Pariwisata
+                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" id="Mekatronika"/>Mektronika</br> 
+                                                          <input type="checkbox" name="jurusan[]" value="Multimedia" id="Multimedia"/>Multimedia</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" id="Pariwisata"/>Pariwisata</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Perhotelan" id="Perhotelan"/>Perhotelan</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Perkantoran" id="Perkantoran"/>Perkantoran</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TKR" id="TKR"/>TKR</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TSM" id="TSM"/>TSM</br>  
+                                                          <input type="checkbox" name="jurusan[]" value="Tata Boga" id="Tata Boga"/>Tata Boga</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Tata Busana" id="Tata Busana"/>Tata Busana</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Teknik Otomasi Industri" id="Teknik Otomasi Industri"/>Teknik Otomasi Industri</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Teknik Sipil" id="Teknik Sipil"/>Teknik Sipil
+                                                          
                                                 </div>
                                             </div>
                                         </div>

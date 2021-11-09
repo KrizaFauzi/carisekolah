@@ -159,16 +159,31 @@ function showCheckboxes() {
                                                       <option><span class="option"> (Mohon diisi</span></option>
                                                      </select>
                                                  </div>
-                                                  <div id="checkboxes">
-                                                          <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus" <?php in_array("tidak ada jurusan khusus",$o) ? print 'checked' :'' ?> >tidak ada jurusan khusus</br>
-                                                          <input type="checkbox" name="jurusan[]" value="RPL" <?php in_array("RPL",$o) ? print 'checked' :'' ?> >RPL</br>
-                                                          <input type="checkbox"  name="jurusan[]" value="TKJ" <?php in_array("TKJ",$o) ? print 'checked' :'' ?>>TKJ</br>
-                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" <?php in_array("Mekatronika",$o) ? print 'checked' :'' ?> />Mektronika</br> 
-                                                          <input type="checkbox" name="jurusan[]" value="kesehatan dan Pekerjaan Sosial" <?php in_array("Kesehatan dan Pekerjaan Sosial",$o) ? print 'checked' :'' ?> />Kesehatan dan Pekerjaan Sosial</br>
-                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" <?php in_array("Bisnis dan Manajemen",$o) ? print 'checked' :'' ?> />Bisnis dan Manajemen</br>
-                                                          <input type="checkbox" name="jurusan[]" value="TKR" <?php in_array("TKR",$o) ? print 'checked' :'' ?>>TKR</br>
-                                                          <input type="checkbox" name="jurusan[]" value="Kemaritiman" <?php in_array("Kemaritiman",$o) ? print 'checked' :'' ?> />Kemaritiman</br>
-                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" <?php in_array("Pariwisata",$o) ? print 'checked' :'' ?> />Pariwisata
+                                                  <div id="checkboxes"> 
+
+                                                  <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus " />tidak ada jurusan khusus </br>
+                                                          <input type="checkbox" name="jurusan[]" value="Akuntansi" <?php in_array("Akuntansi",$o) ? print 'checked' :'' ?>/>Akuntansi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Alat Berat" <?php in_array("Alat Berat",$o) ? print 'checked' :'' ?>/>Alat Berat</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Animasi" <?php in_array("Animasi",$o) ? print 'checked' :'' ?>/>Animasi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Analisis kimia" <?php in_array("Analisis Kimia",$o) ? print 'checked' :'' ?>/>Analisis kimia</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Bisnis dan Manajemen" <?php in_array("Bisnis dan Manajemen",$o) ? print 'checked' :'' ?>/>Bisnis dan Manajemen</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Elin" <?php in_array("ELin",$o) ? print 'checked' :'' ?>/>Elin</br>
+                                                          <input type="checkbox" name="jurusan[]" value="RPL" <?php in_array("RPL",$o) ? print 'checked' :'' ?>/>RPL</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="TKJ" <?php in_array("TKJ",$o) ? print 'checked' :'' ?>"/>TKJ</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Farmasi" <?php in_array("Farmasi",$o) ? print 'checked' :'' ?>/>Farmasi</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Jurnalistik" <?php in_array("Jurnalistik",$o) ? print 'checked' :'' ?>/>Jurnalistik</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Kemaritiman" <?php in_array("kemaritiman",$o) ? print 'checked' :'' ?>/>Kemaritiman</br>
+                                                          <input type="checkbox"  name="jurusan[]" value="Mekatronika" <?php in_array("Mekatronika",$o) ? print 'checked' :'' ?>/>Mektronika</br> 
+                                                          <input type="checkbox" name="jurusan[]" value="Multimedia" <?php in_array("Multimedia",$o) ? print 'checked' :'' ?>/>Multimedia</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Pariwisata" <?php in_array("Pariwisata",$o) ? print 'checked' :'' ?>/>Pariwisata</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Perhotelan" <?php in_array("Perhotelan",$o) ? print 'checked' :'' ?>/>Perhotelan</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Perkantoran" <?php in_array("perkantoran",$o) ? print 'checked' :'' ?>/>Perkantoran</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TKR" <?php in_array("TKR",$o) ? print 'checked' :'' ?>/>TKR</br>
+                                                          <input type="checkbox" name="jurusan[]" value="TSM" <?php in_array("TSM",$o) ? print 'checked' :'' ?>/>TSM</br>  
+                                                          <input type="checkbox" name="jurusan[]" value="Tata Boga" <?php in_array("Tata Boga",$o) ? print 'checked' :'' ?>/>Tata Boga</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Tata Busana" <?php in_array("Tata Busana",$o) ? print 'checked' :'' ?>/>Tata Busana</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Teknik Otomasi Industri" <?php in_array("Teknik Otomasi",$o) ? print 'checked' :'' ?>/>Teknik Otomasi Industri</br>
+                                                          <input type="checkbox" name="jurusan[]" value="Teknik Sipil" <?php in_array("Teknik Sipil",$o) ? print 'checked' :'' ?>/>Teknik Sipil
                                                 </div>
                                             </div>
                                         </div>

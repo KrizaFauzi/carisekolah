@@ -3,7 +3,7 @@
 
 session_start();
 if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
-    echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='index.php'</script>";
+    echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='multilevel/index.php'</script>";
 }
 
 ?>

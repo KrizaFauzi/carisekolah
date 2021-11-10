@@ -117,9 +117,7 @@ $bsk = query("SELECT * FROM tb_berita WHERE nama_sekolah = 'smpn 7 malang' ");
                     <div class="row">
                         <div class="col-sm-9" >
                             <div class="widget-styles">
-                                <div class="content-box">
-                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="10"><?= $jbm["deskripsi"];?></textarea>
-                                </div>
+                                <textarea  class="form-control" rows="20" disabled style="background-color: white;"><?= $jbm["deskripsi"];?></textarea>
                             </div>   
                             <div class="widget-styles">
                                 <div class="header content t-left"><h2>BERITA TERBARU SEKOLAH</h2></div>

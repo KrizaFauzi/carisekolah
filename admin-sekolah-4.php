@@ -106,7 +106,7 @@ $conn = mysqli_connect("localhost","root","","carisekolah");
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <input type="text" class="form-control" placeholder="" value=<?= $_SESSION['username'] ?>>
+                                                        <input type="text" class="form-control" placeholder="" value=<?= $_SESSION['username'] ?> style="background-color: white;" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -115,7 +115,7 @@ $conn = mysqli_connect("localhost","root","","carisekolah");
                                                         $query = mysqli_query($conn,"SELECT * FROM loginmulti WHERE id = '".$_SESSION['id']."' ");
                                                         while ($dt = mysqli_fetch_assoc($query)) {
                                                                 ?>
-                                                        <input  type="text" class="form-control" placeholder="email" value=<?= $dt["gmail"]; ?>>
+                                                        <input  type="text" class="form-control" placeholder="email" value=<?= $dt["gmail"]; ?> style="background-color: white;" disabled>
                                                         <?php
                                                         }
                                                         ?>
@@ -123,7 +123,7 @@ $conn = mysqli_connect("localhost","root","","carisekolah");
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group form-xs-group">
-                                                        <class class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)"></textarea>
+                                                        <input class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)" style="background-color: white;" disabled>
                                                     </div>
                                                 </div>
                                             </div>

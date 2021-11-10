@@ -27,7 +27,7 @@ $level="";
 		<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sticky-footer/">
 
 		
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="icon" href="../assets/img/logocs.ico" type="image/x-icon" />
 	<style>
 		.bd.placeholder-img{

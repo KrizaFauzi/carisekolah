@@ -115,10 +115,10 @@ $bsk = query("SELECT * FROM tb_berita WHERE nama_sekolah = 'smpn 7 malang' ");
             <div class="container container-palette widget">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-9">
+                        <div class="col-sm-9" >
                             <div class="widget-styles">
                                 <div class="content-box">
-                                <?= $jbm["deskripsi"];?>
+                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="10"><?= $jbm["deskripsi"];?></textarea>
                                 </div>
                             </div>   
                             <div class="widget-styles">

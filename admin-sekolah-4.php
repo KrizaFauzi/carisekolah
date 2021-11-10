@@ -6,6 +6,8 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
     echo "<script>alert('Maaf, untuk mengakses halaman ini, anda harus login terlebih dahulu, terima kasih');document.location='multilevel/index.php'</script>";
 }
 
+$conn = mysqli_connect("localhost","root","","carisekolah");
+
 
 ?>
 <!DOCTYPE html>
@@ -104,12 +106,19 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <class type="text" class="form-control" placeholder=""><h4><?= $_SESSION['username'] ?></h4>
+                                                        <input type="text" class="form-control" placeholder="" value=<?= $_SESSION['username'] ?>>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <class  type="text" class="form-control" placeholder="email"><h4><?= $_SESSION["gmail"]?></h4>
+                                                        <?php 
+                                                        $query = mysqli_query($conn,"SELECT * FROM loginmulti WHERE id = '".$_SESSION['id']."' ");
+                                                        while ($dt = mysqli_fetch_assoc($query)) {
+                                                                ?>
+                                                        <input  type="text" class="form-control" placeholder="email" value=<?= $dt["gmail"]; ?>>
+                                                        <?php
+                                                        }
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">

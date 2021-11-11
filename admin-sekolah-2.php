@@ -6,25 +6,27 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 }
 
 
-require 'function1.php';
+require 'function4.php';
+$jbm = query("SELECT * FROM tb_sekolah ");
 
 if(isset($_POST["submit"])){
 
-	if(tambah($_POST) > 0 ){
+	if(tm_profil($_POST) > 0 ){
 		echo 
 			"<script>
-				alert('data berhasil ditambahkan');
+				alert('profil berhasil di upload');
 				document.location.href = 'admin-sekolah-4.php';
 			</script>";
 	}else {
 		echo 
 			"<script>
-				alert('data gagal ditambahkan');
-				document.location.href = 'admin-sekolah-2.php';
+            alert('profil gagal di upload');
+            document.location.href = 'admin-sekolah-2.php';
 			</script>";
 	}
 
 }
+
 
 
 ?>
@@ -57,7 +59,18 @@ if(isset($_POST["submit"])){
                 <div class="bar-head top-bar clearfix">		
                     <div class="profile-card pull-right">
                         <a href="admin-sekolah-4.php" class="profile-card-image">
-                            <img src="assets/img/placeholder/kirja.jpg" alt="">
+                        <?php 
+                            $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
+                            if($gb = mysqli_fetch_assoc($query)) {
+                        ?>
+                         <img src="img/<?= $gb["gambar"]; ?>" alt="">
+                        <?php
+                          }else{
+                        ?>
+                          <img src="assets/img/placeholder/profil1.jpg" alt="">
+                        <?php
+                          }
+                        ?>
                         </a>
                         <div class="profile-body">
                             <?= $_SESSION['username'] ?>
@@ -74,17 +87,32 @@ if(isset($_POST["submit"])){
                         </div>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="<?= $jbm["id"]; ?>">
+                        <input type="hidden" name="user_id" value="<?= $_SESSION["id"]; ?>">	
+	                    <input type="hidden" name="gambarLama" value="<?= $jbm["gambar"]; ?>">
                         <div class="box-content">
                             <div class="profile-editor clearfix">
                                 <div class="profile-editor-side">
                                     <div class="profile-editor-preview">
-                                        <img src="assets/img/placeholder/post-preview.jpg" alt="">
+                                    <?php 
+                                      $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
+                                      if($gb = mysqli_fetch_assoc($query)) {
+                                    ?>
+                                     <img src="img/<?= $gb["gambar"]; ?>" alt="">
+                                    <?php
+                                      }else{
+                                    ?>
+                                      <img src="assets/img/placeholder/profil1.jpg" alt="">
+                                    <?php
+                                      }
+                                    ?>
                                     </div>
                                     <p class="image_upload">
                                                 <label for="foto">
                                                     <a class="btn btn-danger btn-lg btn-block btn-local-danger" rel="nofollow"  ><span class='glyphicon glyphicon-paperclip'></span> Masukan Foto</a>
                                                 </label>
-                                                 <input type="file" class="hidden" name="foto" id="foto">
+
+                                                 <input type="file" class="hidden" name="gambar" id="foto">
                                             </p>
                                 </div>
                                 <div class="profile-editor-main">
@@ -94,24 +122,42 @@ if(isset($_POST["submit"])){
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <input type="text" class="form-control" name="nama" placeholder="Username">
+                                                    <input type="text" class="form-control" placeholder="" value=<?= $_SESSION['username'] ?> style="background-color: white;" disabled>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group form-xs-group">
-                                                        <input type="text" class="form-control" name="email" placeholder="email">
+                                                    <?php 
+                                                        $query = mysqli_query($db,"SELECT * FROM loginmulti WHERE id = '".$_SESSION['id']."' ");
+                                                        while ($dt = mysqli_fetch_assoc($query)) {
+                                                                ?>
+                                                        <input  type="text" class="form-control" placeholder="email" value=<?= $dt["gmail"]; ?> style="background-color: white;" disabled>
+                                                        <?php
+                                                        }
+                                                    ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group form-xs-group">
-                                                        <textarea class="form-control" id="fieldDesription" rows="5" placeholder="Tentang pengguna(max 100 kata)" name="tentang"></textarea>
+                                                    <?php 
+                                                        $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
+                                                       if($nd = mysqli_fetch_assoc($query)) {
+                                                                ?>
+                                                        <textarea type="text" class="form-control" id="fieldDesription"  name ="deskripsi"><?= $nd["deskripsi"]; ?></textarea>.
+                                                        <?php
+                                                        }else{
+                                                        ?>
+                                                        <textarea type="text" class="form-control" id="fieldDesription" name="deskripsi" rows="5" style="background-color: white;" >isikan deskripsi tentang anda</textarea>
+                                                    <?php
+                                                        }
+                                                        ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div> 
                                         </div>
                                         <div class="form-group form-xs-group">
-                                            <button type="submit" class="btn btn-xs btn-danger btn-local-danger" name="submit">Perbarui Profil</button>
+                                            <button type="submit" class="btn btn-danger" name="submit" >Perbarui Profil pertama kali</button>
                                         </div>
                     
                                 </div>

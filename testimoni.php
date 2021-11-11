@@ -1,20 +1,27 @@
 <?php
 
-require 'function.php';
+require 'function3.php';
 
 $jbm = query("SELECT * FROM testimoni");
 
 
-if(isset($_POST['submit'])){
-    $email = $_POST["email"];
-    $nama = $_POST["nama"];
-    $deskripsi = $_POST["deskripsi"];
+if(isset($_POST["submit"])){
 
-    $query = "INSERT INTO testimoni
-                VALUES
-                ('', '$email', '$nama', '$deskripsi')
-                ";
-                mysqli_query($db, $query);
+    if(tm_profil($_POST) < 1 ){
+        echo 
+        "<script>
+            alert('Testimoni Berhasil Ditambahkan');
+            document.location.href = 'testimoni.php';
+        </script>";
+        
+    }else {
+        echo 
+            "<script>
+                alert('Testimoni Gagal Ditambahkan');
+                document.location.href = 'testimoni.php';
+            </script>";
+    }
+
 }
 
 
@@ -152,15 +159,17 @@ if(isset($_POST['submit'])){
                         
                         <div class="widget-styles agent-box">
                                 <div class="content">
-                                    <div class="preview-image"><a href="page_profile.html"><img src="assets/img/logocs.ico" style= "width: 100px;" alt="" /></a></div>
+                                    <div class="preview-image"><a href="tentangcs.html"><img src="assets/img/logocs.ico" style= "width: 170px;" alt="" /></a></div>
                                     <div class="content-box">
                                         <h2 class="title"><a href="tentangcs.html">CARI SEKOLAH</a></h2>
                                         <div class="description"> Betapapun sulitnya hidup, selalu ada sesuatu yang dapat Anda lakukan dan berhasil.  </div>
-                                        <a href="#" class="btn btn-custom btn-custom-secondary btn-wide"><i class="ion-email"></i></a>
                                     </div>
                                 </div>
                         </div>
                         <div class="widget widget-styles widget-right-map">
+                            <div class="body">
+                                <img src="assets/img/placeholder/ads.jpg" style="width: 240px;" alt="" />  
+                            </div>
                             <div class="body">
                                 <img src="assets/img/placeholder/ads.jpg" style="width: 240px;" alt="" />  
                             </div>

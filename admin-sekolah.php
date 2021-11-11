@@ -83,7 +83,18 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE user_id ='" . $_SESSION["id"] . "' 
                 <div class="bar-head top-bar clearfix">		
                     <div class="profile-card pull-right">
                         <a href="admin-sekolah-4.php" class="profile-card-image">
-                            <img src="assets/img/placeholder/kirja.jpg" alt="">
+                        <?php 
+                            $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
+                            if($gb = mysqli_fetch_assoc($query)) {
+                        ?>
+                         <img src="img/<?= $gb["gambar"]; ?>" alt="">
+                        <?php
+                          }else{
+                        ?>
+                          <img src="assets/img/placeholder/profil1.jpg" alt="">
+                        <?php
+                          }
+                        ?>
                         </a>
                         <div class="profile-body">
                             <?= $_SESSION['username'] ?>

@@ -103,7 +103,7 @@ $bsk = query("SELECT * FROM tb_berita WHERE id = $id")[0];
                                             <div class="list-reviews-title">
                                                 <h1 style="font-weight: bold;"><?= $bsk["judul"]?></h1>
                                             </div>
-                                            <div class="description"><?= $bsk["isi_berita"]?></div>
+                                            <textarea  class="form-control" rows="20" disabled style="background-color: white;"><?= $bsk["isi_berita"];?></textarea>
                                         </div>
                                     </li>
                                     <li class="content-box"> 

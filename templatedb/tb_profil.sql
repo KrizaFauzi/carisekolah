@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Generation Time: Nov 11, 2021 at 08:06 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -24,43 +24,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login_dev`
+-- Table structure for table `tb_profil`
 --
 
-CREATE TABLE `login_dev` (
-  `id` int(12) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `gmail` varchar(255) NOT NULL
+CREATE TABLE `tb_profil` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `deskripsi` varchar(40) NOT NULL,
+  `gambar` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `login_dev`
+-- Dumping data for table `tb_profil`
 --
 
-INSERT INTO `login_dev` (`id`, `username`, `password`, `gmail`) VALUES
-(17, 'carisekolah', '$2y$10$1DA0BaUB.7B1mF.LjWPH.e0.DWA8p1RBR6yxTfmxMjvueOcksLj/S', 'carisekolah12@gmail.com'),
-(18, '12', '$2y$10$.PKKYp6lee5WpK4RLtSDcO.69WqcfBEE31/4PAStAJGza8YrdeTSq', '12');
+INSERT INTO `tb_profil` (`id`, `user_id`, `deskripsi`, `gambar`) VALUES
+(3, 16, 'adasdasda', '618c95a06f09e.jpg'),
+(5, 22, 'ini namanya percobaan', '618c9ce96f97b.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `login_dev`
+-- Indexes for table `tb_profil`
 --
-ALTER TABLE `login_dev`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tb_profil`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `login_dev`
+-- AUTO_INCREMENT for table `tb_profil`
 --
-ALTER TABLE `login_dev`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `tb_profil`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tb_profil`
+--
+ALTER TABLE `tb_profil`
+  ADD CONSTRAINT `tb_profil_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `loginmulti` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

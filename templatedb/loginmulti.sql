@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Generation Time: Nov 11, 2021 at 08:06 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -40,11 +40,12 @@ CREATE TABLE `loginmulti` (
 --
 
 INSERT INTO `loginmulti` (`id`, `username`, `password`, `gmail`, `level`) VALUES
-(10, '1', '2', '3', 'devoloper'),
-(15, '12', '12', '12', 'admin'),
+(15, '12', '123', '12', 'admin'),
 (16, 'admin', '123', 'carisekolah12@gmail.com', 'admin'),
-(17, '12', '12', 'carisekolah12@gmail.com', 'admin'),
-(18, 'f', 'f', 'f@gmail.com', 'admin');
+(18, 'f', 'f', 'f@gmail.com', 'admin'),
+(19, 'developer', 'csdvlpr', 'carisekolah12@gmail.com', 'devoloper'),
+(21, 'sy', 'yeye', 'kriznafiubadah55@gmail.com', 'admin'),
+(22, 'sdsd', 'sd', 'sd@gmail.com', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `loginmulti`
 -- AUTO_INCREMENT for table `loginmulti`
 --
 ALTER TABLE `loginmulti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

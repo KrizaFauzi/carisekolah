@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 03:08 AM
+-- Generation Time: Nov 11, 2021 at 08:06 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.4.21
 
@@ -39,15 +39,9 @@ CREATE TABLE `testimoni` (
 --
 
 INSERT INTO `testimoni` (`id`, `email`, `nama`, `deskripsi`) VALUES
-(3, 'aderhom17@gmail.com', 'ade rhoma a', 'smkn 8 malanag'),
-(4, 'sdk@gmail', 'bdbam', 'bkabsx,'),
-(5, 'ade@gmail', 'adee', 'smkn 8 malang'),
-(6, 'ade@gmail', 'adee', 'smkn 8 malang'),
-(7, 'saxbkabsk@gbsmz', 'bx kb', 'bck kxsa'),
-(8, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 's'),
-(9, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 's'),
-(10, 'kriz4@gmail.com', 'Arayana Maulana', 's'),
-(11, 'kriz4@gmail.com', 'Arayana Maulana', 's');
+(17, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 'sad'),
+(18, 'admin@gmail.com', 'kriza', 'das'),
+(19, 'admin@gmail.com', 'Kriza Fauzi Nafi Ubadah', 'coba coba bang\r\n');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +61,7 @@ ALTER TABLE `testimoni`
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

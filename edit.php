@@ -162,6 +162,7 @@ function showCheckboxes() {
                                                   <div id="checkboxes"> 
 
                                                   <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus " />tidak ada jurusan khusus </br>
+                                                          <label  name="jurusan[]">WAJIB DIISI</label>
                                                           <input type="checkbox" name="jurusan[]" value="Akuntansi" <?php in_array("Akuntansi",$o) ? print 'checked' :'' ?>/>Akuntansi</br>
                                                           <input type="checkbox" name="jurusan[]" value="Alat Berat" <?php in_array("Alat Berat",$o) ? print 'checked' :'' ?>/>Alat Berat</br>
                                                           <input type="checkbox" name="jurusan[]" value="Animasi" <?php in_array("Animasi",$o) ? print 'checked' :'' ?>/>Animasi</br>

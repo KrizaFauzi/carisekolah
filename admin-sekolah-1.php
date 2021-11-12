@@ -222,6 +222,7 @@ function showCheckboxes() {
                                                      </select>
                                                  </div>
                                                   <div id="checkboxes">
+                                                          <label  name="jurusan[]">WAJIB DIISI</label>
                                                           <input type="checkbox" name="jurusan[]" value="tidak ada jurusan khusus " />tidak ada jurusan khusus </br>
                                                           <input type="checkbox" name="jurusan[]" value="Akuntansi" id="Akuntansi"/>Akuntansi</br>
                                                           <input type="checkbox" name="jurusan[]" value="Alat Berat" id="Alat Berat"/>Alat Berat</br>

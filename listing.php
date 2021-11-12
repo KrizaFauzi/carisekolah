@@ -8,7 +8,7 @@ $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
 
 
 
-$bsk = query("SELECT * FROM tb_berita WHERE nama_sekolah = 'smpn 7 malang' ");
+$bsk = query("SELECT * FROM tb_berita ");
 
 
 
@@ -139,7 +139,7 @@ $bsk = query("SELECT * FROM tb_berita WHERE nama_sekolah = 'smpn 7 malang' ");
                                                             </div>
                                                             <div>
                                                                 <span class="listing-tags tags">
-                                                                    <?= $row["asal"];?>  ·  <?= $row["isi_berita"];?>
+                                                                    <?= $row["nama_sekolah"];?>  ·  
                                                                 </span>
                                                             </div>
                                                         </td>

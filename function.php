@@ -506,6 +506,7 @@ function ubah($data){
 function ubah_1($data){
 	global $db;
 	$id = $data["id"];
+    $nama_sekolah = htmlspecialchars($data["nama_sekolah"]);
 	$judul = htmlspecialchars($data["judul"]);
 	$asal = htmlspecialchars($data["asal"]);
     $isi_berita = htmlspecialchars($data["isi_berita"]);
@@ -533,6 +534,7 @@ function ubah_1($data){
 
 
 	$query = "UPDATE tb_berita SET 
+                nama_sekolah = '$nama_sekolah',
 				judul = '$judul',
 				asal   = '$asal',
 				berita_1 = '$berita_1',

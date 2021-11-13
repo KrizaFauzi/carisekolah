@@ -9,6 +9,7 @@ if (empty($_SESSION['username']) or empty($_SESSION['level'])) {
 require 'function4.php';
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +80,7 @@ require 'function4.php';
                         <a href="admin-sekolah-4.php" class="profile-card-image">
                             <?php 
                                 $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
+                                
                                 if($gb = mysqli_fetch_assoc($query)) {
                             ?>
                              <img src="img/<?= $gb["gambar"]; ?>" alt="">
@@ -93,6 +95,7 @@ require 'function4.php';
                         
                         <div class="profile-body">
                             <?= $_SESSION['username'] ?>
+                            
                         </div>
                     </div><!-- /.profile-card -->
                     <a href="multilevel/ganti.php" class="btn btn-transparent pull-right">Ganti Sandi</a>       
@@ -170,11 +173,11 @@ require 'function4.php';
                                         $lk = mysqli_fetch_assoc($query);
 
                                         if ( $lk == '') { ?>
-                                            <button type="button" onclick="window.location.href='admin-sekolah-2.php' " class="btn btn-danger" name="btn">tambah profil</button>
+                                            <button type="button" onclick="window.location.href='admin-sekolah-2.php' " class="btn btn-danger" name="btn">Tambah profil</button>
                                         <?php 
                                         }else{ 
                                         ?>
-                                            <button type="button"  " class="btn btn-danger" >tambah profil</button>
+                                            <button type="button" onclick="window.location.href='admin-sekolah-3.php?id=<?= $lk['id'] ?>' " class="btn btn-danger" >Update Profil</button>
                                         <?php 
                                             }
                                         ?>

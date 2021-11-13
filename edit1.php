@@ -89,7 +89,7 @@ if(isset($_POST["proses"])){
                                     <div class="col-md-12">
                                             <div class="form-group">
                                                 <label for="nama_sekolah">berita untuk sekolah</label>
-                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" value="<?= $jbm["judul"];?>">
+                                                <input type="text" class="form-control"  name="nama_sekolah" id="nama_sekolah" value="<?= $jbm["nama_sekolah"];?>">
                                             </div>
                                         </div>
                                         <div class="col-md-12">

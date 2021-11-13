@@ -77,5 +77,27 @@ function tm_profil($data){
 	return mysqli_affected_rows($db);
 }
 
+function up_profil($data){
+	global $db;
+	$id = $data["id"];
+	$deskripsi = htmlspecialchars($data["deskripsi"]);
+    $gambarLama= htmlspecialchars($data["gambarLama"]);
+
+	if ($_FILES['gambar']['error'] === 4 ) {
+		$gambar = $gambarLama; 
+	}else{
+		$gambar = upload(); 
+	}
+
+	$query = "UPDATE tb_profil SET 
+				deskripsi = '$deskripsi',
+				gambar = '$gambar'
+				WHERE id = $id
+				";
+
+     mysqli_query($db, $query);
+
+	return mysqli_affected_rows($db);
+}
 
 ?>

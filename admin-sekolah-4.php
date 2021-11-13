@@ -157,7 +157,7 @@ require 'function4.php';
                                                         <?php
                                                         }else{
                                                         ?>
-                                                        <textarea type="text" class="form-control" id="fieldDesription" placeholder="Tentang pengguna(max 100 kata)" rows="5" style="background-color: white;" disabled></textarea>
+                                                        <textarea type="text" class="form-control" id="fieldDesription" placeholder="Tentang pengguna(max 100 kata)" rows="5" style="background-color: white;" disabled>Isikan Deskripsi tentang anda</textarea>
                                                          <?php
                                                         }
                                                         ?>

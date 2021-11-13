@@ -106,21 +106,21 @@ if(isset($_POST["submit"])){
                             <div class="widget-styles">
                                 <div class="header content t-left"><h2>Testimoni pengguna Cari sekolah</h2></div>
                                 <ul class="list-reviews">
-<?php $i=1; ?>
-<?php foreach ($jbm as $row) : ?> 
-                                    <li class="content-box">
-                                        <a href="#">
-                                            <img src="assets/img/placeholder/unkwon.jpg" alt="" style="width: 50px;" />
-                                        </a>
-                                        <div class="list-reviews-body">
-                                            <div class="list-reviews-title">
-                                                <h2><a href="#"><?= $row["nama"]; ?></a></h2>
+                                    <?php $i=1; ?>
+                                    <?php foreach ($jbm as $row) : ?> 
+                                        <li class="content-box">
+                                            <a href="#">
+                                                <img src="assets/img/placeholder/unkwon.jpg" alt="" style="width: 50px;" />
+                                            </a>
+                                            <div class="list-reviews-body">
+                                                <div class="list-reviews-title">
+                                                    <h2><a href="#"><?= $row["nama"]; ?></a></h2>
+                                                </div>
+                                                <div class="description"><?= $row["deskripsi"]; ?></div>
                                             </div>
-                                            <div class="description"><?= $row["deskripsi"]; ?></div>
-                                        </div>
-                                    </li>
-<?php $i++; ?>
-<?php endforeach; ?>   
+                                        </li>
+                                    <?php $i++; ?>
+                                    <?php endforeach; ?>   
                                 </ul>
                                 <div class="caption-title t-left content" id="write_review">Nilai/Tulis Testimoni</div>
                                 <div class="content-box">

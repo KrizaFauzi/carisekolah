@@ -162,16 +162,22 @@ require 'function4.php';
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div></br> 
                                         </div>
                                         <div class="form-group form-xs-group">
                                         <?php
                                         $query = mysqli_query($db,"SELECT * FROM tb_profil WHERE user_id = '".$_SESSION['id']."' ");
                                         $lk = mysqli_fetch_assoc($query);
 
-                                        if ( $lk == '') : ?>
+                                        if ( $lk == '') { ?>
                                             <button type="button" onclick="window.location.href='admin-sekolah-2.php' " class="btn btn-danger" name="btn">tambah profil</button>
-                                        <?php endif ?>
+                                        <?php 
+                                        }else{ 
+                                        ?>
+                                            <button type="button"  " class="btn btn-danger" >tambah profil</button>
+                                        <?php 
+                                            }
+                                        ?>
                                             
                                         </div>
                                     </form>

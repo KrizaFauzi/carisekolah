@@ -82,7 +82,7 @@ $tbs = query("SELECT * FROM tb_berita");
                             <div class="logo"><a href="#">Cari Sekolah</a></div>
                             <ul class="nav navbar-nav nav-items default-menu" id="main-menu">
                                 <li class="active"><a href="index.php">Beranda</a></li>
-                                <li><a href="admin-sekolah-4.php">Admin</a></li>
+                                <li><a href="multilevel/index.php">Admin</a></li>
                                 <li><a href="homepage-slider-top.php">Daftar Sekolah</a></li>
                                 </li>
                                 

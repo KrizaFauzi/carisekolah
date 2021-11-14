@@ -1,7 +1,7 @@
 <?php
 require 'function.php';
 
-$jumlahDataPerhalaman = 6;
+$jumlahDataPerhalaman = 1;
 $jumlahData = count(query("SELECT * FROM tb_sekolah"));
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman) ;
 $halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
@@ -10,7 +10,7 @@ $awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
 $tbr = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman");
 
 if (isset($_GET["input"])) {
-    $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%'  ");
+    $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%' LIMIT $awalData, $jumlahDataPerhalaman ");
 }else {
     
 }

@@ -1,7 +1,7 @@
 <?php
 require 'function.php';
 
-$jumlahDataPerhalaman = 3;
+$jumlahDataPerhalaman = 6;
 $jumlahData = count(query("SELECT * FROM tb_sekolah"));
 $jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman) ;
 $halamanAktif = ( isset($_GET["page"]) ) ? $_GET["page"] : 1;
@@ -10,7 +10,7 @@ $awalData = ($jumlahDataPerhalaman * $halamanAktif) - $jumlahDataPerhalaman ;
 $tbr = query("SELECT * FROM tb_sekolah LIMIT $awalData, $jumlahDataPerhalaman");
 
 if (isset($_GET["input"])) {
-    $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%' LIMIT $awalData, $jumlahDataPerhalaman ");
+    $tbr = query("SELECT * FROM tb_sekolah WHERE provinsi LIKE '%".$_GET["input"]."%'  ");
 }else {
     
 }
@@ -248,15 +248,28 @@ $tbs = query("SELECT * FROM tb_berita");
                                 </li>
                         <?php endif; ?>
 
-                        <?php for ($i=1; $i <=$jumlahHalaman; $i++) : ?> 
-                         <?php if(($i>=$halamanAktif-2) && ($i<=$halamanAktif+2) || ($i==1) || ($i==$jumlahHalaman)) :?>  
-                            <?php if ( $i == $halamanAktif) : ?>                            
-                                 <li class="active"><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
-                            <?php else :?>
-                                 <li><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
-                          <?php endif ;?>
-                         <?php endif ;?>
-                         <?php endfor ?>
+                        <?php if(isset($_GET["input"])) { ?>
+                            <?php $input = $_GET["input"]; ?>
+                            <?php for ($i=1; $i <=$jumlahHalaman; $i++) : ?> 
+                             <?php if(($i>=$halamanAktif-2) && ($i<=$halamanAktif+2) || ($i==1) || ($i==$jumlahHalaman)) :?>  
+                                <?php if ( $i == $halamanAktif) : ?>                            
+                                     <li class="active"><a href="?input=<?= $input;?>&page=<?= $i; ?>"><?= $i; ?></a></li>
+                                <?php else :?>
+                                     <li><a href="?input=<?= $input;?>&page=<?= $i; ?>"><?= $i; ?></a></li>
+                              <?php endif ;?>
+                             <?php endif ;?>
+                             <?php endfor ?>
+                        <?php }else{?>
+                            <?php for ($i=1; $i <=$jumlahHalaman; $i++) : ?> 
+                             <?php if(($i>=$halamanAktif-2) && ($i<=$halamanAktif+2) || ($i==1) || ($i==$jumlahHalaman)) :?>  
+                                <?php if ( $i == $halamanAktif) : ?>                            
+                                     <li class="active"><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                                <?php else :?>
+                                     <li><a href="?page=<?= $i; ?>"><?= $i; ?></a></li>
+                              <?php endif ;?>
+                             <?php endif ;?>
+                             <?php endfor ?>
+                        <?php }?>
 
                         <?php if( $halamanAktif < $jumlahHalaman) :?> 
                                 <li>              

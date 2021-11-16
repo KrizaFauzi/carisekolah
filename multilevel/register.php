@@ -63,21 +63,21 @@ $level="";
  				<input type="text" class="form-control" id="username" name="username" placeholder="Username">
  			</div>
  		</div>
-
+		<br>
  		<div class="form-group row">
  			<label for="gmail" class="col-sm-2 col-form-label">gmail</label>
  			<div class="col-sm-10">
  				<input type="email" class="form-control" id="gmail" name="gmail" placeholder="gmail">
  			</div>
  		</div>
-
+		 <br>
  		<div class="form-group row">
  			<label for="password" class="col-sm-2 col-form-label">Kata Sandi</label>
  			<div class="col-sm-10">
  				<input type="password" class="form-control" name="password" id="password" placeholder="Password">
  			</div>
  		</div>
-		 
+		 <br>
 		<div class="form-group row">
  			<label for="level"class="col-sm-2 col-form-label">Sebagai </label>
 				<div class="col-sm-10">	

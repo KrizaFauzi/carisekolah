@@ -6,7 +6,7 @@ $id = $_GET["id"];
 
 
 $jbm = query("SELECT * FROM tb_sekolah WHERE id = $id")[0];
-$o = explode(',', $jbm['jurusan']);
+$o = explode( '\n ,' , $jbm['jurusan']);
 
 if(isset($_POST["submit"])){
 

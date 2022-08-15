@@ -21,7 +21,7 @@ function tambah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
-    $jurusan = htmlspecialchars(implode(',', $data["jurusan"]));
+    $jurusan = htmlspecialchars(implode('\n  ,', $data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
@@ -433,7 +433,7 @@ function ubah($data){
     $ofc_web = htmlspecialchars($data["ofc_web"]);
 	$deskripsi = htmlspecialchars($data["deskripsi"]);
     $kategori = htmlspecialchars($data["kategori"]);
-    $jurusan = htmlspecialchars(implode(',', $data["jurusan"]));
+    $jurusan = htmlspecialchars(implode('\n ,', $data["jurusan"]));
     $alamat = htmlspecialchars($data["alamat"]);
     $maps = htmlspecialchars($data["maps"]);
     $provinsi = htmlspecialchars($data["provinsi"]);
